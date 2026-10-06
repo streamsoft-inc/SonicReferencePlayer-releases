@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonic Reference Player — Release Notes</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --accent:#b8860b; --side:#f5f5f7; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1c1c1e; --fg:#f2f2f7; --muted:#a1a1a6; --line:#3a3a3c; --accent:#daa520; --side:#2c2c2e; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  header { padding:20px 24px; border-bottom:1px solid var(--line); }
+  header h1 { margin:0; font-size:22px; }
+  .nda { margin:6px 0 0; font-weight:600; }
+  .wrap { display:flex; }
+  nav { position:sticky; top:0; align-self:flex-start; width:220px; height:100vh; overflow:auto; background:var(--side); border-right:1px solid var(--line); padding:12px 0; }
+  nav input { margin:0 12px 10px; width:calc(100% - 24px); padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); }
+  nav ul { list-style:none; margin:0; padding:0; }
+  nav a { display:flex; justify-content:space-between; padding:5px 16px; color:var(--fg); text-decoration:none; }
+  nav a:hover { background:var(--line); }
+  nav .d { color:var(--muted); font-size:12px; }
+  main { flex:1; min-width:0; padding:8px 32px 64px; max-width:900px; }
+  section { padding:18px 0; border-bottom:1px solid var(--line); scroll-margin-top:8px; }
+  section h2 { margin:0 0 6px; font-size:20px; }
+  .date { color:var(--muted); font-size:14px; font-weight:400; margin-left:8px; }
+  .headlines { margin:4px 0 8px; }
+  details summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  details h3 { font-size:16px; margin:16px 0 4px; }
+  details h4 { font-size:15px; margin:12px 0 4px; }
+  code { font-size:13px; background:var(--side); padding:1px 4px; border-radius:4px; }
+  a { color:var(--accent); }
+  #results { display:none; padding:14px 0 6px; border-bottom:1px solid var(--line); }
+  #results h2 { font-size:15px; margin:0 0 8px; color:var(--muted); font-weight:600; }
+  #results ol { list-style:none; margin:0; padding:0; }
+  #results li { padding:8px 10px; margin:0 0 6px; border:1px solid var(--line); border-radius:8px; cursor:pointer; }
+  #results li:hover, #results li:focus { background:var(--side); outline:none; }
+  #results .where { font-size:12px; color:var(--muted); margin-bottom:2px; }
+  #results .where b { color:var(--fg); }
+  mark { background:#ffe58a; color:#1d1d1f; padding:0 1px; border-radius:2px; }
+  .hit { animation: flash 1.6s ease-out; }
+  @keyframes flash { from { background:#ffe58a55; } to { background:transparent; } }
+  @media (max-width: 760px) {
+    .wrap { display:block; }
+    nav { position:static; width:auto; height:auto; max-height:40vh; border-right:none; border-bottom:1px solid var(--line); }
+    main { padding:8px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+<header><h1>Sonic Reference Player — Release Notes</h1></header>
+<div class="wrap">
+<nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-16"><span class="v">0.1.16</span><span class="d">2026-10-06</span></a></li>
+<li><a href="#v0-1-15"><span class="v">0.1.15</span><span class="d">2026-10-05</span></a></li>
+<li><a href="#v0-1-14"><span class="v">0.1.14</span><span class="d">2026-10-04</span></a></li>
+<li><a href="#v0-1-13"><span class="v">0.1.13</span><span class="d">2026-10-03</span></a></li>
+<li><a href="#v0-1-12"><span class="v">0.1.12</span><span class="d">2026-09-28</span></a></li>
+<li><a href="#v0-1-11"><span class="v">0.1.11</span><span class="d">2026-09-27</span></a></li>
+<li><a href="#v0-1-10"><span class="v">0.1.10</span><span class="d">2026-09-26</span></a></li>
+<li><a href="#v0-1-9"><span class="v">0.1.9</span><span class="d">2026-09-24</span></a></li>
+<li><a href="#v0-1-8"><span class="v">0.1.8</span><span class="d">2026-09-23</span></a></li>
+<li><a href="#v0-1-7"><span class="v">0.1.7</span><span class="d">2026-09-23</span></a></li>
+<li><a href="#v0-1-6"><span class="v">0.1.6</span><span class="d">2026-09-22</span></a></li>
+<li><a href="#v0-1-5"><span class="v">0.1.5</span><span class="d">2026-09-22</span></a></li>
+<li><a href="#v0-1-4"><span class="v">0.1.4</span><span class="d">2026-09-21</span></a></li>
+<li><a href="#v0-1-3"><span class="v">0.1.3</span><span class="d">2026-09-21</span></a></li>
+<li><a href="#v0-1-2"><span class="v">0.1.2</span><span class="d">2026-09-20</span></a></li>
+<li><a href="#v0-1-1"><span class="v">0.1.1</span><span class="d">2026-09-20</span></a></li>
+<li><a href="#v0-1-0"><span class="v">0.1.0</span><span class="d">2026-09-20</span></a></li>
+</ul></nav>
+<main>
+<div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-16"><h2>0.1.16 <span class="date">2026-10-06</span></h2><ul class="headlines"><li>Auro-Cx and Auro speaker configurations, a room-centric object view, and a reorderable list.</li></ul><details><summary>Full notes</summary><p>Auro-Cx and Auro speaker configurations, a room-centric object view, and a reorderable list.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Objects: room-centric (changes what you hear)</h3>
+<ul><li><strong>Speakers stand in the room's corners</strong>, as engineers lay out a room (ITU-R BS.2127), and polar (EBU) object positions are converted into the room the same way. <strong>The panner follows the same rule</strong>, so an object is heard where it is drawn — this changes the sound of Dolby-style (Cartesian) objects near the corners.</li><li><strong>Room-centric</strong> tick in the object view switches back to the old listener-centred sphere, for comparison.</li><li><strong>Isometric</strong> tick: the room drawn as macOS Audio MIDI Setup draws one, with a lounge chair at the listening position.</li><li><p>Soloing an object shows the others as muted (visible, dimmed, no level).</p></li></ul>
+<h3>Auro-3D and Auro-Cx</h3>
+<ul><li><strong>Auro speaker configurations</strong>: Auro 9.1, 10.1, 11.1, 12.1 and 13.1 — for monitoring, and to name files that declare one.</li><li><strong>Auro-Cx</strong>: the Auro badge, "Auro-Cx" with its declared quality, speaker names, declared loudness, and its tags and cover.</li><li><strong>Auro-Cx inside a movie MP4 now decodes</strong> (it showed as "A3DS lossy").</li><li><p>Auro carrier detection is lighter on ordinary files.</p></li></ul>
+<h3>The list</h3>
+<ul><li><strong>Reorder it</strong>: drag rows, the row menu, or Cmd-Option-Up/Down. After a metadata sheet import it offers to follow the sheet's track order.</li><li><p><strong>Cmd-A</strong> selects every file.</p></li></ul>
+<h3>Monitoring</h3>
+<ul><li><strong>Monitor menu</strong>: Follow File (the default) or pin a layout for every file; only layouts your output device can carry; "Channel Based" removed.</li><li><strong>Stereo</strong>: Source says Stereo (or Binaural); no Monitor control or headphones button when it is stereo in and stereo out.</li><li><strong>Source</strong> is a read-out of what the file declares. The ADM column shows only for ADMs. <strong>DIM</strong> lights when engaged.</li><li><p><strong>Export DDEX</strong> clears waveform cache folders from the delivery first.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p>Open an Auro-Cx movie (or .mp4a) and an ADM with objects; toggle Room-centric and Isometric.</p></li></ul>
+<p>Everything else is as in 0.1.15.</p></details></section>
+<section id="v0-1-15"><h2>0.1.15 <span class="date">2026-10-05</span></h2><ul class="headlines"><li>Artist Connection: uploads work again, and Create Album is easier to get right.</li></ul><details><summary>Full notes</summary><p>Artist Connection: uploads work again, and Create Album is easier to get right.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Artist Connection</h3>
+<ul><li><strong>Fixed: every upload was refused by storage</strong> and never arrived.</li><li><strong>Create Album</strong> now opens as a list with nothing selected — tick the tracks you want. They go in Track Number order, titled from each file's Title tag, and you can reorder and rename them before the album is made.</li><li><strong>Uploads keep their subfolders.</strong></li><li><p><strong>Fixed: a studio's top level was listed twice.</strong></p></li></ul>
+<h3>Demo master</h3>
+<ul><li><p>The built-in "Deep Note" demo now carries its album info.</p></li></ul>
+<h3>DDEX</h3>
+<ul><li><p>If a delivery's files cannot be read, the report says so, rather than reporting MD5 mismatches.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p>Upload a small folder of tagged files to your studio, then Create Album from it and check the track order and titles.</p></li></ul>
+<p>Everything else is as in 0.1.14.</p></details></section>
+<section id="v0-1-14"><h2>0.1.14 <span class="date">2026-10-04</span></h2><ul class="headlines"><li>A guided tour for first-time users, and a demo master to try it on.</li></ul><details><summary>Full notes</summary><p>A guided tour for first-time users, and a demo master to try it on.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>First-run tour</h3>
+<ul><li><strong>The first time the Player opens, a short tour walks through the window</strong>, part by part from the top left: the part being described is highlighted in gold, with a card explaining it — Back, Next and Skip Tour (arrow keys, Return and Esc work too). Parts not on screen are skipped.</li><li><p><strong>Help &gt; Show Tour</strong> runs it again at any time.</p></li></ul>
+<h3>Demo master</h3>
+<ul><li><p><strong>"Deep Note" by James Andy Moorer</strong>, six channels, is built in. The tour's first page offers to open it, and <strong>Help &gt; Open Demo Master</strong> does at any time.</p></li></ul>
+<h3>For testers</h3>
+<ul><li>Hover anything in the Player — tooltips now work throughout (since 0.1.13).</li><li><p>To see the tour again as a new user would, use Help &gt; Show Tour.</p></li></ul>
+<p>Everything else is as in 0.1.13.</p></details></section>
+<section id="v0-1-13"><h2>0.1.13 <span class="date">2026-10-03</span></h2><ul class="headlines"><li>Checking a stereo album: lists, metadata, DDEX and loudness that stays with the file. And tooltips — the Player never showed any until now.</li></ul><details><summary>Full notes</summary><p>Checking a stereo album: lists, metadata, DDEX and loudness that stays with the file. And tooltips — the Player never showed any until now.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Artist Connection</h3>
+<ul><li><strong>The cloud button opens your studio's library as a tab</strong>, where the file list is. Every format streams — WAV, FLAC, MP4, Auro-Cx and ADM — and a download is offered, never required.</li><li><p><strong>Upload files and create albums</strong> from the Player.</p></li></ul>
+<h3>Lists</h3>
+<ul><li><strong>Save List</strong> saves the list, with its Featured and Skip ticks; <strong>Open</strong> asks whether to replace the list or add to it, and opens a saved list or an EDL.</li><li>Remove from List removes every selected row, without a question.</li><li><p>Drop a folder to add the audio files in it (not its sub-folders).</p></li></ul>
+<h3>Stereo files</h3>
+<ul><li><p>A simpler window: no F/Skip columns, no Source button, and <strong>Binaural is a choice in the Monitor menu</strong>, which stops at Stereo. The object view folds away, and the Monitor meters hide when they would only repeat the Desk.</p></li></ul>
+<h3>Metadata and DDEX</h3>
+<ul><li><strong>Drop a CSV, TXT, TSV or Excel sheet to import it.</strong> Rows match files by ISRC, by name, or by track number; review, then <strong>Import All</strong> or <strong>Import ISRC Only</strong>. Album fields come in where a column repeats the album on every row.</li><li><strong>Album Info</strong> (button beside Export, or right-click the cover): the album's details, including a <strong>description</strong> and its <strong>delivery layout</strong> (e.g. Binaural).</li><li><strong>Drop a DDEX message</strong> to replace the list with its whole release. <strong>Export &gt; DDEX never asks for a layout</strong> — two channels are Stereo unless the file or the album says otherwise.</li><li><strong>Drop an image on the cover square</strong> to use it.</li><li>Removing the last file asks whether to delete the album info too.</li><li><p>Hover a file to see its whole name; hover the room for how to rotate it.</p></li></ul>
+<h3>Loudness and level</h3>
+<ul><li><strong>Measure saves its figures with the file</strong> and shows them whenever the file is selected, until the file changes. Save to File writes them into a WAV's bext.</li><li><strong>The main volume fader shows what is going out</strong>, after the fader.</li><li><strong>The SR lamp lights green when the file is sample-rate converted.</strong></li><li><p>The bar beside the Desk can be dragged to move the loudness figures right.</p></li></ul>
+<h3>Fixes</h3>
+<ul><li><strong>Tooltips now show</strong> — the Player had no tooltip window, so none ever did.</li><li><strong>Auro binaural was silent</strong> — fixed.</li><li><p>Fixed a crash pressing Import in the DDEX report.</p></li></ul>
+<h3>For testers</h3>
+<ul><li>Drop a folder of stereo masters and its spreadsheet; check every row matches, Import All, then Export &gt; DDEX.</li><li>Measure a file, select another, come back — the figures should read "measured" with the date.</li><li><p>Hover the buttons and the loudness block — every one should explain itself.</p></li></ul>
+<p>Everything else is as in 0.1.12.</p></details></section>
+<section id="v0-1-12"><h2>0.1.12 <span class="date">2026-09-28</span></h2><ul class="headlines"><li>Cleaner starts for streamed masters, and Channel Based monitoring that really claims nothing.</li></ul><details><summary>Full notes</summary><p>Cleaner starts for streamed masters, and Channel Based monitoring that really claims nothing.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Artist Connection</h3>
+<ul><li><strong>Streams start cleanly.</strong> A streamed master now buffers about three seconds before it plays, and the Player says "Buffering the stream…" while it does, instead of starting in silence or breaking up in the first seconds.</li><li><strong>ADMs, MP4, Auro-Cx and IAMF files ask before downloading.</strong> They cannot be streamed — they need the whole file — so the Player now asks "download to play?" rather than starting a download on its own.</li><li><p><strong>Download icons.</strong> Every playable row in the Library shows whether the file is on this Mac: an arrow (not downloaded), a ring (downloading) or a tick (downloaded). Streamed rows in the file list show the arrow too.</p></li></ul>
+<h3>Monitoring</h3>
+<ul><li><p><strong>Channel Based now claims nothing.</strong> Choosing Channel Based in the Monitor menu used to keep the previous layout underneath — its speaker map and its loudness weighting went on applying. Now the channels go out exactly as they are, one per output with no fold, while the Desk, the monitor meters and the Out column keep the file's own width. Patching a row's output in Channel Based moves only that channel.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><strong>Artist Connection:</strong> double-click a WAV in the Library — you should see "Buffering the stream…" briefly, then clean playback from the first second.</li><li><strong>Double-click an ADM</strong> in the Library: it should ask before downloading.</li><li><strong>Channel Based:</strong> open a 5.1 or 7.1.4 file, choose Monitor &gt; Channel Based. Every channel should play on its own output, the monitor meters should show the file's full width, and re-patching one row in the Out column should move only that channel.</li><li><p><strong>If you still hear breakup</strong>, please send the log (<code>~/Library/Logs/Sonic Reference Player/</code>), your interface, buffer size and sample rate.</p></li></ul>
+<p>Everything else is as in 0.1.11.</p></details></section>
+<section id="v0-1-11"><h2>0.1.11 <span class="date">2026-09-27</span></h2><ul class="headlines"><li>Artist Connection: open masters straight from your studio&#x27;s library.</li></ul><details><summary>Full notes</summary><p>Artist Connection: open masters straight from your studio's library.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Artist Connection</h3>
+<ul><li><strong>File &gt; Artist Connection…</strong> opens your studio's media Library. Sign in with your Artist Connection studio admin account (the same one soundBlade uses); the approval happens in your browser.</li><li><strong>Double-click a file to play it.</strong> It streams straight away — the row says "streaming" and plays as one row carrying all its channels.</li><li><strong>Right-click a streamed row &gt; Download</strong> brings the original file onto this Mac. Once it lands, the same row becomes a normal master: one row per channel, the overview, Auro-3D decoding, cover and metadata. Downloaded files open instantly next time, with no network.</li><li><strong>ADMs, MP4 and Auro-Cx files download rather than stream</strong> — they need the whole file. Progress and Cancel are in the Artist Connection window.</li><li><strong>Settings &gt; Clear Downloads</strong> frees the space; the list keeps the masters and streams them again.</li><li><p>The Library is read-only here: nothing in the Player can change the studio's files.</p></li></ul>
+<h3>Monitoring</h3>
+<ul><li><strong>Binaural on an Auro-3D file keeps all its channels.</strong> The rows stay at the decoded layout (12 for 7.1.4) and only the monitor becomes the headphone pair, rendered by Auro's own binaural renderer.</li><li><strong>Apple Spatial Audio</strong> is a new binaural renderer choice in Settings, beside Auro and SOFA.</li><li><p><strong>"Custom" is shown</strong> on the Monitor button when the speaker-to-output map is hand-built, and the Monitor menu has a <strong>Custom</strong> item to bring it back. The Speaker Layout dialog agrees with the button.</p></li></ul>
+<h3>The window</h3>
+<ul><li><strong>Drag bar between the file list and the Layout list</strong> — drag to resize the file list, double-click to reset. The waveform (Overview) column is the one that grows.</li><li>The Featured column is gone (the Player never opens masters into an EDL); ADM and Name get its space.</li><li><strong>Measure</strong> fills the loudness rows with the measured figures, and an ADM's own declared loudness is shown where it states one.</li><li><strong>Double-click a file to play it</strong>, again to stop.</li><li>Icons on Open, Video and Binaural; bigger triangles; the object view folds away; removing a file asks first.</li><li><strong>Help &gt; Sonic Reference Player Guide</strong> opens the user guide.</li><li><p>Waveform caches are one folder beside each file instead of one file per channel.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><strong>Artist Connection:</strong> sign in, double-click a stereo or 7.1.4 WAV — it should play within a few seconds. Then Download it and check the rows split per channel.</li><li><strong>Try an ADM</strong> from the Library: it should download, then open as usual.</li><li><strong>Binaural on an Auro master:</strong> 12 rows, two monitor meters.</li><li><p><strong>If you still hear breakup</strong>, please send the log (<code>~/Library/Logs/Sonic Reference Player/</code>), your interface, buffer size and sample rate.</p></li></ul>
+<p>Everything else is as in 0.1.10.</p></details></section>
+<section id="v0-1-10"><h2>0.1.10 <span class="date">2026-09-26</span></h2><ul class="headlines"><li>Steadier playback, from the engine the Player shares with soundBlade.</li></ul><details><summary>Full notes</summary><p>Steadier playback, from the engine the Player shares with soundBlade.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Playback</h3>
+<ul><li><strong>No silent gaps when the disk falls behind.</strong> If the read-ahead has not reached the part of a file that is about to play — a slow drive, a very wide file, a seek — the Player now reads that audio directly from the file instead of playing silence in its place. The read-ahead also runs further ahead (about a second) and keeps its place when the list changes.</li><li><p>The log (<code>~/Library/Logs/Sonic Reference Player/</code>) notes how often this happened in a pass, so a slow drive shows up as a number rather than as a dropout.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><strong>Play a wide master</strong> (7.1.4, an ADM, an Auro carrier) and <strong>seek around quickly</strong>. There should be no dropouts to silence.</li><li><p><strong>If you still hear breakup</strong>, please send the log, your interface, buffer size and sample rate.</p></li></ul>
+<p>Everything else is as in 0.1.9.</p></details></section>
+<section id="v0-1-9"><h2>0.1.9 <span class="date">2026-09-24</span></h2><ul class="headlines"><li>DDEX arrives, plus a tidier button row.</li></ul><details><summary>Full notes</summary><p>DDEX arrives, plus a tidier button row.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>DDEX (ERN 4.3)</h3>
+<ul><li><strong>Export... now asks: CSV or DDEX.</strong> DDEX writes an ERN 4.3 release message from the list: each file is one recording, in list order, its metadata record the track and the album record the release. Files that share a <strong>Track</strong> number are one song in different layouts, and each layout is its own recording with its own ISRC.</li><li><strong>Before it writes</strong>, it lists anything the release is missing — album title, artist, UPC, label, genre, release date (YYYY-MM-DD); per file a title, an ISRC and a Layout — and writes nothing until it is complete.</li><li>Sender and recipient, each with an <strong>optional DDEX Party ID</strong> (without one the message carries <code>PADPIDAUNASSIGNED</code>, fine for internal use). <strong>"Copy audio and artwork into the delivery folder"</strong> is off unless you tick it.</li><li><strong>Import... now also takes a DDEX <code>.xml</code></strong>, even on an empty list. It checks the message and every file it names — references, UPC and ISRC check digits, track order, files present, MD5 checksums, and each file's channels, rate, bit depth and duration against the message — and shows a <strong>report</strong> you can save. <strong>Add to List</strong>, only when there are no errors, brings the files in and writes a metadata record beside each.</li><li><p><strong>Edit Metadata</strong> has a new <strong>Track</strong> and <strong>Layout</strong> row. Layout (Stereo, 5.1, 7.1.4, Auro-3D, Auro-Cx, Binaural) fills itself only when the file says what it is; a binaural file is two channels like stereo, so that one is yours to set.</p></li></ul>
+<h3>Button row</h3>
+<ul><li>Source, Binaural and Monitor now sit on the bottom row under the meters they set, full height. The window cannot be made narrow enough for them to overlap.</li></ul></details></section>
+<section id="v0-1-8"><h2>0.1.8 <span class="date">2026-09-23</span></h2><ul class="headlines"><li>A small follow-up to 0.1.7.</li></ul><details><summary>Full notes</summary><p>A small follow-up to 0.1.7.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Cover images</h3>
+<ul><li><p><strong>An X to remove a chosen cover.</strong> A cover image you chose now shows a small <strong>X</strong> in its top-right corner — click it to remove the image. A file's own artwork, or a <code>cover.jpg</code> beside it, is not something the Player can delete, so it shows no X.</p></li></ul>
+<p>Everything else is as in 0.1.7 — see its notes for the metadata, import / export and cover work.</p></details></section>
+<section id="v0-1-7"><h2>0.1.7 <span class="date">2026-09-23</span></h2><ul class="headlines"><li>Metadata you can see, import and export, an album cover, and the Player&#x27;s own icon.</li></ul><details><summary>Full notes</summary><p>Metadata you can see, import and export, an album cover, and the Player's own icon.</p><h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Metadata</h3>
+<ul><li><p><strong>Each file's metadata in the list.</strong> A triangle on each file opens a line under it with its title, artist, ISRC and ISWC. Click again to close it.</p></li><li><p><strong>Kept beside the file, not in it.</strong> A file's metadata is kept in a small record beside it (<code>&lt;file&gt;.sbmeta.xml</code>), so it travels with the file. Files exported from soundBlade with Create Tracks from Marks arrive with theirs. <strong>Edit Metadata</strong>'s <strong>Save</strong> writes the record and never changes the audio; <strong>Save to File</strong> also writes the tags into the file, and <strong>ISRC Only</strong> writes just the ISRC.</p></li><li><p><strong>Import… from CSV or Excel.</strong> Reads a CSV or an Excel workbook (.xlsx) onto the files in the list — the track list is found wherever it is, and each row is matched to its file by ISRC or by the track number the file name starts with. <strong>You review the matches before anything is written.</strong> A UPC a spreadsheet rounded to <code>6.09E+11</code> is refused with the reason, and text garbled by the wrong encoding is repaired.</p></li><li><p><strong>Export…</strong> writes the list's metadata as a CSV that Import reads back.</p></li><li><p><strong>Edit Metadata</strong> steps through the list with <strong>Prev / Next</strong>, and <strong>Save</strong> turns yellow while there are unsaved edits.</p></li></ul>
+<h3>Album cover</h3>
+<ul><li><p><strong>The cover is shown beside the loudness read-outs</strong>: the file's own artwork, else an image you choose (click the square), else a <code>cover.jpg</code> beside the file. Under it: the image's size, its data size and where it came from.</p></li></ul>
+<h3>Look</h3>
+<ul><li><strong>The Player has its own icon</strong>, so it can be told apart from soundBlade.</li><li><p>The loudness read-outs are narrower, with Reset and Measure under the title, and the Binaural button sits on the Monitor row.</p></li></ul>
+<h3>For testers</h3>
+<p>1. <strong>Open a row's triangle</strong> on files exported from soundBlade, and on files with no metadata. 2. <strong>Import a label's CSV or workbook</strong>, review the matches, and open the rows. 3. <strong>Click the cover square</strong> on a file with no artwork and choose an image.</p>
+<p>None of this changes audio. It is covered by soundBlade's in-app test suite, which the two applications share, and by nothing else.</p></details></section>
+<section id="v0-1-6"><h2>0.1.6 <span class="date">2026-09-22</span></h2><ul class="headlines"><li>A Speakers page, speaker naming in SMPTE or ITU-R, a Room view seen from the listener&#x27;s seat, and diffuse objects heard as diffuse.</li></ul><details><summary>Full notes</summary><p>A Speakers page, speaker naming in SMPTE or ITU-R, a Room view seen from the listener's seat, and diffuse objects heard as diffuse.</p><h3>Read this first</h3>
+<p><strong>The breakup reported against the 0.1.4 test build has not been reproduced</strong>, and the leading explanation is another application taking the audio device. If you hear the audio break up, please report it with the machine, the interface, the device buffer size, the sample rate, and whether 0.1.3 does the same on the same file. <code>~/Library/Logs/Sonic Reference Player/</code> holds the log, which records under-runs and their cause; please attach it.</p>
+<h3>Licensing</h3>
+<ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
+<h3>Speakers</h3>
+<ul><li><p><strong>Settings has a Speakers tab.</strong> The layout, the channel order, the speaker naming and the output each speaker plays from, on one page — the same page soundBlade has in Project Settings. It edits the same settings as the window's own Speaker Layout dialog.</p></li><li><p><strong>Speaker naming: SMPTE or ITU-R.</strong> Speakers can be named the familiar way (L R C LFE Lss Rss Ltf …) or by ITU-R BS.2051 position (M+030 M-030 M+000 LFE M+090 U+045 …). Set it with <strong>Naming</strong> on the Speakers tab or in the Speaker Layout dialog. It changes labels only — never routing or audio. The master meters always keep SMPTE names; the monitor meters follow the setting.</p></li><li><p><strong>A file that names its channels is believed.</strong> A WAV or FLAC that declares its speakers (its channel mask) now gets those names, and its layout comes from the declaration instead of being guessed from the channel count — the only way to tell ten channels of 7.1.2 from ten of 5.1.4. Each named channel plays to the speaker it names, so a WAV-order 7.1 — rears before sides — reaches the right speakers.</p></li><li><p><strong>A 5.1.4 was shown and played as 7.1.2</strong>, including a 5.1.4 Auro decode. Fixed.</p></li><li><p><strong>The Speaker Layout dialog</strong> now applies a change to a single speaker's output. Before, only picking a whole layout took effect.</p></li><li><p><strong>The monitor meters scroll</strong> when they do not all fit beside the fader, as the master meters do. A 7.1.4 monitor used to be cut off unless the window was widened.</p></li></ul>
+<h3>Object audio</h3>
+<ul><li><p><strong>The Room view is seen from the listener's seat.</strong> The front of the room is now the far wall and the rear the near one, looking down towards the front as from a theatre seat, with <strong>FRONT</strong> marked on the front wall under the centre speaker. It used to be drawn back to front. The flat Front and Side views were corrected the same way.</p></li><li><p><strong>Diffuse objects sound diffuse.</strong> An object an ADM declares as diffuse is now rendered that way — decorrelated across the speakers — instead of as a hard point. Two commercial Atmos releases tested here declare most of their objects fully diffuse, so this is audible on real masters. Measured loudness follows it too.</p></li></ul>
+<h3>For testers</h3>
+<p>1. <strong>Does the audio break up?</strong> See "Read this first" — a clean report is as useful as a broken one. 2. <strong>Open Settings &gt; Speakers</strong> and try Naming; check the labels change where you expect and nowhere else. 3. <strong>Open the Room view</strong> and check it reads the right way round — front far, L on the left. 4. <strong>Play an ADM with diffuse objects</strong> and compare against 0.1.5.</p>
+<p>None of this has had a listening test here; it is covered by soundBlade's in-app test suite, which the two applications share, and by nothing else.</p></details></section>
+<section id="v0-1-5"><h2>0.1.5 <span class="date">2026-09-22</span></h2><ul class="headlines"><li>Object metadata and object timing, on top of the audio-engine corrections that were staged as 0.1.4 and never published.</li></ul><details><summary>Full notes</summary><p>Object metadata and object timing, on top of the audio-engine corrections that were staged as 0.1.4 and never published.</p><h3>Read this first</h3>
+<p><strong>0.1.3 is the last build known to play cleanly.</strong> A build made from the engine work in this release broke up badly on playback here, and the cause has not yet been found. soundBlade's matching release was withdrawn for the same reason. This build is going out so the problem can be characterised on more than one machine — not because it is believed fixed.</p>
+<p><strong>If you hear the audio break up, that is the thing to report</strong>, with the machine, the interface, the device buffer size and the sample rate, and whether 0.1.3 does the same on the same file. <code>~/Library/Logs/Sonic Reference Player/</code> holds the log, which records under-runs and their cause; please attach it.</p>
+<h3>Licensing</h3>
+<ul><li><p><strong>Unchanged from 0.1.3.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before. The player's own separate licence was prepared and then reverted — it is still coming, but it is not in this build. (The 0.1.4 notes, which were written and never shipped, said the opposite.)</p></li></ul>
+<h3>Object audio</h3>
+<ul><li><p><strong>An imported ADM keeps its objects' size.</strong> Every object's <code>width</code>, <code>height</code>, <code>depth</code>, <code>diffuse</code> and divergence was being read from the file and then dropped on the way into the timeline, so an object arrived as a bare point. Anything that wrote the file back out then wrote those lost values over the originals as zeros. They now survive.</p><p>Note this is metadata, not yet sound: the renderer still plays every object as a point source, so a wide object is not yet heard as wide. What changes today is that the file's description of it stops being destroyed.</p></li><li><p><strong>Object moves happen when the file says they happen.</strong> An ADM states where an object arrives and how long the move takes; we were reading that as the moment the move <em>begins</em>, which put every imported trajectory up to one metadata block early — around 20 ms on a typical master, and a whole block wherever the blocks are longer.</p></li><li><p><strong>A move that the file says is instant is now instant.</strong> Where a file states a short interpolation and then a hold — a common authoring convention, and the one the THX reference master uses — the object moved over the whole block instead, smearing a 5 ms step across 20 ms. It now moves over the stated time and holds.</p><p>Objects you position by hand are unaffected and still glide between their keyframes, which is what that gesture means.</p></li></ul>
+<h3>Playback</h3>
+<p>The player shares its engine with soundBlade, so the corrections staged as 1.1.87 are here too.</p>
+<ul><li><p><strong>Nothing left over when the playhead jumps.</strong> The delay lines that keep everything in time were fed only while playing and never cleared, so pressing Play or seeking began with a fragment of whatever was last heard. Both those lines and the plug-ins' own internal buffers are now cleared at a transport jump.</p></li><li><p><strong>A moving object no longer steps.</strong> The panner read an object's position once per audio block and held one gain across the whole of it — at a 1024-sample buffer that is a step every 10 ms, and each step is a click. Position and gain now update every 64 samples and ramp between. A stationary object costs exactly what it did before.</p></li><li><p><strong>Playback and export agree about time.</strong> Positions were rounded down to the sample in playback where an export rounds to the nearest, so material could sit one sample earlier in what you heard than in what you printed.</p></li></ul>
+<h3>For testers</h3>
+<p>In priority order:</p>
+<p>1. <strong>Does the audio break up?</strong> See "Read this first". This is the question that matters most, and a clean report is as useful as a broken one — please say either way, and say what you played.</p>
+<p>2. <strong>Play an ADM with moving objects and compare against 0.1.3.</strong> Object motion should now sit very slightly later than it did, and land where the file says. Anything that sounds like it drifts, lags or jumps wrongly is worth reporting.</p>
+<p>3. <strong>Confirm your existing soundBlade licence still unlocks the player.</strong> It should — nothing about the wrap changed in this build.</p>
+<p>4. <strong>A fast object move is worth a listen</strong>, and so is starting playback part way into a file.</p>
+<ul><li>No part of this release has had a listening test here. The object timing and metadata work is verified by soundBlade's in-app test suite, which the two applications share, and by nothing else. The import has not been run against a real ADM file carrying sized objects.</li></ul></details></section>
+<section id="v0-1-4"><h2>0.1.4 <span class="date">2026-09-21</span></h2><ul class="headlines"><li>The audio-engine corrections from soundBlade 1.1.87, and the player&#x27;s own licence.</li></ul><details><summary>Full notes</summary><p>The audio-engine corrections from soundBlade 1.1.87, and the player's own licence.</p><h3>Licensing</h3>
+<ul><li><p><strong>The player now has its own product licence.</strong> Up to 0.1.3 it was wrapped with soundBlade's, so a soundBlade iLok unlocked both. It no longer does: this build needs a licence issued for the Sonic Reference Player itself.</p></li></ul>
+<h3>Playback</h3>
+<p>The player shares its engine with soundBlade, so every correction in soundBlade 1.1.87 is here too.</p>
+<ul><li><p><strong>Nothing left over when the playhead jumps.</strong> The delay lines that keep everything in time were fed only while playing and never cleared, so pressing Play or seeking began with a fragment of whatever was last heard. Both those lines and the plug-ins' own internal buffers are now cleared at a transport jump.</p></li><li><p><strong>A moving object no longer steps.</strong> The panner read an object's position once per audio block and held one gain across the whole of it — at a 1024-sample buffer that is a step every 10 ms, and each step is a click. Position and gain now update every 64 samples and ramp between. A stationary object costs exactly what it did before.</p></li><li><p><strong>Playback and export agree about time.</strong> Positions were rounded down to the sample in playback where an export rounds to the nearest, so material could sit one sample earlier in what you heard than in what you printed.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p><strong>Confirm the player launches at all.</strong> With a new licence and a new wrap, that is the one thing worth checking first — a mismatch stops the app before it opens a window, with nothing written to the log.</p></li><li><p><strong>A fast object move is worth a listen</strong>, and so is starting playback part way into a file.</p></li><li>Nothing in this release has had a listening test. It is verified by soundBlade's in-app test suite, which the two applications share.</li></ul></details></section>
+<section id="v0-1-3"><h2>0.1.3 <span class="date">2026-09-21</span></h2><ul class="headlines"><li>Auro-Cx playback, and the window remembering itself.</li></ul><details><summary>Full notes</summary><p>Auro-Cx playback, and the window remembering itself.</p><h3>Auro-Cx</h3>
+<ul><li><p><strong>Auro-Cx files open and play.</strong> This is a different format from the Auro-3D carrier the player already read: a carrier is ordinary PCM with its height channels hidden in the low bits, while <strong>Auro-Cx is a coded bitstream</strong> in an <code>a3ds</code> track described by an <code>acxd</code> box, meaningless until a Cx decoder has had it.</p><p>Nothing in macOS can open one — both AVFoundation and CoreAudio refuse the container — so this uses Auro's own MP4 parser and Cx engine end to end.</p></li><li><p><strong>The layout comes from the file.</strong> A 5.1 master opens as 5.1, a 7.1.4 one as 7.1.4: the decoder is asked what the content <em>is</em>, not what it can render to.</p></li><li><p><strong>Seeking is exact</strong>, re-priming from 32 access units earlier — measured against real files rather than guessed.</p></li></ul>
+<h3>The window</h3>
+<ul><li><p><strong>It remembers its size and position.</strong> Every launch used to centre it at a fixed size. A position saved on a monitor that is no longer attached is ignored rather than leaving the window somewhere you cannot see it.</p></li><li><p><strong>A video window you closed stays closed.</strong> Opening a file that carries picture shows the picture — but closing that window is a decision, and it now survives a relaunch. Asking for it again through File &gt; Open Video brings the automatic behaviour back.</p></li><li><p><strong>The monitor meters show the right number straight away.</strong> They were correct but drawn inside a strip sized for the previous count, so the window could open showing two.</p></li><li><p><strong>The Monitor read-out says when the device has narrowed the layout</strong>, as <code>5.1 → Stereo</code>.</p></li><li><p><strong>Quitting no longer reports a leak.</strong> The background waveform scan pool was never shut down in this application.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p><strong>Auro-Cx is new and has had one day of use.</strong> The decode was measured; the reader around it is a day old. Anything that sounds wrong is worth reporting at once.</p></li><li><strong>A note for Auro:</strong> the Cx components in the SDK drop we hold work as documented. What is not clear from the package is whether our existing agreement covers <em>shipping</em> them — the drop is named "Passthrough", which is a narrower thing than decoding. We would like that confirmed.</li></ul></details></section>
+<section id="v0-1-2"><h2>0.1.2 <span class="date">2026-09-20</span></h2><ul class="headlines"><li>Two corrections to 0.1.1&#x27;s MP4 support, found by testing it against a real set of video files.</li></ul><details><summary>Full notes</summary><p>Two corrections to 0.1.1's MP4 support, found by testing it against a real set of video files.</p><ul><li><p><strong>Dolby soundtracks are named properly.</strong> A 5.1 film mix delivered as Dolby Digital Plus was labelled <code>EC-3</code>, which is its four-character code and tells you nothing. Rows now read <strong>Dolby Digital Plus</strong> and <strong>Dolby Digital</strong>, and HE-AAC is named too. A codec still not recognised keeps its four-CC — that says the file can be read and its name was not recognised, rather than inventing one.</p></li><li><p><strong>A lossless track reports the depth it was written at.</strong> A 24-bit FLAC inside an MP4 read <code>FLAC 48/32</code> — 32 being the depth the player decodes to, which describes the player rather than your file. It now reads <code>FLAC 48/24</code>, taken from what the file itself declares.</p><p>A lossy track has no source depth to report, so it still says "lossy" with no number.</p></li></ul></details></section>
+<section id="v0-1-1"><h2>0.1.1 <span class="date">2026-09-20</span></h2><ul class="headlines"><li>Video files, an About window, and updates where you would look for them.</li></ul><details><summary>Full notes</summary><p>Video files, an About window, and updates where you would look for them.</p><h3>Video and MP4</h3>
+<ul><li><p><strong>Open an MP4 and hear it.</strong> Raw PCM, FLAC and ALAC inside an MP4 are read <strong>bit-exactly</strong> — nothing on the path converts through floating point, which is what lets an <strong>Auro-3D carrier inside a video file</strong> decode properly. AAC is supported too and is <strong>labelled "lossy"</strong>, since what it cannot be is a master.</p></li><li><p><strong>The picture opens with it.</strong> A file that carries video shows its own video window, muted — what you hear is the decoded audio through this app's engine, not the movie's own playback.</p></li><li><p><strong>The file row names the codec, not the extension.</strong> ".mp4" tells you nothing about what is inside; a row now reads <code>PCM 48/24</code>, <code>FLAC 96/24</code> or <code>AAC 48 lossy</code>.</p></li><li><p><strong>Channel names come from the file.</strong> A file that declares what its channels are gets real speaker names; one that declares nothing gets <code>Ch 1..N</code>. Nothing is reordered — a file that lists rears before sides keeps that order, and the Out column re-patches it.</p></li></ul>
+<h3>The window</h3>
+<ul><li><p><strong>Binaural is a button you can see</strong>, under the loudness read-outs, lit when it is on. It was a checkbox positioned past the edge of its column — invisible since it was added — so only the menu item ever worked. The Monitor read-out also says <code>7.1.4 → Binaural</code> while it is on: binaural monitoring is a stereo pair, so two monitor meters beside a box reading "7.1.4" looked exactly like a fault and was not one.</p></li><li><p><strong>About Sonic Reference Player</strong>, in the application menu, with the version you are running.</p></li><li><p><strong>Check for Updates has moved into Settings</strong>, beside the running version — which is what every update comparison is made against, so "why was I not offered X" is answerable without asking anyone.</p></li><li><p><strong>"Add Files..." is now "Open..."</strong>, and it offers every format the application can actually read rather than a fixed list — which is how <code>.mp4</code> appears in it at all.</p></li><li><p><strong>File &gt; Open Video...</strong> shows the picture for the selected master, or points it at a different cut.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p>MP4 support is new. The decode was checked against independent decoders — raw PCM against the file's own bytes, FLAC against ffmpeg — and seeking is sample-exact, but <strong>the reader has had one day of use</strong>. Anything that sounds wrong in an MP4 is worth reporting straight away.</p></li><li><p>A FLAC inside an MP4 reports its bit depth as 32, which is the depth it is decoded to rather than the depth it was written at. Cosmetic today; it will be read properly from the file.</p></li><li><strong>This build still ships with soundBlade's licence identity</strong>, so one licence unlocks both applications.</li></ul></details></section>
+<section id="v0-1-0"><h2>0.1.0 <span class="date">2026-09-20</span></h2><ul class="headlines"><li>The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade&#x27;s Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.</li></ul><details><summary>Full notes</summary><p>The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.</p><h3>What it does</h3>
+<ul><li><strong>Open any number of masters and compare them.</strong> ADM (BW64), Auro-3D carriers, and plain multichannel PCM — WAV, FLAC, AIFF, RF64, W64. Drag them in, or File &gt; Add Files.</li><li><strong>See what the file actually is</strong> before you trust it: sample rate, bit depth, duration, start timecode, channel count, bed and object counts, and the loudness it declares.</li><li><strong>Play it on the layout it was made for</strong>, or on the one you have. Pick the Source layout the material IS and the Monitor layout you are LISTENING on, and it folds between them.</li><li><strong>Meter it properly</strong> — a Desk strip with one column per channel, monitor meters showing what reaches the device, and true-peak/loudness read-outs.</li><li><strong>Watch the objects move</strong>, for an ADM master, in the object view.</li><li><p><strong>Listen on headphones</strong> with binaural monitoring.</p></li></ul>
+<h3>Auro-3D</h3>
+<ul><li><strong>An Auro-3D carrier is detected and decoded on open.</strong> A carrier hides its height channels inside an ordinary 5.1 or 7.1 PCM stream, so an 8-channel file opens as the twelve channels it really holds — not as eight.</li><li>The decode happens at the reader, so the channel list, the waveforms, the meters and playback all see the real thing.</li><li><p><strong>On headphones, an Auro master is rendered by Auro's own engine</strong>, not by ours, so it is spatialised once and by the renderer that made it.</p></li></ul>
+<h3>Channel Based, and not inventing names</h3>
+<ul><li><strong>A file that does not say what its channels are is listed as <code>Ch 1..N</code>.</strong> Eight channels could be 7.1 or 5.1.2 and the file does not say, so the Player does not guess. Speaker names appear where the file actually supports the claim — an ADM's beds and objects, or an Auro carrier stating its layout.</li><li><p><strong>"Channel Based"</strong> in the monitor menu means exactly that: no layout claimed, no fold, each channel straight out to its own output.</p></li></ul>
+<h3>Your room</h3>
+<ul><li><strong>Click a row's Out column to send it to a different output.</strong> Useful when a rig is not wired in layout order, and the only way to patch an unlabelled multichannel master.</li><li><strong>Speaker Layout…</strong> does the same thing for a whole layout at once.</li><li>Both are remembered, because they describe the room rather than the file.</li><li><p><strong>Audio I/O…</strong> picks the device, rate and buffer size.</p></li></ul>
+<h3>Binaural</h3>
+<ul><li><strong>Auro renders it, by default.</strong> For headphone monitoring the Player uses Auro's own renderer — the same engine that decodes Auro masters, and the path Auro's encoder itself offers for 7.1.4.</li><li><strong>An Auro master always uses Auro's renderer</strong>, whatever this is set to. It is already binaural by the time it is decoded, and rendering it again would spatialise it twice.</li><li><p><strong>SOFA (HRTF)</strong> is the alternative: our own convolution, using an HRTF file you supply. It works for any layout with directions, including ones Auro does not carry — and if the Source layout is one Auro cannot render, the Player falls back to it and tells you so in Settings.</p></li></ul>
+<h3>Settings</h3>
+<ul><li><strong>Binaural renderer</strong> — Auro or SOFA (HRTF).</li><li><strong>The HRTF</strong> used by the SOFA renderer. One ships with the Player; load your own <code>.sofa</code> if you have one. Not used while Auro is the renderer, and shown as unavailable then rather than looking live.</li><li><p><strong>Check for Updates</strong>, and whether to check on launch.</p></li></ul>
+<h3>Known limitations</h3>
+<ul><li><strong>It cannot share an audio interface with soundBlade.</strong> Both open the device; whichever gets there first keeps it. Run one at a time, or give them different devices.</li><li><strong>Its settings are its own</strong>, separate from soundBlade's, with the deliberate exception of the HRTF choice — that describes your ears and your room, so both applications follow it.</li><li><p><strong>Nothing here writes to your files.</strong> The Player reads. Edit Metadata is the one exception and it asks first.</p></li></ul>
+<h3>For testers</h3>
+<p>The things most worth breaking:</p>
+<ul><li><strong>Binaural on a layout Auro does not carry</strong> — it should fall back to SOFA and say so in Settings, not go quiet or render something it should not.</li><li><p><strong>Binaural loudness against the speaker render.</strong> Toggling it should not jump in level, and should not clip.</p></li><li>Open a master whose layout your device cannot carry — a 7.1.4 file on an 8-output interface. It should fold to something the device can play and say what it is doing, not play to outputs that are not there.</li><li>Mute and unmute channels while it plays, in any order.</li><li>Re-patch outputs with the Out column, then check the file still plays to where you put it after reopening.</li><li><p>Compare an Auro carrier against the same material decoded elsewhere.</p></li></ul>
+<p>Please report what you were doing, what you expected and what happened.</p></details></section>
+</main>
+</div>
+<script>
+  /* SEARCH (2026-10-05): every paragraph, bullet and heading of every version's notes is a searchable block.
+     All the words typed must appear in a block; the results list each block with its version and section,
+     terms highlighted, and a click opens that version's notes at the spot. A version number alone jumps to it. */
+  const box = document.getElementById('filter');
+  const results = document.getElementById('results');
+  const count = document.getElementById('results-count');
+  const list = document.getElementById('results-list');
+
+  const blocks = [];
+  document.querySelectorAll('main section').forEach(sec => {
+    const version = sec.querySelector('h2').firstChild.textContent.trim();
+    const date = (sec.querySelector('.date') || { textContent: '' }).textContent.trim();
+    let heading = '';
+    sec.querySelectorAll('details h3, details h4, details p, details li, .headlines li').forEach(el => {
+      if (el.tagName === 'H3' || el.tagName === 'H4') { heading = el.textContent.trim(); }
+      // A bullet's own paragraphs are searched with it, not twice.
+      if (el.tagName === 'P' && el.closest('li')) return;
+      // The summary sentence is both a headline and the notes' first paragraph: list it once.
+      if (blocks.some(b => b.sec === sec && b.text.trim() === el.textContent.trim())) return;
+      blocks.push({ el, sec, version, date, heading: el.tagName.startsWith('H') ? '' : heading, text: el.textContent });
+    });
+  });
+
+  const escapeHtml = t => t.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const escapeRe = t => t.split('').map(c => '.*+?^${}()|[]/'.includes(c) || c.charCodeAt(0) === 92 ? String.fromCharCode(92) + c : c).join('');
+
+  function snippet(text, words) {
+    const lower = text.toLowerCase();
+    const at = Math.max(0, lower.indexOf(words[0]));
+    const from = Math.max(0, at - 70), to = Math.min(text.length, at + 170);
+    let s = (from > 0 ? '…' : '') + text.slice(from, to).trim() + (to < text.length ? '…' : '');
+    s = escapeHtml(s);
+    const re = new RegExp('(' + words.map(escapeRe).join('|') + ')', 'gi');
+    return s.replace(re, '<mark>$1</mark>');
+  }
+
+  function clearMarks() {
+    document.querySelectorAll('main section mark').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+    document.querySelectorAll('main section').forEach(s => s.normalize());
+  }
+
+  function markIn(el, words) {
+    const re = new RegExp('(' + words.map(escapeRe).join('|') + ')', 'gi');
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n => {
+      if (!re.test(n.textContent)) return;
+      re.lastIndex = 0;
+      const span = document.createElement('span');
+      span.innerHTML = escapeHtml(n.textContent).replace(re, '<mark>$1</mark>');
+      n.replaceWith(...span.childNodes);
+    });
+  }
+
+  function go(block, words) {
+    block.sec.querySelector('details').open = true;
+    clearMarks();
+    markIn(block.sec, words);
+    block.el.classList.remove('hit'); void block.el.offsetWidth; block.el.classList.add('hit');
+    block.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function search() {
+    const q = box.value.trim().toLowerCase();
+    clearMarks();
+    document.querySelectorAll('main section, nav li').forEach(e => e.style.display = '');
+
+    if (!q) { results.style.display = 'none'; return; }
+
+    // A version number: jump straight to it.
+    const asVersion = document.getElementById('v' + q.replace(/^v/, '').replace(/\./g, '-'));
+    const words = q.split(/\s+/).filter(Boolean);
+    const hits = blocks.filter(b => { const t = b.text.toLowerCase(); return words.every(w => t.includes(w)); });
+
+    const versions = new Set(hits.map(h => h.sec.id));
+    if (asVersion) versions.add(asVersion.id);
+    document.querySelectorAll('main section').forEach(s => s.style.display = versions.has(s.id) ? '' : 'none');
+    document.querySelectorAll('nav a').forEach(a => a.parentElement.style.display = versions.has(a.getAttribute('href').slice(1)) ? '' : 'none');
+
+    count.textContent = hits.length === 0 ? (asVersion ? 'Version ' + q : 'No matches')
+                      : hits.length + (hits.length === 1 ? ' match' : ' matches') + ' in ' + versions.size + (versions.size === 1 ? ' version' : ' versions');
+    list.innerHTML = '';
+
+    hits.slice(0, 200).forEach(h => {
+      const li = document.createElement('li');
+      li.tabIndex = 0;
+      li.innerHTML = '<div class="where"><b>' + escapeHtml(h.version) + '</b>' + (h.date ? ' · ' + escapeHtml(h.date) : '')
+                   + (h.heading ? ' · ' + escapeHtml(h.heading) : '') + '</div>' + snippet(h.text, words);
+      li.addEventListener('click', () => go(h, words));
+      li.addEventListener('keydown', e => { if (e.key === 'Enter') go(h, words); });
+      list.appendChild(li);
+    });
+
+    results.style.display = 'block';   // the stylesheet hides it; '' would fall back to that
+  }
+
+  let timer = null;
+  box.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(search, 150); });
+  box.addEventListener('keydown', e => { if (e.key === 'Escape') { box.value = ''; search(); } });
+
+  // A link to a version opens its full notes.
+  function openTarget() { const s = document.getElementById(location.hash.slice(1)); if (s && s.querySelector('details')) s.querySelector('details').open = true; }
+  window.addEventListener('hashchange', openTarget); openTarget();
+</script>
+</body>
+</html>
