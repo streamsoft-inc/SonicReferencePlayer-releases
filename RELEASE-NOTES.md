@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.17](#v0-1-17)** — 2026-10-07
+  - Auro files named as Auro names them, and Artist Connection's Library, Albums and Projects side by side.
 - **[0.1.16](#v0-1-16)** — 2026-10-06
   - Auro-Cx and Auro speaker configurations, a room-centric object view, and a reorderable list.
 - **[0.1.15](#v0-1-15)** — 2026-10-05
@@ -39,6 +41,51 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-17"></a>
+## 0.1.17 — 2026-10-07
+
+Auro files named as Auro names them, and Artist Connection's Library, Albums and Projects side by side.
+
+### Licensing
+
+- **Unchanged.** This build is wrapped with soundBlade's product licence, so a
+  soundBlade iLok unlocks it exactly as before.
+
+### Auro-3D: named as Auro names them
+
+- **An Auro file (a carrier or Auro-Cx) is named by the configuration it
+  declares**, as listed in Auro's own licensee manual — for example
+  "Auro 11.1 (7.1+4H)" or "Auro 9.1 (5.1+4H)" — and its channels take Auro's
+  own names in Auro's own order: L R C LFE Ls Rs Cs Lb Rb HL HR HC T HLs HRs.
+- **Every Auro configuration is recognised**, from LCR and Quad to Auro 13.1.
+- **A 7.1.4 Auro master now reads "Auro 11.1 (7.1+4H)"** with HL/HR/HLs/HRs
+  rows. **It sounds the same**: on a monitor of the same speakers (7.1.4,
+  5.1.4, 7.1, 5.1) it goes straight through, channel for channel.
+- **Auro configurations appear in the Monitor menu and Speaker Layout dialog
+  only when the selected file is Auro.**
+
+### Artist Connection
+
+- **Library | Albums | Projects**: the cloud view now has all three.
+  - **Albums** lists the studio's albums with their covers; Set Cover, Share
+    and End Review as your sign-in allows.
+  - **Projects** lists the studio's whole project list, wherever each was made,
+    newest first; **Get Links** shows a published project's share links.
+- **The Open (folder) button returns from the cloud view** to the file list as
+  you left it; from the list it opens the file chooser as before.
+
+### For testers
+
+- Open an Auro 7.1.4 master: rows should read HL HR HLs HRs and it should
+  sound exactly as in 0.1.16.
+- Artist Connection: try the Albums and Projects tabs.
+
+Everything else is as in 0.1.16.
+
+[Back to the list of versions](#versions)
 
 ---
 
