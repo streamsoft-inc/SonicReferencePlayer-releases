@@ -50,6 +50,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-18"><span class="v">0.1.18</span><span class="d">2026-10-09</span></a></li>
 <li><a href="#v0-1-17"><span class="v">0.1.17</span><span class="d">2026-10-07</span></a></li>
 <li><a href="#v0-1-16"><span class="v">0.1.16</span><span class="d">2026-10-06</span></a></li>
 <li><a href="#v0-1-15"><span class="v">0.1.15</span><span class="d">2026-10-05</span></a></li>
@@ -71,6 +72,23 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-18"><h2>0.1.18 <span class="date">2026-10-09</span></h2><ul class="headlines"><li>Its own licence; Settings laid out as soundBlade&#x27;s; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.</li></ul><details><summary>Full notes</summary><p>Its own licence; Settings laid out as soundBlade's; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.</p><h3>Licensing — CHANGED</h3>
+<ul><li><p><strong>This build needs its own Sonic Reference Player iLok licence.</strong> It is now wrapped with the Player's own product licence, so <strong>a soundBlade licence no longer unlocks it.</strong> Ask us for a Player licence before installing if you do not have one.</p></li></ul>
+<h3>Binaural now plays the master as authored</h3>
+<ul><li><p><strong>The Auro binaural renderer no longer upmixes.</strong> Until now it ran in a mode that upmixes everything (Auro-Matic for Headphones), so a 5.1 or 7.1.4 master on headphones was heard upmixed. It now plays the material as it is. <strong>Binaural through Auro will sound different — drier, with no added height.</strong></p></li></ul>
+<h3>Auro-Matic Upmix (monitoring only)</h3>
+<ul><li><p><strong>Monitor menu &gt; Auro-Matic Upmix</strong> — off by default, remembered. On speakers, Auro's engine upmixes the material to the Monitor layout; on headphones, Auro's binaural upmixes again. Offered only where Auro renders both layouts (5.1, 7.1, 5.1.4, 7.1.4 and the Auro configurations — not 9.1.6). The Monitor read-out says "→ Auro-Matic". Never in a Save or Measure.</p></li></ul>
+<h3>Save</h3>
+<ul><li><strong>Binaural Save</strong> — beside Binaural while it is on: the master through the binaural renderer chosen in Settings (Auro's for Auro material), 2-channel 24-bit WAV, "&lt;name&gt; - Binaural".</li><li><strong>Monitor Save</strong> — beside the Monitor button on 7.1.4 or 5.1: what you are monitoring, rendered by our own renderer (an ADM's objects placed in the room), "&lt;name&gt; - 7.1.4" or "&lt;name&gt; - Surround", 24-bit.</li><li>Saved beside the master, or in the download folder for an Artist Connection download, with its metadata, and added to the list.</li><li><p><strong>A Save runs in the background</strong> — pick other files and play them while it works; the button shows its progress and cancels it. (Measure renders its own copy too.)</p></li></ul>
+<h3>Menus and Settings</h3>
+<ul><li><strong>The Sonic Reference Player menu</strong> has <strong>Application Settings...</strong> and <strong>Audio I/O Settings...</strong> (⌥A). The Monitoring menu is gone; Settings is no longer in the File menu; Help no longer has Open Demo Master (the tour still offers it).</li><li><strong>Settings &gt; General</strong>: <strong>Enable SRC</strong> (on by default) and updates.</li><li><strong>Settings &gt; Speakers</strong>: the layout, then <strong>Enable Binaural Monitoring</strong> and the renderer / HRTF at the bottom — as soundBlade has them.</li><li><strong>Settings &gt; Accounts</strong>: Artist Connection — status, one <strong>Login / Logout</strong> button that follows the sign-in live, <strong>Reveal Log</strong> — and <strong>AC Connect</strong> (the Artist Connection app on your phone plays to the Player; off by default).</li><li><p>Small text in Settings is easier to read.</p></li></ul>
+<h3>Artist Connection</h3>
+<ul><li><strong>The cloud button appears only while signed in.</strong> File &gt; Artist Connection... signed out opens Settings &gt; Accounts.</li><li><strong>Downloads go to a folder you choose</strong> (asked once, remembered, shown with <strong>Set Folder...</strong>), <strong>keep their extension</strong>, and can be removed with right-click &gt; <strong>Delete Downloaded File...</strong>. Clear Downloads is gone.</li><li><strong>Double-click a picture</strong> in the Library to make it the album cover.</li><li><p><strong>Uploading is no longer offered in the Player</strong> — upload from soundBlade.</p></li></ul>
+<h3>Preview</h3>
+<ul><li><strong>Solo and Mute under every meter</strong>; a silenced channel draws no meter.</li><li><strong>Monitor meters</strong>: level readout, Solo/Mute per speaker, follow <strong>P/H</strong>.</li><li><strong>Right-click a file &gt; Show File Location...</strong></li><li><strong>Clicking a file with video opens the video window</strong> if it is closed.</li><li><p><strong>Drop a picture</strong> anywhere to make it the album cover.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><strong>Install with a Player licence</strong> — a soundBlade one will not open it.</li><li>Binaural on a 5.1/7.1.4 master with the Auro renderer: still binaural, no added height? Then try Auro-Matic Upmix.</li><li><p>Save a binaural and a 7.1.4 version; play each against the Preview.</p></li></ul>
+<p>Everything else is as in 0.1.17.</p></details></section>
 <section id="v0-1-17"><h2>0.1.17 <span class="date">2026-10-07</span></h2><ul class="headlines"><li>Auro files named as Auro names them, and Artist Connection&#x27;s Library, Albums and Projects side by side.</li></ul><details><summary>Full notes</summary><p>Auro files named as Auro names them, and Artist Connection's Library, Albums and Projects side by side.</p><h3>Licensing</h3>
 <ul><li><p><strong>Unchanged.</strong> This build is wrapped with soundBlade's product licence, so a soundBlade iLok unlocks it exactly as before.</p></li></ul>
 <h3>Auro-3D: named as Auro names them</h3>
