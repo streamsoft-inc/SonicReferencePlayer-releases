@@ -28,6 +28,10 @@
   details h3 { font-size:16px; margin:16px 0 4px; }
   details h4 { font-size:15px; margin:12px 0 4px; }
   code { font-size:13px; background:var(--side); padding:1px 4px; border-radius:4px; }
+  .tablewrap { overflow-x:auto; margin:8px 0 12px; }
+  table { border-collapse:collapse; font-size:13px; }
+  th, td { border:1px solid var(--line); padding:5px 8px; text-align:left; vertical-align:top; }
+  th { background:var(--side); }
   a { color:var(--accent); }
   #results { display:none; padding:14px 0 6px; border-bottom:1px solid var(--line); }
   #results h2 { font-size:15px; margin:0 0 8px; color:var(--muted); font-weight:600; }
@@ -50,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-19"><span class="v">0.1.19</span><span class="d">2026-10-09</span></a></li>
 <li><a href="#v0-1-18"><span class="v">0.1.18</span><span class="d">2026-10-09</span></a></li>
 <li><a href="#v0-1-17"><span class="v">0.1.17</span><span class="d">2026-10-07</span></a></li>
 <li><a href="#v0-1-16"><span class="v">0.1.16</span><span class="d">2026-10-06</span></a></li>
@@ -72,6 +77,17 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-19"><h2>0.1.19 <span class="date">2026-10-09</span></h2><ul class="headlines"><li>ADMs with objects play in 7.1.4; Render for Binaural and 7.1.4 deliverables; heights kept silent in every render.</li></ul><details><summary>Full notes</summary><p>ADMs with objects play in 7.1.4; Render for Binaural and 7.1.4 deliverables; heights kept silent in every render.</p><h3>ADMs with objects play in 7.1.4 — this changes the sound</h3>
+<ul><li><strong>An ADM whose bed has fewer than four height speakers now plays in 7.1.4.</strong> Until now its objects were squeezed into the bed's own speakers (a 7.1.2 bed's two top middles) and spread again over a 7.1.4's four heights. Objects now go straight to the four heights.</li><li><p><strong>Bed channels go to the speaker their label names</strong>; Dolby's labels are recognised as heights, and a 5.1.4 bed is no longer taken for 7.1.2.</p></li></ul>
+<h3>Render</h3>
+<ul><li><strong>Render...</strong> replaces the Save buttons: the selected files' <strong>Binaural</strong> and/or <strong>7.1.4</strong>, one at a time in the background, 24-bit WAV beside each master (or in the download folder), with its metadata, added to the list.</li><li><strong>A small bar at the end of each row</strong> shows that file's progress.</li><li><strong>A master narrower than 7.1.4 is named first</strong> — its heights stay silent.</li><li><p>Renders of MP4, FLAC and Auro files are much faster.</p></li></ul>
+<h3>What each file becomes</h3>
+<p>What the Preview — and a file opened as an EDL — does with each kind of master, on each output. "Plays in" is the layout the Desk shows and every render starts from; it is set when the file is opened and does not change when you switch monitors.</p>
+<div class="tablewrap"><table><thead><tr><th>Your file</th><th>Plays in</th><th>On speakers</th><th>On headphones (Binaural)</th><th>Render 7.1.4</th><th>Render Binaural</th></tr></thead><tbody><tr><td>Stereo</td><td>Stereo</td><td>folded to your speakers</td><td>not binauralized</td><td>skipped</td><td>skipped</td></tr><tr><td>5.1 / 7.1</td><td>its own layout</td><td>folded to your speakers</td><td>the renderer chosen in Settings</td><td>the original channels, <strong>heights silent</strong> (you are warned first)</td><td>the renderer chosen in Settings</td></tr><tr><td>5.1.4, 7.1.4, 9.1.6 …</td><td>its own layout</td><td>folded</td><td>Settings renderer</td><td>7.1.4 as is; wider is folded, heights into heights</td><td>Settings renderer</td></tr><tr><td>ADM, bed only</td><td>its bed</td><td>folded</td><td>Settings renderer</td><td>as its bed's layout</td><td>Settings renderer</td></tr><tr><td><strong>ADM with objects</strong> (bed with fewer than four heights, or no bed)</td><td><strong>7.1.4</strong> — objects placed straight into it</td><td>folded from 7.1.4</td><td>Settings renderer</td><td>as is</td><td>Settings renderer</td></tr><tr><td>ADM with objects, bed with four or more heights</td><td>its bed</td><td>folded</td><td>Settings renderer</td><td>folded, heights into heights</td><td>Settings renderer</td></tr><tr><td>Auro-3D carrier</td><td>its Auro layout</td><td>a smaller system gets Auro's own decode; otherwise straight through</td><td><strong>Auro's renderer, always</strong></td><td>its own layout into 7.1.4</td><td>Auro's renderer</td></tr><tr><td>Auro-Cx</td><td>its bed</td><td>folded</td><td>Settings renderer</td><td>as a channel file</td><td>Settings renderer</td></tr></tbody></table></div>
+<ul><li><strong>Folded</strong> means each speaker of the file goes to where it belongs among your speakers; nothing is added.</li><li><strong>Every layout render — Render, Export, Album Renders — keeps heights where they are</strong>: a speaker the file has goes straight across, any other only among speakers at its own height, so a narrower master's heights stay silent. A downmix (to Stereo or 5.1) still folds the heights in.</li><li><strong>Binaural plays the master as authored.</strong> The Settings renderer is Auro (the default), SOFA with your HRTF, or Apple Spatial Audio.</li><li><strong>Auro-Matic Upmix</strong> (Monitor menu, off by default) upmixes on speakers and headphones where Auro supports both layouts — never in a render or export.</li><li><p><strong>A Render carries no Solo, Mute, DIM, Main volume or upmix</strong>, and in a batch no Desk faders: each file is rendered as authored.</p></li></ul>
+<h3>For testers</h3>
+<ul><li>An ADM with a 7.1.2 bed and objects should read 7.1.4.</li><li><p>Render a 5.1 and an ADM to 7.1.4 and Binaural; compare with the Preview.</p></li></ul>
+<p>Everything else is as in 0.1.18.</p></details></section>
 <section id="v0-1-18"><h2>0.1.18 <span class="date">2026-10-09</span></h2><ul class="headlines"><li>Its own licence; Settings laid out as soundBlade&#x27;s; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.</li></ul><details><summary>Full notes</summary><p>Its own licence; Settings laid out as soundBlade's; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.</p><h3>Licensing — CHANGED</h3>
 <ul><li><p><strong>This build needs its own Sonic Reference Player iLok licence.</strong> It is now wrapped with the Player's own product licence, so <strong>a soundBlade licence no longer unlocks it.</strong> Ask us for a Player licence before installing if you do not have one.</p></li></ul>
 <h3>Binaural now plays the master as authored</h3>
