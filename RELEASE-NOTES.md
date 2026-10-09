@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.18](#v0-1-18)** — 2026-10-09
+  - Its own licence; Settings laid out as soundBlade's; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.
 - **[0.1.17](#v0-1-17)** — 2026-10-07
   - Auro files named as Auro names them, and Artist Connection's Library, Albums and Projects side by side.
 - **[0.1.16](#v0-1-16)** — 2026-10-06
@@ -41,6 +43,92 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-18"></a>
+## 0.1.18 — 2026-10-09
+
+Its own licence; Settings laid out as soundBlade's; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.
+
+### Licensing — CHANGED
+
+- **This build needs its own Sonic Reference Player iLok licence.** It is now
+  wrapped with the Player's own product licence, so **a soundBlade licence no
+  longer unlocks it.** Ask us for a Player licence before installing if you do
+  not have one.
+
+### Binaural now plays the master as authored
+
+- **The Auro binaural renderer no longer upmixes.** Until now it ran in a mode
+  that upmixes everything (Auro-Matic for Headphones), so a 5.1 or 7.1.4 master
+  on headphones was heard upmixed. It now plays the material as it is. **Binaural
+  through Auro will sound different — drier, with no added height.**
+
+### Auro-Matic Upmix (monitoring only)
+
+- **Monitor menu > Auro-Matic Upmix** — off by default, remembered. On
+  speakers, Auro's engine upmixes the material to the Monitor layout; on
+  headphones, Auro's binaural upmixes again. Offered only where Auro renders
+  both layouts (5.1, 7.1, 5.1.4, 7.1.4 and the Auro configurations — not 9.1.6).
+  The Monitor read-out says "→ Auro-Matic". Never in a Save or Measure.
+
+### Save
+
+- **Binaural Save** — beside Binaural while it is on: the master through the
+  binaural renderer chosen in Settings (Auro's for Auro material), 2-channel
+  24-bit WAV, "<name> - Binaural".
+- **Monitor Save** — beside the Monitor button on 7.1.4 or 5.1: what you are
+  monitoring, rendered by our own renderer (an ADM's objects placed in the room),
+  "<name> - 7.1.4" or "<name> - Surround", 24-bit.
+- Saved beside the master, or in the download folder for an Artist Connection
+  download, with its metadata, and added to the list.
+- **A Save runs in the background** — pick other files and play them while it
+  works; the button shows its progress and cancels it. (Measure renders its own
+  copy too.)
+
+### Menus and Settings
+
+- **The Sonic Reference Player menu** has **Application Settings...** and
+  **Audio I/O Settings...** (⌥A). The Monitoring menu is gone; Settings is no
+  longer in the File menu; Help no longer has Open Demo Master (the tour still
+  offers it).
+- **Settings > General**: **Enable SRC** (on by default) and updates.
+- **Settings > Speakers**: the layout, then **Enable Binaural Monitoring** and
+  the renderer / HRTF at the bottom — as soundBlade has them.
+- **Settings > Accounts**: Artist Connection — status, one **Login / Logout**
+  button that follows the sign-in live, **Reveal Log** — and **AC Connect**
+  (the Artist Connection app on your phone plays to the Player; off by default).
+- Small text in Settings is easier to read.
+
+### Artist Connection
+
+- **The cloud button appears only while signed in.** File > Artist
+  Connection... signed out opens Settings > Accounts.
+- **Downloads go to a folder you choose** (asked once, remembered, shown with
+  **Set Folder...**), **keep their extension**, and can be removed with
+  right-click > **Delete Downloaded File...**. Clear Downloads is gone.
+- **Double-click a picture** in the Library to make it the album cover.
+- **Uploading is no longer offered in the Player** — upload from soundBlade.
+
+### Preview
+
+- **Solo and Mute under every meter**; a silenced channel draws no meter.
+- **Monitor meters**: level readout, Solo/Mute per speaker, follow **P/H**.
+- **Right-click a file > Show File Location...**
+- **Clicking a file with video opens the video window** if it is closed.
+- **Drop a picture** anywhere to make it the album cover.
+
+### For testers
+
+- **Install with a Player licence** — a soundBlade one will not open it.
+- Binaural on a 5.1/7.1.4 master with the Auro renderer: still binaural, no
+  added height? Then try Auro-Matic Upmix.
+- Save a binaural and a 7.1.4 version; play each against the Preview.
+
+Everything else is as in 0.1.17.
+
+[Back to the list of versions](#versions)
 
 ---
 
