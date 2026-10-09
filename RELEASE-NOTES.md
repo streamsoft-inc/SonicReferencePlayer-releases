@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.20](#v0-1-20)** — 2026-10-09
+  - ADMs with objects keep their bed as the Source; the master is 7.1.4.
 - **[0.1.19](#v0-1-19)** — 2026-10-09
   - ADMs with objects play in 7.1.4; Render for Binaural and 7.1.4 deliverables; heights kept silent in every render.
 - **[0.1.18](#v0-1-18)** — 2026-10-09
@@ -45,6 +47,70 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-20"></a>
+## 0.1.20 — 2026-10-09
+
+ADMs with objects keep their bed as the Source; the master is 7.1.4.
+
+### ADMs with objects: the bed is never changed
+
+- **Correcting 1.1.109**, which showed such an ADM's Source as 7.1.4: **the
+  Source is the bed, exactly as the file states it** — a 7.1.2 bed reads
+  7.1.2, in the Preview and in an EDL, and is never rewritten.
+- **The Monitor starts on the bed** (7.1.2), to match the file; set it to
+  7.1.4 to hear the objects in all four heights.
+- **The master is 7.1.4** — the Desk, Render and every export: objects go
+  straight to its four heights, and the bed's own channels to their own
+  speakers.
+- **A 7.1.2 bed's top-middle channels feed the front and rear heights on
+  their side only** (−3 dB each). In 1.1.109 part of them reached the side
+  surrounds at ear level.
+- **An ADM export never writes a position into a bed channel.**
+- Renders and exports keep heights to the two nearest speakers at their own
+  height (was three).
+
+### What each file becomes
+
+What the Preview — and a file opened as an EDL — does with each kind of
+master. **Source** is the file's own layout, exactly as it states it — never
+changed. **Master** is what it is mixed into: the Desk, and every render and
+export.
+
+| Your file | Source / Master | On speakers | On headphones (Binaural) | Render 7.1.4 | Render Binaural |
+|---|---|---|---|---|---|
+| Stereo | Stereo | folded to your speakers | not binauralized | skipped | skipped |
+| 5.1 / 7.1 | its own layout | folded to your speakers | the renderer chosen in Settings | the original channels, **heights silent** (you are warned first) | the renderer chosen in Settings |
+| 5.1.4, 7.1.4, 9.1.6 … | its own layout | folded | Settings renderer | 7.1.4 as is; wider is folded, heights into heights | Settings renderer |
+| ADM, bed only | its bed | folded | Settings renderer | as its bed's layout | Settings renderer |
+| **ADM with objects** (bed with fewer than four heights, or no bed) | Source **the bed (e.g. 7.1.2)**, Master **7.1.4** — the Monitor starts on the bed; set it to 7.1.4 to hear all four heights | folded from the 7.1.4 master | Settings renderer | the master, as is | Settings renderer |
+| ADM with objects, bed with four or more heights | its bed | folded | Settings renderer | folded, heights into heights | Settings renderer |
+| Auro-3D carrier | its Auro layout | a smaller system gets Auro's own decode; otherwise straight through | **Auro's renderer, always** | its own layout into 7.1.4 | Auro's renderer |
+| Auro-Cx | its bed | folded | Settings renderer | as a channel file | Settings renderer |
+
+- **Folded** means each speaker of the file goes to where it belongs among your
+  speakers; nothing is added.
+- **Heights stay heights in every render and export**: a speaker the target has
+  goes straight across, any other to the two nearest speakers at its own
+  height. A narrower master's heights stay silent; a downmix (to Stereo or 5.1)
+  still folds them in.
+- **Binaural plays the master as authored.** The Settings renderer is Auro
+  (the default), SOFA with your HRTF, or Apple Spatial Audio.
+- **Auro-Matic Upmix** (Monitor menu, off by default) upmixes on speakers and
+  headphones where Auro supports both layouts — never in a render or export.
+- **A Render carries no Solo, Mute, DIM, Main volume or upmix**, and in a batch
+  no Desk faders: each file is rendered as authored.
+
+### For testers
+
+- An ADM with a 7.1.2 bed and objects: Source 7.1.2, Monitor 7.1.2; set the
+  Monitor to 7.1.4 to hear all four heights.
+
+Everything else is as in 0.1.19.
+
+[Back to the list of versions](#versions)
 
 ---
 
