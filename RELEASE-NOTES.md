@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.22](#v0-1-22)** — 2026-10-11
+  - Nothing in extra speakers, and a tidier object view.
 - **[0.1.21](#v0-1-21)** — 2026-10-11
   - Export from the File menu, gapless play-through, and keyboard shortcuts.
 - **[0.1.20](#v0-1-20)** — 2026-10-09
@@ -49,6 +51,39 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-22"></a>
+## 0.1.22 — 2026-10-11
+
+Nothing in extra speakers, and a tidier object view.
+
+### Monitoring: nothing in extra speakers
+
+- **On a wider monitor, the speakers the master does not have stay silent.**
+  7.1.4 on a 9.1.6 system plays channel for channel, with nothing at all in
+  the wides or top middles. Before, every speaker was spread a little into its
+  neighbours.
+- A speaker the monitor lacks goes to the two nearest speakers at its own
+  height. Folding down to 5.1 or stereo still folds the heights in.
+- **Auro-Matic Upmix** is unchanged — still in the Monitor menu, off by
+  default.
+
+### Object view
+
+- **Room / Side / Top on top; zoom and the checkboxes along the bottom**, the
+  zoom slider a third of the width.
+- **Stacked objects:** the list over a stack stays open as you move onto it;
+  click a name to bring that object to the front.
+
+### For testers
+
+- 7.1.4 material on a 9.1.6 monitor: the wides and top middles silent.
+
+Everything else is as in 0.1.21.
+
+[Back to the list of versions](#versions)
 
 ---
 
