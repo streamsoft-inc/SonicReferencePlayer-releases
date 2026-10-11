@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-21"><span class="v">0.1.21</span><span class="d">2026-10-11</span></a></li>
 <li><a href="#v0-1-20"><span class="v">0.1.20</span><span class="d">2026-10-09</span></a></li>
 <li><a href="#v0-1-19"><span class="v">0.1.19</span><span class="d">2026-10-09</span></a></li>
 <li><a href="#v0-1-18"><span class="v">0.1.18</span><span class="d">2026-10-09</span></a></li>
@@ -78,6 +79,17 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-21"><h2>0.1.21 <span class="date">2026-10-11</span></h2><ul class="headlines"><li>Export from the File menu, gapless play-through, and keyboard shortcuts.</li></ul><details><summary>Full notes</summary><p>Export from the File menu, gapless play-through, and keyboard shortcuts.</p><h3>Export</h3>
+<ul><li><strong>File &gt; Export…</strong> replaces the Render button: the export window, with your name tags, bit depth and BWF details, and the layouts — Stereo, Binaural, 5.1, 7.1.4, 9.1.6.</li><li><strong>Type</strong>: Interleaved, or <strong>Individual</strong> — one file per speaker of each layout, named by speaker.</li><li><strong>Open in Player</strong> adds the exported files to the list.</li><li><p><strong>A progress window with Cancel</strong> shows each file as it is written.</p></li></ul>
+<h3>Playing</h3>
+<ul><li><p><strong>The list plays through</strong>: with Loop off, the next file starts when one ends — gapless when it has the same layout, after a short pause otherwise. Loop on repeats the current file.</p></li></ul>
+<h3>Loudness</h3>
+<ul><li><strong>Integrated is coloured against the reference</strong> — green under it, yellow to red over it.</li><li><p>Reference presets, <strong>Save to ADM</strong> for a measured ADM, and a PDF loudness report.</p></li></ul>
+<h3>Also</h3>
+<ul><li><strong>Keyboard Shortcuts</strong> — every menu command, change, add, clear, reset, with search and Save / Import. The menus' shortcuts now always work.</li><li>File menu: Open, Open Video, Save Playlist, Export.</li><li>ADM column after #; shorter tooltips throughout.</li><li><p><strong>Artist Connection</strong>: with one studio you go straight to it.</p></li></ul>
+<h3>For testers</h3>
+<ul><li>Export with <strong>Individual</strong>: one file per speaker, each playable.</li><li><p>Let the list play through two files of the same layout: no gap at the join — also with Binaural on.</p></li></ul>
+<p>Everything else is as in 0.1.20.</p></details></section>
 <section id="v0-1-20"><h2>0.1.20 <span class="date">2026-10-09</span></h2><ul class="headlines"><li>ADMs with objects keep their bed as the Source; the master is 7.1.4.</li></ul><details><summary>Full notes</summary><p>ADMs with objects keep their bed as the Source; the master is 7.1.4.</p><h3>ADMs with objects: the bed is never changed</h3>
 <ul><li><strong>Correcting 1.1.109</strong>, which showed such an ADM's Source as 7.1.4: <strong>the Source is the bed, exactly as the file states it</strong> — a 7.1.2 bed reads 7.1.2, in the Preview and in an EDL, and is never rewritten.</li><li><strong>The Monitor starts on the bed</strong> (7.1.2), to match the file; set it to 7.1.4 to hear the objects in all four heights.</li><li><strong>The master is 7.1.4</strong> — the Desk, Render and every export: objects go straight to its four heights, and the bed's own channels to their own speakers.</li><li><strong>A 7.1.2 bed's top-middle channels feed the front and rear heights on their side only</strong> (−3 dB each). In 1.1.109 part of them reached the side surrounds at ear level.</li><li><strong>An ADM export never writes a position into a bed channel.</strong></li><li><p>Renders and exports keep heights to the two nearest speakers at their own height (was three).</p></li></ul>
 <h3>What each file becomes</h3>
