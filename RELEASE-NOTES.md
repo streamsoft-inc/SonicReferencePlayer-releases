@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.21](#v0-1-21)** — 2026-10-11
+  - Export from the File menu, gapless play-through, and keyboard shortcuts.
 - **[0.1.20](#v0-1-20)** — 2026-10-09
   - ADMs with objects keep their bed as the Source; the master is 7.1.4.
 - **[0.1.19](#v0-1-19)** — 2026-10-09
@@ -47,6 +49,54 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-21"></a>
+## 0.1.21 — 2026-10-11
+
+Export from the File menu, gapless play-through, and keyboard shortcuts.
+
+### Export
+
+- **File > Export…** replaces the Render button: the export window, with
+  your name tags, bit depth and BWF details, and the layouts — Stereo,
+  Binaural, 5.1, 7.1.4, 9.1.6.
+- **Type**: Interleaved, or **Individual** — one file per speaker of each
+  layout, named by speaker.
+- **Open in Player** adds the exported files to the list.
+- **A progress window with Cancel** shows each file as it is written.
+
+### Playing
+
+- **The list plays through**: with Loop off, the next file starts when one
+  ends — gapless when it has the same layout, after a short pause otherwise.
+  Loop on repeats the current file.
+
+### Loudness
+
+- **Integrated is coloured against the reference** — green under it, yellow
+  to red over it.
+- Reference presets, **Save to ADM** for a measured ADM, and a PDF loudness
+  report.
+
+### Also
+
+- **Keyboard Shortcuts** — every menu command, change, add, clear, reset,
+  with search and Save / Import. The menus' shortcuts now always work.
+- File menu: Open, Open Video, Save Playlist, Export.
+- ADM column after #; shorter tooltips throughout.
+- **Artist Connection**: with one studio you go straight to it.
+
+### For testers
+
+- Export with **Individual**: one file per speaker, each playable.
+- Let the list play through two files of the same layout: no gap at the join
+  — also with Binaural on.
+
+Everything else is as in 0.1.20.
+
+[Back to the list of versions](#versions)
 
 ---
 
