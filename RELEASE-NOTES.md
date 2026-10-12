@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.23](#v0-1-23)** — 2026-10-12
+  - Export to Artist Connection, and a Name field you can type in.
 - **[0.1.22](#v0-1-22)** — 2026-10-11
   - Nothing in extra speakers, and a tidier object view.
 - **[0.1.21](#v0-1-21)** — 2026-10-11
@@ -51,6 +53,37 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-23"></a>
+## 0.1.23 — 2026-10-12
+
+Export to Artist Connection, and a Name field you can type in.
+
+### Export
+
+- **Add to Artist Connection** (File > Export..., shown while signed in):
+  uploads what the export writes — **each type into its own Library folder
+  and album**, "<name> - (7.1.4)", "<name> - (Binaural)" — optionally with a
+  share link per album. You are asked the name, the album and the link before
+  anything renders. **No share link = nothing published.** A folder that
+  already exists can be **replaced**, files and album tracks, so each album
+  and its link stay the same. A message says when the upload is done, with
+  any links copied to the clipboard.
+- **Quitting while an upload runs asks first.**
+- **Name field**: type between the tags — typed text becomes fixed-text tags;
+  Delete next to a tag takes it out.
+
+### For testers
+
+- Sign in, export a 7.1.4 and a Binaural with Add to Artist Connection and a
+  share link; export again to the same name and choose Replace — the link
+  should still play the new files.
+
+Everything else is as in 0.1.22.
+
+[Back to the list of versions](#versions)
 
 ---
 
