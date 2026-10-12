@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-23"><span class="v">0.1.23</span><span class="d">2026-10-12</span></a></li>
 <li><a href="#v0-1-22"><span class="v">0.1.22</span><span class="d">2026-10-11</span></a></li>
 <li><a href="#v0-1-21"><span class="v">0.1.21</span><span class="d">2026-10-11</span></a></li>
 <li><a href="#v0-1-20"><span class="v">0.1.20</span><span class="d">2026-10-09</span></a></li>
@@ -80,6 +81,11 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-23"><h2>0.1.23 <span class="date">2026-10-12</span></h2><ul class="headlines"><li>Export to Artist Connection, and a Name field you can type in.</li></ul><details><summary>Full notes</summary><p>Export to Artist Connection, and a Name field you can type in.</p><h3>Export</h3>
+<ul><li><strong>Add to Artist Connection</strong> (File &gt; Export..., shown while signed in): uploads what the export writes — <strong>each type into its own Library folder and album</strong>, "&lt;name&gt; - (7.1.4)", "&lt;name&gt; - (Binaural)" — optionally with a share link per album. You are asked the name, the album and the link before anything renders. <strong>No share link = nothing published.</strong> A folder that already exists can be <strong>replaced</strong>, files and album tracks, so each album and its link stay the same. A message says when the upload is done, with any links copied to the clipboard.</li><li><strong>Quitting while an upload runs asks first.</strong></li><li><p><strong>Name field</strong>: type between the tags — typed text becomes fixed-text tags; Delete next to a tag takes it out.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p>Sign in, export a 7.1.4 and a Binaural with Add to Artist Connection and a share link; export again to the same name and choose Replace — the link should still play the new files.</p></li></ul>
+<p>Everything else is as in 0.1.22.</p></details></section>
 <section id="v0-1-22"><h2>0.1.22 <span class="date">2026-10-11</span></h2><ul class="headlines"><li>Nothing in extra speakers, and a tidier object view.</li></ul><details><summary>Full notes</summary><p>Nothing in extra speakers, and a tidier object view.</p><h3>Monitoring: nothing in extra speakers</h3>
 <ul><li><strong>On a wider monitor, the speakers the master does not have stay silent.</strong> 7.1.4 on a 9.1.6 system plays channel for channel, with nothing at all in the wides or top middles. Before, every speaker was spread a little into its neighbours.</li><li>A speaker the monitor lacks goes to the two nearest speakers at its own height. Folding down to 5.1 or stereo still folds the heights in.</li><li><p><strong>Auro-Matic Upmix</strong> is unchanged — still in the Monitor menu, off by default.</p></li></ul>
 <h3>Object view</h3>
