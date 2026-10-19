@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.24](#v0-1-24)** — 2026-10-19
+  - Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.
 - **[0.1.23](#v0-1-23)** — 2026-10-12
   - Export to Artist Connection, and a Name field you can type in.
 - **[0.1.22](#v0-1-22)** — 2026-10-11
@@ -53,6 +55,44 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-24"></a>
+## 0.1.24 — 2026-10-19
+
+Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.
+
+### Playback
+
+- Playback now renders a few audio blocks **ahead** of what you hear, so a
+  moment of heavy processing no longer drops out. On by default (4 blocks --
+  21 ms at 512 samples / 96 kHz): **Settings > General > Render Plug-ins Ahead**
+  (Off / 2 / 4 / 8 blocks; Off is the old behaviour). Controls are heard that
+  much later; Main Output Volume is not.
+- **The playhead shows what you hear** -- it no longer runs ahead of the audio,
+  waits at the start until the sound arrives, and Stop leaves it where the
+  sound stopped. The video follows it.
+- **The channel meters** are in step with the sound.
+- **Loop is sample-exact**: the end plays out in full and the start follows
+  with no gap; a file played to its end is no longer cut short.
+
+### Keyboard Shortcuts
+
+- Setting a shortcut works: the dialog shows the keys as you press them.
+- **Option-letter keys** (Option-I, Option-E... which start an accented letter
+  on a Mac keyboard) can be set and now work as shortcuts.
+- **Delete** in the dialog erases what you pressed, to try again.
+- A key already in use asks first, naming the command that has it.
+
+### For testers
+
+- Play a long file with Loop on over its end: no gap, no click, nothing cut.
+- Settings > Keyboard Shortcuts: set Option-I on a command and use it.
+
+Everything else is as in 0.1.23.
+
+[Back to the list of versions](#versions)
 
 ---
 
