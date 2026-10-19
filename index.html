@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-24"><span class="v">0.1.24</span><span class="d">2026-10-19</span></a></li>
 <li><a href="#v0-1-23"><span class="v">0.1.23</span><span class="d">2026-10-12</span></a></li>
 <li><a href="#v0-1-22"><span class="v">0.1.22</span><span class="d">2026-10-11</span></a></li>
 <li><a href="#v0-1-21"><span class="v">0.1.21</span><span class="d">2026-10-11</span></a></li>
@@ -81,6 +82,13 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-24"><h2>0.1.24 <span class="date">2026-10-19</span></h2><ul class="headlines"><li>Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.</li></ul><details><summary>Full notes</summary><p>Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.</p><h3>Playback</h3>
+<ul><li>Playback now renders a few audio blocks <strong>ahead</strong> of what you hear, so a moment of heavy processing no longer drops out. On by default (4 blocks -- 21 ms at 512 samples / 96 kHz): <strong>Settings &gt; General &gt; Render Plug-ins Ahead</strong> (Off / 2 / 4 / 8 blocks; Off is the old behaviour). Controls are heard that much later; Main Output Volume is not.</li><li><strong>The playhead shows what you hear</strong> -- it no longer runs ahead of the audio, waits at the start until the sound arrives, and Stop leaves it where the sound stopped. The video follows it.</li><li><strong>The channel meters</strong> are in step with the sound.</li><li><p><strong>Loop is sample-exact</strong>: the end plays out in full and the start follows with no gap; a file played to its end is no longer cut short.</p></li></ul>
+<h3>Keyboard Shortcuts</h3>
+<ul><li>Setting a shortcut works: the dialog shows the keys as you press them.</li><li><strong>Option-letter keys</strong> (Option-I, Option-E... which start an accented letter on a Mac keyboard) can be set and now work as shortcuts.</li><li><strong>Delete</strong> in the dialog erases what you pressed, to try again.</li><li><p>A key already in use asks first, naming the command that has it.</p></li></ul>
+<h3>For testers</h3>
+<ul><li>Play a long file with Loop on over its end: no gap, no click, nothing cut.</li><li><p>Settings &gt; Keyboard Shortcuts: set Option-I on a command and use it.</p></li></ul>
+<p>Everything else is as in 0.1.23.</p></details></section>
 <section id="v0-1-23"><h2>0.1.23 <span class="date">2026-10-12</span></h2><ul class="headlines"><li>Export to Artist Connection, and a Name field you can type in.</li></ul><details><summary>Full notes</summary><p>Export to Artist Connection, and a Name field you can type in.</p><h3>Export</h3>
 <ul><li><strong>Add to Artist Connection</strong> (File &gt; Export..., shown while signed in): uploads what the export writes — <strong>each type into its own Library folder and album</strong>, "&lt;name&gt; - (7.1.4)", "&lt;name&gt; - (Binaural)" — optionally with a share link per album. You are asked the name, the album and the link before anything renders. <strong>No share link = nothing published.</strong> A folder that already exists can be <strong>replaced</strong>, files and album tracks, so each album and its link stay the same. A message says when the upload is done, with any links copied to the clipboard.</li><li><strong>Quitting while an upload runs asks first.</strong></li><li><p><strong>Name field</strong>: type between the tags — typed text becomes fixed-text tags; Delete next to a tag takes it out.</p></li></ul>
 <h3>For testers</h3>
