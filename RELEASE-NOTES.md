@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.25](#v0-1-25)** — 2026-10-21
+  - Named speaker layouts, video straight from Artist Connection, and Japanese, Chinese and Korean text shown correctly.
 - **[0.1.24](#v0-1-24)** — 2026-10-19
   - Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.
 - **[0.1.23](#v0-1-23)** — 2026-10-12
@@ -55,6 +57,65 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-25"></a>
+## 0.1.25 — 2026-10-21
+
+Named speaker layouts, video straight from Artist Connection, and Japanese, Chinese and Korean text shown correctly.
+
+### Named speaker layouts
+
+- **Custom is replaced by layouts you name and save** -- "AURO-Room",
+  "STEREO MONITOR". In **Speaker Layout** (Monitor menu, or Settings >
+  Speakers): pick a layout, set its outputs, type a **Name** and press
+  **Save**. Output changes are applied once the layout is saved.
+- Saved layouts are listed **by name** in the Monitor menu and the Speaker
+  Layout list, and the Monitor button shows the name. **Delete** removes one.
+- Output assignments and saved layouts are **kept between launches**.
+- A device with fewer outputs switched on than the monitor layout needs now has
+  the missing ones **switched on** (7.1.4 on a 16-output interface with two
+  ticked gets 12) -- it only adds, never removes, and never changes the device.
+
+### Video
+
+- **Streamed Artist Connection movies show their picture** -- no download
+  needed. The video opens when the file is selected and follows the sound.
+- A **Video** button appears while the selected file has video; it opens and
+  closes the video window.
+
+### Text
+
+- **Japanese, Chinese, Korean** and other scripts are shown correctly
+  everywhere -- in names, metadata and every text field. They used to show as
+  unrelated Latin letters (the text itself was always stored correctly).
+
+### Also
+
+- Layout lists run 5.1.2, 5.1.4, 7.1.2, 7.1.4.
+- Artist Connection: a folder whose triangle did nothing now opens.
+- Auro-Matic Upmix is removed from the Monitor menu for now.
+
+### iPad
+
+- **Metadata** and **Album** buttons, as on the Mac.
+- **Open** also takes a movie (.mov, .m4v, a picture-only .mp4) and pairs it
+  with the selected master.
+- **Hold a file name** to read the whole of it; the file's menu opens when you
+  let go.
+- The file list's divider follows your finger and can always be dragged back.
+
+### For testers
+
+- Speaker Layout: set outputs on 9.1.6, name it, Save; pick it from the Monitor
+  menu after another layout; quit and reopen.
+- Select a streamed movie from Artist Connection: the picture plays in step.
+- Type ありがとう in a name field.
+
+Everything else is as in 0.1.24.
+
+[Back to the list of versions](#versions)
 
 ---
 
