@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-25"><span class="v">0.1.25</span><span class="d">2026-10-21</span></a></li>
 <li><a href="#v0-1-24"><span class="v">0.1.24</span><span class="d">2026-10-19</span></a></li>
 <li><a href="#v0-1-23"><span class="v">0.1.23</span><span class="d">2026-10-12</span></a></li>
 <li><a href="#v0-1-22"><span class="v">0.1.22</span><span class="d">2026-10-11</span></a></li>
@@ -82,6 +83,19 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-25"><h2>0.1.25 <span class="date">2026-10-21</span></h2><ul class="headlines"><li>Named speaker layouts, video straight from Artist Connection, and Japanese, Chinese and Korean text shown correctly.</li></ul><details><summary>Full notes</summary><p>Named speaker layouts, video straight from Artist Connection, and Japanese, Chinese and Korean text shown correctly.</p><h3>Named speaker layouts</h3>
+<ul><li><strong>Custom is replaced by layouts you name and save</strong> -- "AURO-Room", "STEREO MONITOR". In <strong>Speaker Layout</strong> (Monitor menu, or Settings &gt; Speakers): pick a layout, set its outputs, type a <strong>Name</strong> and press <strong>Save</strong>. Output changes are applied once the layout is saved.</li><li>Saved layouts are listed <strong>by name</strong> in the Monitor menu and the Speaker Layout list, and the Monitor button shows the name. <strong>Delete</strong> removes one.</li><li>Output assignments and saved layouts are <strong>kept between launches</strong>.</li><li><p>A device with fewer outputs switched on than the monitor layout needs now has the missing ones <strong>switched on</strong> (7.1.4 on a 16-output interface with two ticked gets 12) -- it only adds, never removes, and never changes the device.</p></li></ul>
+<h3>Video</h3>
+<ul><li><strong>Streamed Artist Connection movies show their picture</strong> -- no download needed. The video opens when the file is selected and follows the sound.</li><li><p>A <strong>Video</strong> button appears while the selected file has video; it opens and closes the video window.</p></li></ul>
+<h3>Text</h3>
+<ul><li><p><strong>Japanese, Chinese, Korean</strong> and other scripts are shown correctly everywhere -- in names, metadata and every text field. They used to show as unrelated Latin letters (the text itself was always stored correctly).</p></li></ul>
+<h3>Also</h3>
+<ul><li>Layout lists run 5.1.2, 5.1.4, 7.1.2, 7.1.4.</li><li>Artist Connection: a folder whose triangle did nothing now opens.</li><li><p>Auro-Matic Upmix is removed from the Monitor menu for now.</p></li></ul>
+<h3>iPad</h3>
+<ul><li><strong>Metadata</strong> and <strong>Album</strong> buttons, as on the Mac.</li><li><strong>Open</strong> also takes a movie (.mov, .m4v, a picture-only .mp4) and pairs it with the selected master.</li><li><strong>Hold a file name</strong> to read the whole of it; the file's menu opens when you let go.</li><li><p>The file list's divider follows your finger and can always be dragged back.</p></li></ul>
+<h3>For testers</h3>
+<ul><li>Speaker Layout: set outputs on 9.1.6, name it, Save; pick it from the Monitor menu after another layout; quit and reopen.</li><li>Select a streamed movie from Artist Connection: the picture plays in step.</li><li><p>Type ありがとう in a name field.</p></li></ul>
+<p>Everything else is as in 0.1.24.</p></details></section>
 <section id="v0-1-24"><h2>0.1.24 <span class="date">2026-10-19</span></h2><ul class="headlines"><li>Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.</li></ul><details><summary>Full notes</summary><p>Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.</p><h3>Playback</h3>
 <ul><li>Playback now renders a few audio blocks <strong>ahead</strong> of what you hear, so a moment of heavy processing no longer drops out. On by default (4 blocks -- 21 ms at 512 samples / 96 kHz): <strong>Settings &gt; General &gt; Render Plug-ins Ahead</strong> (Off / 2 / 4 / 8 blocks; Off is the old behaviour). Controls are heard that much later; Main Output Volume is not.</li><li><strong>The playhead shows what you hear</strong> -- it no longer runs ahead of the audio, waits at the start until the sound arrives, and Stop leaves it where the sound stopped. The video follows it.</li><li><strong>The channel meters</strong> are in step with the sound.</li><li><p><strong>Loop is sample-exact</strong>: the end plays out in full and the start follows with no gap; a file played to its end is no longer cut short.</p></li></ul>
 <h3>Keyboard Shortcuts</h3>
