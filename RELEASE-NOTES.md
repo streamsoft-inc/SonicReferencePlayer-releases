@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.27](#v0-1-27)** — 2026-10-22
+  - Layout fixes.
 - **[0.1.26](#v0-1-26)** — 2026-10-22
   - Meters show where each speaker goes, the album cover in Album Info, and the iPad metadata window gets Import and Export.
 - **[0.1.25](#v0-1-25)** — 2026-10-21
@@ -59,6 +61,31 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-27"></a>
+## 0.1.27 — 2026-10-22
+
+Layout fixes.
+
+### Layouts
+
+- The Speaker Layout dialog lists 5.1.2, 5.1.4, 7.1.2, 7.1.4 in that order, as
+  the menus do.
+- A line above the Auro layouts in every layout list.
+- An EDL opened in the Player shows its own layout (Auro 13.1, not 7.1.6), and
+  the Monitor menu offers the Auro layouts for it.
+- The time read-out draws reliably wherever it appears.
+
+### For testers
+
+- Open the Speaker Layout dialog and check the order.
+- Open an Auro EDL: it reads its Auro layout.
+
+Everything else is as in 0.1.26.
+
+[Back to the list of versions](#versions)
 
 ---
 
