@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.26](#v0-1-26)** — 2026-10-22
+  - Meters show where each speaker goes, the album cover in Album Info, and the iPad metadata window gets Import and Export.
 - **[0.1.25](#v0-1-25)** — 2026-10-21
   - Named speaker layouts, video straight from Artist Connection, and Japanese, Chinese and Korean text shown correctly.
 - **[0.1.24](#v0-1-24)** — 2026-10-19
@@ -57,6 +59,44 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-26"></a>
+## 0.1.26 — 2026-10-22
+
+Meters show where each speaker goes, the album cover in Album Info, and the iPad metadata window gets Import and Export.
+
+### Meters
+
+- Each **Monitor** meter shows, under its speaker name, the **output** it goes
+  to (in gold) -- the meters stay in speaker order, so a room wired out of order
+  reads at a glance (Ltm 15, Rtm 16, Ltr 13, Rtr 14).
+- The **Source** meters show their channel number at the same height, so the two
+  rows line up. Both rows are a little shorter.
+
+### Album Info
+
+- The album's **cover** is shown in Album Info, with **Change...** to pick a new
+  image (JPEG or PNG). It is applied on Save; Cancel keeps the old one.
+
+### iPad
+
+- The metadata window has **Import** and **Export**, as on the Mac. An exported
+  CSV or DDEX report is saved wherever you choose in Files.
+- With the metadata window open, **tapping another file** shows that file in it.
+  Unsaved edits are asked about first (Save / Don't Save / Cancel); Cancel keeps
+  the window on its file.
+
+### For testers
+
+- A layout with outputs out of order: check the numbers under the Monitor meters.
+- Album Info > Change...: pick an image, Save.
+- iPad: open Metadata, edit a field, tap another file -- answer each choice.
+
+Everything else is as in 0.1.25.
+
+[Back to the list of versions](#versions)
 
 ---
 
