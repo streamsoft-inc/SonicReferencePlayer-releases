@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.28](#v0-1-28)** — 2026-10-24
+  - Plug-in timing and exact renders.
 - **[0.1.27](#v0-1-27)** — 2026-10-22
   - Layout fixes.
 - **[0.1.26](#v0-1-26)** — 2026-10-22
@@ -61,6 +63,43 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-28"></a>
+## 0.1.28 — 2026-10-24
+
+Plug-in timing and exact renders.
+
+### Playback
+
+- **Playback is now in time with plug-ins whose latency is over half a second.**
+  Delay compensation was capped at 0.5 s and quietly cut anything longer short --
+  MAAT thEQred alone reports 0.68 s at 96 kHz -- so with such a plug-in in an EDL,
+  tracks played out of time with each other and with a render. Every delay is now
+  compensated in full.
+- **Play flashes while it waits for plug-in latency.** With long-latency plug-ins
+  the first sound can take a second or more to arrive; the Play button flashes
+  until it does.
+
+### Renders
+
+- **A render is exactly the samples from its start to its end**, both rounded to
+  the nearest sample on the timeline, and plug-in edges land on the same sample in
+  every render and in playback.
+- **Plug-ins running at the start or end of a render are fed the audio around
+  them**, as playback feeds them, and only the render's own span is written.
+- **A render never leaves out a plug-in without saying so** -- one that should
+  print but cannot stops the render and is named.
+
+### For testers
+
+- Play an EDL with MAAT thEQred (or any plug-in reporting more than half a second
+  of latency) next to a track without it: the two stay in time.
+
+Everything else is as in 0.1.27.
+
+[Back to the list of versions](#versions)
 
 ---
 
