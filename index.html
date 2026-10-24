@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-28"><span class="v">0.1.28</span><span class="d">2026-10-24</span></a></li>
 <li><a href="#v0-1-27"><span class="v">0.1.27</span><span class="d">2026-10-22</span></a></li>
 <li><a href="#v0-1-26"><span class="v">0.1.26</span><span class="d">2026-10-22</span></a></li>
 <li><a href="#v0-1-25"><span class="v">0.1.25</span><span class="d">2026-10-21</span></a></li>
@@ -85,6 +86,13 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-28"><h2>0.1.28 <span class="date">2026-10-24</span></h2><ul class="headlines"><li>Plug-in timing and exact renders.</li></ul><details><summary>Full notes</summary><p>Plug-in timing and exact renders.</p><h3>Playback</h3>
+<ul><li><strong>Playback is now in time with plug-ins whose latency is over half a second.</strong> Delay compensation was capped at 0.5 s and quietly cut anything longer short -- MAAT thEQred alone reports 0.68 s at 96 kHz -- so with such a plug-in in an EDL, tracks played out of time with each other and with a render. Every delay is now compensated in full.</li><li><p><strong>Play flashes while it waits for plug-in latency.</strong> With long-latency plug-ins the first sound can take a second or more to arrive; the Play button flashes until it does.</p></li></ul>
+<h3>Renders</h3>
+<ul><li><strong>A render is exactly the samples from its start to its end</strong>, both rounded to the nearest sample on the timeline, and plug-in edges land on the same sample in every render and in playback.</li><li><strong>Plug-ins running at the start or end of a render are fed the audio around them</strong>, as playback feeds them, and only the render's own span is written.</li><li><p><strong>A render never leaves out a plug-in without saying so</strong> -- one that should print but cannot stops the render and is named.</p></li></ul>
+<h3>For testers</h3>
+<ul><li><p>Play an EDL with MAAT thEQred (or any plug-in reporting more than half a second of latency) next to a track without it: the two stay in time.</p></li></ul>
+<p>Everything else is as in 0.1.27.</p></details></section>
 <section id="v0-1-27"><h2>0.1.27 <span class="date">2026-10-22</span></h2><ul class="headlines"><li>Layout fixes.</li></ul><details><summary>Full notes</summary><p>Layout fixes.</p><h3>Layouts</h3>
 <ul><li>The Speaker Layout dialog lists 5.1.2, 5.1.4, 7.1.2, 7.1.4 in that order, as the menus do.</li><li>A line above the Auro layouts in every layout list.</li><li>An EDL opened in the Player shows its own layout (Auro 13.1, not 7.1.6), and the Monitor menu offers the Auro layouts for it.</li><li><p>The time read-out draws reliably wherever it appears.</p></li></ul>
 <h3>For testers</h3>
