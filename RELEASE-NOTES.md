@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.29](#v0-1-29)** — 2026-10-25
+  - Symbols stripped.
 - **[0.1.28](#v0-1-28)** — 2026-10-24
   - Plug-in timing and exact renders.
 - **[0.1.27](#v0-1-27)** — 2026-10-22
@@ -63,6 +65,22 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-29"></a>
+## 0.1.29 — 2026-10-25
+
+Symbols stripped.
+
+### Copy protection
+
+- The app is now shipped with its debug symbols stripped, as a release should be.
+  Nothing else changes.
+
+Everything else is as in 0.1.28.
+
+[Back to the list of versions](#versions)
 
 ---
 
