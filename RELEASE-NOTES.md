@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.30](#v0-1-30)** — 2026-10-26
+  - Speaker Position correction — please test.
 - **[0.1.29](#v0-1-29)** — 2026-10-25
   - Symbols stripped.
 - **[0.1.28](#v0-1-28)** — 2026-10-24
@@ -65,6 +67,74 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-30"></a>
+## 0.1.30 — 2026-10-26
+
+Speaker Position correction — please test.
+
+### New: Speaker Position correction
+
+If your speakers are not exactly where the layout says they should be, the Player can
+now make monitoring sound as if they were.
+
+**Application Settings > Speaker Positions**
+
+- Choose the layout you monitor on (Stereo, 5.1, 7.1.4, ...).
+- For each speaker, enter where it really is, measured from your listening position:
+  - **Azimuth** — degrees from front centre. Positive is to your left, negative to your
+    right, up to 180 behind you. (L at 30 means 30 degrees to the left.)
+  - **Elevation** — degrees above ear height.
+  - **Distance** — metres from your listening position.
+- Tick **Correct speaker positions**.
+
+What it does:
+
+- **Correct angles** — each channel is panned between your real speakers so it sounds
+  from its ideal direction. A speaker within 3 degrees of where it should be plays its
+  channel on its own.
+- **Correct distances** — nearer speakers are delayed and turned down so every speaker
+  arrives at the same time and level as the farthest one. The Delay / Trim column shows
+  what each speaker gets.
+- **Reset** puts every speaker of that layout back on its ideal position.
+
+Things to know:
+
+- **Monitoring only.** It is never in an export or a measurement.
+- It is applied last, right before dither — after the meters and monitor solo/mute.
+- It is off while Binaural is on (headphones have no speakers to move).
+- **Changing anything stops playback**, so a change never clicks mid-programme.
+- Each layout keeps its own measurements; the layout you monitor on decides which set
+  is used.
+- The Player keeps its own measurements — positions entered in soundBlade are not
+  carried over.
+
+**In the object view**
+
+- **Cmd-Option-click a speaker** to change that speaker's position in a small pop-up.
+- While correction is on, each speaker that is off its ideal angle shows an **orange
+  ring where it really is**, joined to its cabinet by a dashed line. The cabinets stay
+  at the ideal positions — that is where the sound is now placed.
+
+**What we would like to hear from testers**
+
+- Does the image move where you expect when you enter your real positions?
+- Do phantom images (a channel panned between two speakers) sound stable at your
+  listening position?
+- Does the time alignment sound tighter with **Correct distances** on?
+- Anything that clicks, drops out or sounds wrong — with your layout and the numbers
+  you entered.
+
+### Fixed
+
+- **Object view:** the Ctrl-click Mute/Solo menu now opens where you click, not at the
+  bottom of the view.
+
+Everything else is as in 0.1.29.
+
+[Back to the list of versions](#versions)
 
 ---
 
