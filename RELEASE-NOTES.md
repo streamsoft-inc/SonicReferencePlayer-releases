@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.31](#v0-1-31)** — 2026-10-31
+  - DSD (.dsf) playback — please test.
 - **[0.1.30](#v0-1-30)** — 2026-10-26
   - Speaker Position correction — please test.
 - **[0.1.29](#v0-1-29)** — 2026-10-25
@@ -67,6 +69,51 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-31"></a>
+## 0.1.31 — 2026-10-31
+
+DSD (.dsf) playback — please test.
+
+### New: DSD files (.dsf)
+
+The Player now opens **DSF** files (DSD64, DSD128, DSD256; mono up to 5.1). Open one
+from the file list or drag it in, like any other master.
+
+How it plays:
+
+- **Converted to PCM** — 176.4 kHz, 32-bit float (192 kHz for 48 kHz-family DSD),
+  whatever the DSD rate. Everything works on it as on any other file: meters,
+  loudness, binaural, speaker position correction, monitor solo/mute.
+- The conversion filter is **flat to 30 kHz** and removes DSD's ultrasonic noise above
+  70 kHz before it reaches your speakers.
+- The file panel shows what the file really is — for example
+  **DSD64 · 2.8224 MHz → 176.4 kHz**, **1 bit (DSD)**.
+
+Things to know:
+
+- **DSD masters read about 6 dB lower** than their PCM equivalent. The conversion is
+  at unity: SACD's 0 dB reference is half modulation, so a DSD master peaking at
+  "0 dB SACD" shows about -6 dBFS here. Nothing is added to make it louder, so nothing
+  can clip.
+- If your device is not at 176.4 kHz, the file is sample-rate converted to it, as for
+  any other file (the SR lamp lights).
+- Title and artist tags in a DSF (ID3) are not shown yet.
+- **Not yet:** sending the DSD itself to a DSD DAC (DoP). That is coming in a later
+  build; for now every output plays the PCM conversion.
+
+**What we would like to hear from testers**
+
+- Do your DSF files open and play, at every DSD rate you have?
+- Does seeking and looping behave as with a WAV?
+- Anything that clicks, drops out or sounds wrong — with the file's DSD rate and
+  channel count.
+
+Everything else is as in 0.1.30.
+
+[Back to the list of versions](#versions)
 
 ---
 
