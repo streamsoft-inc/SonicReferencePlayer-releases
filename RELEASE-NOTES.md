@@ -5,11 +5,13 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
-- **[0.1.33](#v0-1-33)**
+- **[0.1.34](#v0-1-34)** — 2026-11-05
+  - One fix.
+- **[0.1.33](#v0-1-33)** — 2026-11-05
   - One addition: the 9.1.4 speaker layout.
-- **[0.1.32](#v0-1-32)** — 2026-11-04
+- **[0.1.32](#v0-1-32)** — 2026-11-05
   - A file browser, artwork on your tracks, a three-column file list, and a window that scales.
-- **[0.1.31](#v0-1-31)** — 2026-11-01
+- **[0.1.31](#v0-1-31)** — 2026-10-31
   - DSD (.dsf) playback — please test.
 - **[0.1.30](#v0-1-30)** — 2026-10-26
   - Speaker Position correction — please test.
@@ -17,15 +19,15 @@ Every release, newest first. Each links to its full notes below.
   - Symbols stripped.
 - **[0.1.28](#v0-1-28)** — 2026-10-24
   - Plug-in timing and exact renders.
-- **[0.1.27](#v0-1-27)** — 2026-10-21
+- **[0.1.27](#v0-1-27)** — 2026-10-22
   - Layout fixes.
-- **[0.1.26](#v0-1-26)** — 2026-10-21
+- **[0.1.26](#v0-1-26)** — 2026-10-22
   - Meters show where each speaker goes, the album cover in Album Info, and the iPad metadata window gets Import and Export.
 - **[0.1.25](#v0-1-25)** — 2026-10-21
   - Named speaker layouts, video straight from Artist Connection, and Japanese, Chinese and Korean text shown correctly.
 - **[0.1.24](#v0-1-24)** — 2026-10-19
   - Playback rendered ahead, the playhead and meters in step with the sound, and Keyboard Shortcuts fixed.
-- **[0.1.23](#v0-1-23)** — 2026-10-11
+- **[0.1.23](#v0-1-23)** — 2026-10-12
   - Export to Artist Connection, and a Name field you can type in.
 - **[0.1.22](#v0-1-22)** — 2026-10-11
   - Nothing in extra speakers, and a tidier object view.
@@ -35,15 +37,15 @@ Every release, newest first. Each links to its full notes below.
   - ADMs with objects keep their bed as the Source; the master is 7.1.4.
 - **[0.1.19](#v0-1-19)** — 2026-10-09
   - ADMs with objects play in 7.1.4; Render for Binaural and 7.1.4 deliverables; heights kept silent in every render.
-- **[0.1.18](#v0-1-18)** — 2026-10-08
+- **[0.1.18](#v0-1-18)** — 2026-10-09
   - Its own licence; Settings laid out as soundBlade's; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.
-- **[0.1.17](#v0-1-17)** — 2026-10-06
+- **[0.1.17](#v0-1-17)** — 2026-10-07
   - Auro files named as Auro names them, and Artist Connection's Library, Albums and Projects side by side.
-- **[0.1.16](#v0-1-16)** — 2026-10-05
+- **[0.1.16](#v0-1-16)** — 2026-10-06
   - Auro-Cx and Auro speaker configurations, a room-centric object view, and a reorderable list.
-- **[0.1.15](#v0-1-15)** — 2026-10-04
+- **[0.1.15](#v0-1-15)** — 2026-10-05
   - Artist Connection: uploads work again, and Create Album is easier to get right.
-- **[0.1.14](#v0-1-14)** — 2026-10-03
+- **[0.1.14](#v0-1-14)** — 2026-10-04
   - A guided tour for first-time users, and a demo master to try it on.
 - **[0.1.13](#v0-1-13)** — 2026-10-03
   - Checking a stereo album: lists, metadata, DDEX and loudness that stays with the file. And tooltips — the Player never showed any until now.
@@ -53,11 +55,11 @@ Every release, newest first. Each links to its full notes below.
   - Artist Connection: open masters straight from your studio's library.
 - **[0.1.10](#v0-1-10)** — 2026-09-26
   - Steadier playback, from the engine the Player shares with soundBlade.
-- **[0.1.9](#v0-1-9)** — 2026-09-23
+- **[0.1.9](#v0-1-9)** — 2026-09-24
   - DDEX arrives, plus a tidier button row.
-- **[0.1.8](#v0-1-8)** — 2026-09-22
+- **[0.1.8](#v0-1-8)** — 2026-09-23
   - A small follow-up to 0.1.7.
-- **[0.1.7](#v0-1-7)** — 2026-09-22
+- **[0.1.7](#v0-1-7)** — 2026-09-23
   - Metadata you can see, import and export, an album cover, and the Player's own icon.
 - **[0.1.6](#v0-1-6)** — 2026-09-22
   - A Speakers page, speaker naming in SMPTE or ITU-R, a Room view seen from the listener's seat, and diffuse objects heard as diffuse.
@@ -65,19 +67,36 @@ Every release, newest first. Each links to its full notes below.
   - Object metadata and object timing, on top of the audio-engine corrections that were staged as 0.1.4 and never published.
 - **[0.1.4](#v0-1-4)** — 2026-09-21
   - The audio-engine corrections from soundBlade 1.1.87, and the player's own licence.
-- **[0.1.3](#v0-1-3)** — 2026-09-20
+- **[0.1.3](#v0-1-3)** — 2026-09-21
   - Auro-Cx playback, and the window remembering itself.
 - **[0.1.2](#v0-1-2)** — 2026-09-20
   - Two corrections to 0.1.1's MP4 support, found by testing it against a real set of video files.
 - **[0.1.1](#v0-1-1)** — 2026-09-20
   - Video files, an About window, and updates where you would look for them.
-- **[0.1.0](#v0-1-0)** — 2026-09-19
+- **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
 
 ---
 
+<a name="v0-1-34"></a>
+## 0.1.34 — 2026-11-05
+
+One fix.
+
+### Fix: the Layout pane's Out column follows the speaker layout
+
+Changing the speaker layout left the **Out** column showing the old layout's speaker names until
+something else redrew the list. It now updates straight away, from the Monitor menu, the Speakers
+tab in Settings and a saved layout alike.
+
+Everything else is as in 0.1.33.
+
+[Back to the list of versions](#versions)
+
+---
+
 <a name="v0-1-33"></a>
-## 0.1.33
+## 0.1.33 — 2026-11-05
 
 One addition: the 9.1.4 speaker layout.
 
@@ -100,7 +119,7 @@ Everything else is as in 0.1.32.
 ---
 
 <a name="v0-1-32"></a>
-## 0.1.32 — 2026-11-04
+## 0.1.32 — 2026-11-05
 
 A file browser, artwork on your tracks, a three-column file list, and a window that scales.
 
@@ -187,7 +206,7 @@ Everything else is as in 0.1.31.
 ---
 
 <a name="v0-1-31"></a>
-## 0.1.31 — 2026-11-01
+## 0.1.31 — 2026-10-31
 
 DSD (.dsf) playback — please test.
 
@@ -353,7 +372,7 @@ Everything else is as in 0.1.27.
 ---
 
 <a name="v0-1-27"></a>
-## 0.1.27 — 2026-10-21
+## 0.1.27 — 2026-10-22
 
 Layout fixes.
 
@@ -378,7 +397,7 @@ Everything else is as in 0.1.26.
 ---
 
 <a name="v0-1-26"></a>
-## 0.1.26 — 2026-10-21
+## 0.1.26 — 2026-10-22
 
 Meters show where each speaker goes, the album cover in Album Info, and the iPad metadata window gets Import and Export.
 
@@ -513,7 +532,7 @@ Everything else is as in 0.1.23.
 ---
 
 <a name="v0-1-23"></a>
-## 0.1.23 — 2026-10-11
+## 0.1.23 — 2026-10-12
 
 Export to Artist Connection, and a Name field you can type in.
 
@@ -755,7 +774,7 @@ Everything else is as in 0.1.18.
 ---
 
 <a name="v0-1-18"></a>
-## 0.1.18 — 2026-10-08
+## 0.1.18 — 2026-10-09
 
 Its own licence; Settings laid out as soundBlade's; binaural as authored, with Auro-Matic upmix as a choice; and Save for binaural, 7.1.4 and Surround.
 
@@ -841,7 +860,7 @@ Everything else is as in 0.1.17.
 ---
 
 <a name="v0-1-17"></a>
-## 0.1.17 — 2026-10-06
+## 0.1.17 — 2026-10-07
 
 Auro files named as Auro names them, and Artist Connection's Library, Albums and Projects side by side.
 
@@ -886,7 +905,7 @@ Everything else is as in 0.1.16.
 ---
 
 <a name="v0-1-16"></a>
-## 0.1.16 — 2026-10-05
+## 0.1.16 — 2026-10-06
 
 Auro-Cx and Auro speaker configurations, a room-centric object view, and a reorderable list.
 
@@ -945,7 +964,7 @@ Everything else is as in 0.1.15.
 ---
 
 <a name="v0-1-15"></a>
-## 0.1.15 — 2026-10-04
+## 0.1.15 — 2026-10-05
 
 Artist Connection: uploads work again, and Create Album is easier to get right.
 
@@ -984,7 +1003,7 @@ Everything else is as in 0.1.14.
 ---
 
 <a name="v0-1-14"></a>
-## 0.1.14 — 2026-10-03
+## 0.1.14 — 2026-10-04
 
 A guided tour for first-time users, and a demo master to try it on.
 
@@ -1250,7 +1269,7 @@ Everything else is as in 0.1.9.
 ---
 
 <a name="v0-1-9"></a>
-## 0.1.9 — 2026-09-23
+## 0.1.9 — 2026-09-24
 
 DDEX arrives, plus a tidier button row.
 
@@ -1294,7 +1313,7 @@ DDEX arrives, plus a tidier button row.
 ---
 
 <a name="v0-1-8"></a>
-## 0.1.8 — 2026-09-22
+## 0.1.8 — 2026-09-23
 
 A small follow-up to 0.1.7.
 
@@ -1318,7 +1337,7 @@ export and cover work.
 ---
 
 <a name="v0-1-7"></a>
-## 0.1.7 — 2026-09-22
+## 0.1.7 — 2026-09-23
 
 Metadata you can see, import and export, an album cover, and the Player's own icon.
 
@@ -1610,7 +1629,7 @@ soundBlade 1.1.87 is here too.
 ---
 
 <a name="v0-1-3"></a>
-## 0.1.3 — 2026-09-20
+## 0.1.3 — 2026-09-21
 
 Auro-Cx playback, and the window remembering itself.
 
@@ -1759,7 +1778,7 @@ Video files, an About window, and updates where you would look for them.
 ---
 
 <a name="v0-1-0"></a>
-## 0.1.0 — 2026-09-19
+## 0.1.0 — 2026-09-20
 
 The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
 
