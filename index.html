@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-32"><span class="v">0.1.32</span><span class="d">2026-11-05</span></a></li>
 <li><a href="#v0-1-31"><span class="v">0.1.31</span><span class="d">2026-10-31</span></a></li>
 <li><a href="#v0-1-30"><span class="v">0.1.30</span><span class="d">2026-10-26</span></a></li>
 <li><a href="#v0-1-29"><span class="v">0.1.29</span><span class="d">2026-10-25</span></a></li>
@@ -89,6 +90,24 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-32"><h2>0.1.32 <span class="date">2026-11-05</span></h2><ul class="headlines"><li>A file browser, artwork on your tracks, a three-column file list, and a window that scales.</li></ul><details><summary>Full notes</summary><p>A file browser, artwork on your tracks, a three-column file list, and a window that scales.</p><h3>New: File &gt; Files...</h3>
+<p>A file browser in its own window.</p>
+<ul><li><strong>Double-click or drag</strong> to add everything selected to the list. A <strong>folder</strong> brings all the audio inside it, sub-folders included.</li><li>It lists only the audio files the Player can open.</li><li>The first time it opens, macOS may ask for access to your Music folder and network volumes.</li><li><p>Mac direct download only.</p></li></ul>
+<h3>New: artwork on a track</h3>
+<p><strong>Edit Metadata</strong> has an <strong>Album Artwork</strong> row, with a picture and three buttons.</p>
+<ul><li><strong>Select...</strong> (or drop an image on the picture) and <strong>Remove</strong> take effect when you press <strong>Save</strong>.</li><li><strong>Apply to Album...</strong> asks first, then writes the image into every file in the list that names this file's album. Files on another album are skipped.</li><li>The image goes <strong>into the file</strong> in a <strong>DSF, FLAC or WAV</strong>. Your image is stored as it is, and no audio sample is touched, though the file's size and date change.</li><li><p><strong>ADM masters</strong> carry no artwork. Other formats keep the image's location beside the file.</p></li></ul>
+<p><strong>Which picture a row shows:</strong> the art in the file, always, if it has any. Otherwise the image chosen for that file; the album's cover, if the file's metadata names that album; an image named after the file; or a <strong>cover, folder or front</strong> image in the same folder, unless the file names a different album. A folder's image is only shown, never written into a file.</p>
+<h3>DSD files</h3>
+<ul><li>A DSF's <strong>title, artist, album, genre and ISRC</strong> now show and save, in the file's own tag.</li><li><strong>DSD128 and DSD256 now play at 352.8 kHz</strong> (384 kHz for the 48 kHz family). DSD64 stays at 176.4 / 192 kHz. A device at another rate gets sample-rate conversion, as for any file.</li><li>Each file gets a <strong>3 ms fade at its start and end</strong> during playback, because a DSF starting or ending on a hard cut can click. Exports and Measure do not include it. On one continuous recording split into tracks, you may notice a very short dip at each join.</li><li><p>DSF waveforms build faster, one channel per processor core.</p></li></ul>
+<h3>The file list</h3>
+<ul><li><strong>Three columns: Name, Type, Details.</strong> Click a heading to sort. The sort is the real order: what plays next and what a saved playlist holds.</li><li><strong>Dragging in many files</strong> now fills in each file's type and details straight away.</li><li><strong>Dropping a folder brings its sub-folders too.</strong></li><li>The <strong>metadata triangle</strong> has moved to the right-hand end of the row.</li><li><strong>Save</strong>, beside Open, saves the playlist. It lights when the list has changed, and saves over the playlist's own file. File &gt; Save Playlist... still asks for a name.</li><li><p>A newly loaded file always starts at the beginning. It could start partway through before.</p></li></ul>
+<h3>The window and the waveforms</h3>
+<ul><li><strong>The whole window scales as you resize it,</strong> text included. Menus and alerts stay their usual size.</li><li><strong>Mono and stereo files</strong> get large, detailed waveforms that fill the layout pane.</li><li><strong>Overs are marked in red.</strong> An over is at least 3 samples in a row at full scale. This is not true peak, and it is not the meter's over lamp, which lights on one sample.</li><li><p><strong>Stereo files</strong> no longer show a Source read-out, and leave room for the cover, which is now centred beside the loudness.</p></li></ul>
+<h3>Smaller changes</h3>
+<ul><li><strong>Measure</strong> no longer opens a report: it asks whether you want one, then where to save it.</li><li><strong>Ctrl-click any meter</strong> to clear every held peak and over lamp.</li><li><strong>Fix: a click going from one track to the next</strong> on resampled files. The hand-over between files is now a short crossfade.</li><li><strong>Fix: saving tags into some WAV files could crash the app.</strong> This affected a WAV being given a metadata block it did not already have.</li><li><p><strong>Loudness:</strong> the 2.0 and 5.1 fold-downs used for loudness measurement now follow Dolby's published Lo/Ro and BS.2127 rules. The EBU R128 / BS.1770-4 measurement itself is unchanged.</p></li></ul>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Does artwork stay put, and show in your other software, after Save and Apply to Album? Try it on copies of your masters first.</li><li>Do you still hear a click between tracks? Tell us the file type and your device's sample rate.</li><li><p>Does the window, the file list or the waveform drawing feel slow on a large folder or an ADM?</p></li></ul>
+<p>Everything else is as in 0.1.31.</p></details></section>
 <section id="v0-1-31"><h2>0.1.31 <span class="date">2026-10-31</span></h2><ul class="headlines"><li>DSD (.dsf) playback — please test.</li></ul><details><summary>Full notes</summary><p>DSD (.dsf) playback — please test.</p><h3>New: DSD files (.dsf)</h3>
 <p>The Player now opens <strong>DSF</strong> files (DSD64, DSD128, DSD256; mono up to 5.1). Open one from the file list or drag it in, like any other master.</p>
 <p>How it plays:</p>
