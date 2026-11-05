@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.32](#v0-1-32)** — 2026-11-05
+  - A file browser, artwork on your tracks, a three-column file list, and a window that scales.
 - **[0.1.31](#v0-1-31)** — 2026-10-31
   - DSD (.dsf) playback — please test.
 - **[0.1.30](#v0-1-30)** — 2026-10-26
@@ -69,6 +71,93 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-32"></a>
+## 0.1.32 — 2026-11-05
+
+A file browser, artwork on your tracks, a three-column file list, and a window that scales.
+
+### New: File > Files...
+
+A file browser in its own window.
+
+- **Double-click or drag** to add everything selected to the list. A **folder** brings all
+  the audio inside it, sub-folders included.
+- It lists only the audio files the Player can open.
+- The first time it opens, macOS may ask for access to your Music folder and network volumes.
+- Mac direct download only.
+
+### New: artwork on a track
+
+**Edit Metadata** has an **Album Artwork** row, with a picture and three buttons.
+
+- **Select...** (or drop an image on the picture) and **Remove** take effect when you press
+  **Save**.
+- **Apply to Album...** asks first, then writes the image into every file in the list that
+  names this file's album. Files on another album are skipped.
+- The image goes **into the file** in a **DSF, FLAC or WAV**. Your image is stored as it is,
+  and no audio sample is touched, though the file's size and date change.
+- **ADM masters** carry no artwork. Other formats keep the image's location beside the file.
+
+**Which picture a row shows:** the art in the file, always, if it has any. Otherwise the
+image chosen for that file; the album's cover, if the file's metadata names that album; an
+image named after the file; or a **cover, folder or front** image in the same folder, unless
+the file names a different album. A folder's image is only shown, never written into a file.
+
+### DSD files
+
+- A DSF's **title, artist, album, genre and ISRC** now show and save, in the file's own tag.
+- **DSD128 and DSD256 now play at 352.8 kHz** (384 kHz for the 48 kHz family). DSD64 stays at
+  176.4 / 192 kHz. A device at another rate gets sample-rate conversion, as for any file.
+- Each file gets a **3 ms fade at its start and end** during playback, because a DSF starting
+  or ending on a hard cut can click. Exports and Measure do not include it. On one continuous
+  recording split into tracks, you may notice a very short dip at each join.
+- DSF waveforms build faster, one channel per processor core.
+
+### The file list
+
+- **Three columns: Name, Type, Details.** Click a heading to sort. The sort is the real order:
+  what plays next and what a saved playlist holds.
+- **Dragging in many files** now fills in each file's type and details straight away.
+- **Dropping a folder brings its sub-folders too.**
+- The **metadata triangle** has moved to the right-hand end of the row.
+- **Save**, beside Open, saves the playlist. It lights when the list has changed, and saves
+  over the playlist's own file. File > Save Playlist... still asks for a name.
+- A newly loaded file always starts at the beginning. It could start partway through before.
+
+### The window and the waveforms
+
+- **The whole window scales as you resize it,** text included. Menus and alerts stay their
+  usual size.
+- **Mono and stereo files** get large, detailed waveforms that fill the layout pane.
+- **Overs are marked in red.** An over is at least 3 samples in a row at full scale. This is
+  not true peak, and it is not the meter's over lamp, which lights on one sample.
+- **Stereo files** no longer show a Source read-out, and leave room for the cover, which is now
+  centred beside the loudness.
+
+### Smaller changes
+
+- **Measure** no longer opens a report: it asks whether you want one, then where to save it.
+- **Ctrl-click any meter** to clear every held peak and over lamp.
+- **Fix: a click going from one track to the next** on resampled files. The hand-over between
+  files is now a short crossfade.
+- **Fix: saving tags into some WAV files could crash the app.** This affected a WAV being given
+  a metadata block it did not already have.
+- **Loudness:** the 2.0 and 5.1 fold-downs used for loudness measurement now follow Dolby's
+  published Lo/Ro and BS.2127 rules. The EBU R128 / BS.1770-4 measurement itself is unchanged.
+
+**What we would like to hear from testers**
+
+- Does artwork stay put, and show in your other software, after Save and Apply to Album? Try it
+  on copies of your masters first.
+- Do you still hear a click between tracks? Tell us the file type and your device's sample rate.
+- Does the window, the file list or the waveform drawing feel slow on a large folder or an ADM?
+
+Everything else is as in 0.1.31.
+
+[Back to the list of versions](#versions)
 
 ---
 
