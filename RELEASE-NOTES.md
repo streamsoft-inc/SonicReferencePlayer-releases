@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.35](#v0-1-35)** — 2026-11-06
+  - One setting removed, and engine fixes shared with soundBlade.
 - **[0.1.34](#v0-1-34)** — 2026-11-05
   - One fix.
 - **[0.1.33](#v0-1-33)** — 2026-11-05
@@ -75,6 +77,46 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-35"></a>
+## 0.1.35 — 2026-11-06
+
+One setting removed, and engine fixes shared with soundBlade.
+
+### Render Plug-ins Ahead is no longer a setting
+
+Playback now always renders 4 blocks ahead, and the row has gone from Settings. It is a safety margin
+for the CPU, not latency compensation: a plug-in that sometimes takes longer than a block, like a
+linear-phase EQ, is absorbed instead of dropping out. If you had it set to Off, that is now ignored.
+Controls respond that much later (4 blocks of 512 samples at 96 kHz is 21 ms), as they already did at
+the default.
+
+---
+
+### Fix: no click when stopping or seeking during the wait after Play
+
+Audio that had not been heard yet could come in abruptly if you pressed Stop or moved the playhead
+while Play was waiting for plug-in latency. It now ramps up from silence.
+
+---
+
+### Fix: automation on a plug-in in the Master slots
+
+If a Master slot's plug-in carries automation, it now follows the audio at that point, in 64-sample
+steps while a value moves, as an export does. It used to land early by the latency ahead of it.
+
+---
+
+**What we would like to hear from testers**
+
+- With a linear-phase EQ on the Master slots, is playback free of dropouts?
+- Do you hear any click when pressing Stop or moving the playhead just after pressing Play?
+
+Everything else is as in 0.1.34.
+
+[Back to the list of versions](#versions)
 
 ---
 
