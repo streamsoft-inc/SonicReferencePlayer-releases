@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-35"><span class="v">0.1.35</span><span class="d">2026-11-06</span></a></li>
 <li><a href="#v0-1-34"><span class="v">0.1.34</span><span class="d">2026-11-05</span></a></li>
 <li><a href="#v0-1-33"><span class="v">0.1.33</span><span class="d">2026-11-05</span></a></li>
 <li><a href="#v0-1-32"><span class="v">0.1.32</span><span class="d">2026-11-05</span></a></li>
@@ -92,6 +93,18 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-35"><h2>0.1.35 <span class="date">2026-11-06</span></h2><ul class="headlines"><li>One setting removed, and engine fixes shared with soundBlade.</li></ul><details><summary>Full notes</summary><p>One setting removed, and engine fixes shared with soundBlade.</p><h3>Render Plug-ins Ahead is no longer a setting</h3>
+<p>Playback now always renders 4 blocks ahead, and the row has gone from Settings. It is a safety margin for the CPU, not latency compensation: a plug-in that sometimes takes longer than a block, like a linear-phase EQ, is absorbed instead of dropping out. If you had it set to Off, that is now ignored. Controls respond that much later (4 blocks of 512 samples at 96 kHz is 21 ms), as they already did at the default.</p>
+<hr>
+<h3>Fix: no click when stopping or seeking during the wait after Play</h3>
+<p>Audio that had not been heard yet could come in abruptly if you pressed Stop or moved the playhead while Play was waiting for plug-in latency. It now ramps up from silence.</p>
+<hr>
+<h3>Fix: automation on a plug-in in the Master slots</h3>
+<p>If a Master slot's plug-in carries automation, it now follows the audio at that point, in 64-sample steps while a value moves, as an export does. It used to land early by the latency ahead of it.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>With a linear-phase EQ on the Master slots, is playback free of dropouts?</li><li><p>Do you hear any click when pressing Stop or moving the playhead just after pressing Play?</p></li></ul>
+<p>Everything else is as in 0.1.34.</p></details></section>
 <section id="v0-1-34"><h2>0.1.34 <span class="date">2026-11-05</span></h2><ul class="headlines"><li>One fix.</li></ul><details><summary>Full notes</summary><p>One fix.</p><h3>Fix: the Layout pane's Out column follows the speaker layout</h3>
 <p>Changing the speaker layout left the <strong>Out</strong> column showing the old layout's speaker names until something else redrew the list. It now updates straight away, from the Monitor menu, the Speakers tab in Settings and a saved layout alike.</p>
 <p>Everything else is as in 0.1.33.</p></details></section>
