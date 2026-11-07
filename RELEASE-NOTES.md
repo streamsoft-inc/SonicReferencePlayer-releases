@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.36](#v0-1-36)** — 2026-11-07
+  - Bit-perfect playback with a DIRECT lamp, Exclusive Access, MKV files, and Export removed from this edition.
 - **[0.1.35](#v0-1-35)** — 2026-11-06
   - One setting removed, and engine fixes shared with soundBlade.
 - **[0.1.34](#v0-1-34)** — 2026-11-05
@@ -77,6 +79,72 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-36"></a>
+## 0.1.36 — 2026-11-07
+
+Bit-perfect playback with a DIRECT lamp, Exclusive Access, MKV files, and Export removed from this edition.
+
+### Bit-perfect playback, shown by the DIRECT lamp
+
+When nothing in the path changes a PCM file, it reaches the output device with its own sample values.
+The new **DIRECT** lamp lights when that is so. **DIRECT+G** means only the Main Output volume and
+dither are applied after it; at 0.0 dB it is DIRECT. Hover over the lamp for what it means.
+
+---
+
+### Dither comes after the Main Output volume
+
+The Main Output volume is now applied last, followed by dither. Automatic dither turns on only when
+something changes the samples or the volume is not at 0.0 dB, so a DIRECT file is never dithered.
+
+---
+
+### Exclusive Access (hog mode)
+
+A new tick in **Audio I/O Settings** claims the audio device for the Player alone, so no other
+application can mix into it or change its sample rate. It is off by default. While it is on and
+another application holds the device, playback stops and the Player says so. The first time a file
+plays DIRECT with it off, the Player offers to turn it on.
+
+---
+
+### MKV files
+
+Audio in MKV files now opens: PCM, FLAC (Auro-3D carriers included) and Dolby Digital / Dolby Digital
+Plus. DTS, DTS-HD MA and Dolby TrueHD do not play. An MP4 with Dolby Digital Plus Atmos (JOC) says so
+in its details: it plays as its channel bed, without the Atmos objects.
+
+---
+
+### Export and Name Tags removed
+
+**File ▸ Export…** and the **Name Tags** settings page are gone from this edition. The Player plays
+and checks masters; it does not make new audio files. Save Playlist, metadata and Measure reports
+are unchanged.
+
+---
+
+### Also
+
+- **Speaker Positions** is hidden in Settings for now. Saved positions are kept.
+- The Sonic Studio logo is updated, and the Open, Save and loudness reference buttons have new tooltips.
+- The User Guide has new screenshots.
+
+---
+
+**What we would like to hear from testers**
+
+- Does the DIRECT lamp light for your 24-bit and 16-bit files at 0.0 dB, with the device at the file's rate?
+- With Exclusive Access on, does another application (Music, a browser) stay silent, and does the
+  Player recover when it is turned off?
+- Do your MKV files open and play?
+
+Everything else is as in 0.1.35.
+
+[Back to the list of versions](#versions)
 
 ---
 
