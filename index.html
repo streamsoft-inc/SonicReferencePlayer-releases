@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-36"><span class="v">0.1.36</span><span class="d">2026-11-07</span></a></li>
 <li><a href="#v0-1-35"><span class="v">0.1.35</span><span class="d">2026-11-06</span></a></li>
 <li><a href="#v0-1-34"><span class="v">0.1.34</span><span class="d">2026-11-05</span></a></li>
 <li><a href="#v0-1-33"><span class="v">0.1.33</span><span class="d">2026-11-05</span></a></li>
@@ -93,6 +94,27 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-36"><h2>0.1.36 <span class="date">2026-11-07</span></h2><ul class="headlines"><li>Bit-perfect playback with a DIRECT lamp, Exclusive Access, MKV files, and Export removed from this edition.</li></ul><details><summary>Full notes</summary><p>Bit-perfect playback with a DIRECT lamp, Exclusive Access, MKV files, and Export removed from this edition.</p><h3>Bit-perfect playback, shown by the DIRECT lamp</h3>
+<p>When nothing in the path changes a PCM file, it reaches the output device with its own sample values. The new <strong>DIRECT</strong> lamp lights when that is so. <strong>DIRECT+G</strong> means only the Main Output volume and dither are applied after it; at 0.0 dB it is DIRECT. Hover over the lamp for what it means.</p>
+<hr>
+<h3>Dither comes after the Main Output volume</h3>
+<p>The Main Output volume is now applied last, followed by dither. Automatic dither turns on only when something changes the samples or the volume is not at 0.0 dB, so a DIRECT file is never dithered.</p>
+<hr>
+<h3>Exclusive Access (hog mode)</h3>
+<p>A new tick in <strong>Audio I/O Settings</strong> claims the audio device for the Player alone, so no other application can mix into it or change its sample rate. It is off by default. While it is on and another application holds the device, playback stops and the Player says so. The first time a file plays DIRECT with it off, the Player offers to turn it on.</p>
+<hr>
+<h3>MKV files</h3>
+<p>Audio in MKV files now opens: PCM, FLAC (Auro-3D carriers included) and Dolby Digital / Dolby Digital Plus. DTS, DTS-HD MA and Dolby TrueHD do not play. An MP4 with Dolby Digital Plus Atmos (JOC) says so in its details: it plays as its channel bed, without the Atmos objects.</p>
+<hr>
+<h3>Export and Name Tags removed</h3>
+<p><strong>File ▸ Export…</strong> and the <strong>Name Tags</strong> settings page are gone from this edition. The Player plays and checks masters; it does not make new audio files. Save Playlist, metadata and Measure reports are unchanged.</p>
+<hr>
+<h3>Also</h3>
+<ul><li><strong>Speaker Positions</strong> is hidden in Settings for now. Saved positions are kept.</li><li>The Sonic Studio logo is updated, and the Open, Save and loudness reference buttons have new tooltips.</li><li><p>The User Guide has new screenshots.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Does the DIRECT lamp light for your 24-bit and 16-bit files at 0.0 dB, with the device at the file's rate?</li><li>With Exclusive Access on, does another application (Music, a browser) stay silent, and does the Player recover when it is turned off?</li><li><p>Do your MKV files open and play?</p></li></ul>
+<p>Everything else is as in 0.1.35.</p></details></section>
 <section id="v0-1-35"><h2>0.1.35 <span class="date">2026-11-06</span></h2><ul class="headlines"><li>One setting removed, and engine fixes shared with soundBlade.</li></ul><details><summary>Full notes</summary><p>One setting removed, and engine fixes shared with soundBlade.</p><h3>Render Plug-ins Ahead is no longer a setting</h3>
 <p>Playback now always renders 4 blocks ahead, and the row has gone from Settings. It is a safety margin for the CPU, not latency compensation: a plug-in that sometimes takes longer than a block, like a linear-phase EQ, is absorbed instead of dropping out. If you had it set to Off, that is now ignored. Controls respond that much later (4 blocks of 512 samples at 96 kHz is 21 ms), as they already did at the default.</p>
 <hr>
