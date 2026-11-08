@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.37](#v0-1-37)** — 2026-11-08
+  - DTS, DTS-HD Master Audio and Dolby TrueHD in MKV files, through FFmpeg you install yourself.
 - **[0.1.36](#v0-1-36)** — 2026-11-07
   - Bit-perfect playback with a DIRECT lamp, Exclusive Access, MKV files, and Export removed from this edition.
 - **[0.1.35](#v0-1-35)** — 2026-11-06
@@ -79,6 +81,44 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-37"></a>
+## 0.1.37 — 2026-11-08
+
+DTS, DTS-HD Master Audio and Dolby TrueHD in MKV files, through FFmpeg you install yourself.
+
+### DTS and Dolby TrueHD in MKV
+
+The Player does not include a DTS or Dolby TrueHD decoder. It now uses **FFmpeg**, a free program
+you download and put in place yourself. With it, the DTS, DTS-HD MA and Dolby TrueHD tracks of an
+MKV play **bit-exact**: an Auro-3D carrier inside DTS-HD MA survives.
+
+- Put the `ffmpeg` program in `~/Library/Application Support/Sonic Reference Player/Codecs/`
+  (the Player creates the folder the first time it needs it). An FFmpeg already installed in
+  `/opt/homebrew/bin` or `/usr/local/bin` is found too.
+- No restart needed: open the MKV again.
+- Without FFmpeg, the file's row says so, and the Player tells you where to put it.
+- If macOS blocks a downloaded copy, the Player says FFmpeg *would not run*. The User Guide's new
+  section **Playing DTS and Dolby TrueHD** shows how to unblock it.
+- Dolby TrueHD with Atmos plays its channel bed and says *Atmos not decoded*.
+- Starting play or jumping takes about a twentieth of a second longer than other files, and the
+  first opening of a long MKV takes some seconds while the Player reads through it.
+- Mac only.
+
+The Player plays the MKV's default audio track. Choosing between several tracks in one file comes later.
+
+---
+
+**What we would like to hear from testers**
+
+- With FFmpeg in place, do your DTS and TrueHD MKVs play, and do the channel names look right?
+- Without it, is it clear what to do?
+
+Everything else is as in 0.1.36.
+
+[Back to the list of versions](#versions)
 
 ---
 
