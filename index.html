@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-38"><span class="v">0.1.38</span><span class="d">2026-11-08</span></a></li>
 <li><a href="#v0-1-37"><span class="v">0.1.37</span><span class="d">2026-11-08</span></a></li>
 <li><a href="#v0-1-36"><span class="v">0.1.36</span><span class="d">2026-11-07</span></a></li>
 <li><a href="#v0-1-35"><span class="v">0.1.35</span><span class="d">2026-11-06</span></a></li>
@@ -95,6 +96,29 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-38"><h2>0.1.38 <span class="date">2026-11-08</span></h2><ul class="headlines"><li>Pyramix MTFF masters and DDP images play, their tracks are one click away, and the device can follow each file&#x27;s sample rate.</li></ul><details><summary>Full notes</summary><p>Pyramix MTFF masters and DDP images play, their tracks are one click away, and the device can follow each file's sample rate.</p><h3>Pyramix MTFF</h3>
+<p>MTFF masters open as one row with their album name, artist, cover and track list. Only 32-bit float stereo has been seen so far. Any other layout is refused, and says why.</p>
+<hr>
+<h3>DDP images</h3>
+<p>The Player now plays DDP images: open the image file or drop its folder. The row is named after the folder. In the Mac App Store and iPad versions, drop the folder.</p>
+<hr>
+<h3>Tracks under the triangle</h3>
+<p>Click the triangle on an MTFF, a DDP or an MKV with chapters. Under the metadata you now get <strong>one row per track</strong>: number and title, ISRC, and length (an MKV chapter has no ISRC).</p>
+<ul><li><strong>Click a track to play from it.</strong> Play carries on to the end of the file.</li><li>The track you are hearing turns white.</li><li><p>The tracks are in disc order however the list is sorted.</p></li></ul>
+<p>The same marks are drawn on the waveform.</p>
+<hr>
+<h3>Change Sample Rate based on File</h3>
+<p>A new tick in <strong>Audio I/O Settings</strong>, off by default. Before a file plays, the app stops, sets the device to the file's rate, waits up to half a second for the device to report it, then plays.</p>
+<ul><li>It comes ahead of <strong>Enable SRC</strong>. If the device cannot take the rate, Enable SRC decides: on converts the file, off plays it at the wrong rate.</li><li><p>The device stays at the last file's rate. Files needing different rates do not play gaplessly.</p></li></ul>
+<hr>
+<h3>Artist Connection</h3>
+<ul><li><strong>Streaming is faster to start and scrub.</strong> Streamed audio is now held in memory while the app is open, shared by playback and waveform drawing, and read ahead further.</li><li><strong>Double-click an album</strong> in the Albums tab, or right-click and choose <strong>Add Album to File Pane</strong>, to add its tracks in album order at the bottom of the list. Each streams like a Library file. A row shows the track's title.</li><li><strong>Downloading from Artist Connection is switched off for now.</strong> Files stream. Copies you already downloaded still open.</li><li><p>A file's <strong>Type</strong> column says PCM and its <strong>Details</strong> the channel count, and a name no longer ends in its layout and rate.</p></li></ul>
+<hr>
+<h3>Also</h3>
+<ul><li><strong>⌘-O</strong> opens files.</li><li><strong>Object view:</strong> every speaker now meters from its own level, panned objects included. Speakers and object spheres are drawn in blue underneath.</li><li><p>The User Guide covers all of this.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Do an MTFF's and a DDP's tracks and marks land where the disc says?</li><li>With Change Sample Rate ticked, does your interface reach each file's rate before the sound starts?</li></ul></details></section>
 <section id="v0-1-37"><h2>0.1.37 <span class="date">2026-11-08</span></h2><ul class="headlines"><li>DTS, DTS-HD Master Audio and Dolby TrueHD in MKV files, through FFmpeg you install yourself.</li></ul><details><summary>Full notes</summary><p>DTS, DTS-HD Master Audio and Dolby TrueHD in MKV files, through FFmpeg you install yourself.</p><h3>DTS and Dolby TrueHD in MKV</h3>
 <p>The Player does not include a DTS or Dolby TrueHD decoder. It now uses <strong>FFmpeg</strong>, a free program you download and put in place yourself. With it, the DTS, DTS-HD MA and Dolby TrueHD tracks of an MKV play <strong>bit-exact</strong>: an Auro-3D carrier inside DTS-HD MA survives.</p>
 <ul><li>Put the <code>ffmpeg</code> program in <code>~/Library/Application Support/Sonic Reference Player/Codecs/</code> (the Player creates the folder the first time it needs it). An FFmpeg already installed in <code>/opt/homebrew/bin</code> or <code>/usr/local/bin</code> is found too.</li><li>No restart needed: open the MKV again.</li><li>Without FFmpeg, the file's row says so, and the Player tells you where to put it.</li><li>If macOS blocks a downloaded copy, the Player says FFmpeg <em>would not run</em>. The User Guide's new section <strong>Playing DTS and Dolby TrueHD</strong> shows how to unblock it.</li><li>Dolby TrueHD with Atmos plays its channel bed and says <em>Atmos not decoded</em>.</li><li>Starting play or jumping takes about a twentieth of a second longer than other files, and the first opening of a long MKV takes some seconds while the Player reads through it.</li><li><p>Mac only.</p></li></ul>
