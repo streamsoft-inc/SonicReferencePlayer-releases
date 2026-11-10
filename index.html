@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-40"><span class="v">0.1.40</span><span class="d">2026-11-10</span></a></li>
 <li><a href="#v0-1-39"><span class="v">0.1.39</span><span class="d">2026-11-10</span></a></li>
 <li><a href="#v0-1-38"><span class="v">0.1.38</span><span class="d">2026-11-08</span></a></li>
 <li><a href="#v0-1-37"><span class="v">0.1.37</span><span class="d">2026-11-08</span></a></li>
@@ -97,6 +98,19 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-40"><h2>0.1.40 <span class="date">2026-11-10</span></h2><ul class="headlines"><li>MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.</li></ul><details><summary>Full notes</summary><p>MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.</p><h3>MKV: fast after the first open</h3>
+<p>To play an MKV, the Player first reads the whole file once to find where its audio is. On a long film that takes a while: about 10 seconds for a 65-minute Dolby TrueHD track, longer when it streams from Artist Connection.</p>
+<ul><li><strong>The first open now shows a progress bar</strong>: <em>Reading "name.mkv" for the first time</em>, with a percentage. The Player has not stopped responding.</li><li><strong>What it finds is saved</strong>, so every later open of that file is fast, even after you quit and relaunch (about 10 seconds down to a fraction of a second on that film). It is kept in the Player's own cache folder, never beside your file, and read again only if the file changes.</li><li><p>An MKV streamed from Artist Connection is read once, not again for each use.</p></li></ul>
+<hr>
+<h3>A launch that stopped responding</h3>
+<p>If the Player stopped responding while opening your list and had to be Force Quit, the next launch now brings the list back <strong>without opening any file</strong>, and says so.</p>
+<ul><li>Double-click a file, or select it and press Play, to open it.</li><li><p>If one file stops the Player again, <strong>right-click it and choose Remove from List</strong>. That does not open it.</p></li></ul>
+<hr>
+<h3>Help &gt; Log File...</h3>
+<p>Shows the Player's log file in Finder, so you can send it to us when something goes wrong.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Does an MKV open quickly the second time, including after a relaunch?</li><li>If the Player stops responding, please send the log (Help &gt; Log File...).</li></ul></details></section>
 <section id="v0-1-39"><h2>0.1.39 <span class="date">2026-11-10</span></h2><ul class="headlines"><li>You can say what a file&#x27;s channels are, 9.1.6 and 9.1.4 now use the standard SMPTE channel order, and disc images bring their album and track details with them.</li></ul><details><summary>Full notes</summary><p>You can say what a file's channels are, 9.1.6 and 9.1.4 now use the standard SMPTE channel order, and disc images bring their album and track details with them.</p><h3>Say what a file's channels are</h3>
 <p><strong>Ctrl-click (or right-click) the Source read-out</strong> to choose the layout of the selected file: every layout, Channel Based, or Auto (what the file itself says). Binaural is offered on a two-channel file.</p>
 <ul><li>The choice decides the rows' speaker names, the Desk, routing, Measure and Render.</li><li>It is kept for that file, with the list and the session. <strong>It is never written into the audio file.</strong></li><li>On an ADM it names the bed; the objects are unchanged.</li><li><p>Choosing reloads the file from its start.</p></li></ul>
