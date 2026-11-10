@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.39](#v0-1-39)** — 2026-11-10
+  - You can say what a file's channels are, 9.1.6 and 9.1.4 now use the standard SMPTE channel order, and disc images bring their album and track details with them.
 - **[0.1.38](#v0-1-38)** — 2026-11-08
   - Pyramix MTFF masters and DDP images play, their tracks are one click away, and the device can follow each file's sample rate.
 - **[0.1.37](#v0-1-37)** — 2026-11-08
@@ -83,6 +85,65 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-39"></a>
+## 0.1.39 — 2026-11-10
+
+You can say what a file's channels are, 9.1.6 and 9.1.4 now use the standard SMPTE channel order, and disc images bring their album and track details with them.
+
+### Say what a file's channels are
+
+**Ctrl-click (or right-click) the Source read-out** to choose the layout of the selected file: every
+layout, Channel Based, or Auto (what the file itself says). Binaural is offered on a two-channel file.
+
+- The choice decides the rows' speaker names, the Desk, routing, Measure and Render.
+- It is kept for that file, with the list and the session. **It is never written into the audio file.**
+- On an ADM it names the bed; the objects are unchanged.
+- Choosing reloads the file from its start.
+
+---
+
+### 9.1.6 and 9.1.4 in SMPTE order
+
+In SMPTE order the outputs now run 1 to 16 in order: L R C LFE Lss Rss Lrs Rrs, then the wides **Lw Rw on
+outputs 9 and 10**, then the heights. The Speaker Layout window lists the rows in that order.
+
+- A 16-channel (9.1.6) or 14-channel (9.1.4) file with no layout of its own is read in this order too.
+- Film order is unchanged.
+
+---
+
+### Disc images: album and track details
+
+- **MTFF masters open at any channel count** (a 12-channel 7.1.4 one has been seen). The channels are named
+  Ch 1, Ch 2…, since the file does not say which speaker each one is; Ctrl-click Source to say.
+- An MTFF's UPC, album title, artist, label, catalog number and genre fill in **Album Info** where it is
+  blank. Nothing you already typed is replaced, and a disc naming another album adds nothing.
+- A DDP's text file now gives each track's performer, and the disc's title and performer.
+- Track rows read "Title — Performer", with the credits in the tooltip. **Right-click a track > Track
+  Metadata...** shows everything the disc says about it (read only).
+
+---
+
+### AC Connect
+
+When the Artist Connection app plays to the Player:
+
+- The app is told when each track ends, so it moves on to the next one correctly.
+- A stream that fails is reported to the app once, not over and over.
+- Stop and disconnect from the app clear the playlist.
+
+---
+
+**What we would like to hear from testers**
+
+- On a 9.1.6 or 9.1.4 system, does every speaker play what it should?
+- Does choosing a layout from Source give the rows and the sound you expect?
+- With AC Connect, does a playlist play through from one track to the next?
+
+[Back to the list of versions](#versions)
 
 ---
 
