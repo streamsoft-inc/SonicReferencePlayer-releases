@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.40](#v0-1-40)** — 2026-11-10
+  - MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.
 - **[0.1.39](#v0-1-39)** — 2026-11-10
   - You can say what a file's channels are, 9.1.6 and 9.1.4 now use the standard SMPTE channel order, and disc images bring their album and track details with them.
 - **[0.1.38](#v0-1-38)** — 2026-11-08
@@ -85,6 +87,51 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-40"></a>
+## 0.1.40 — 2026-11-10
+
+MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.
+
+### MKV: fast after the first open
+
+To play an MKV, the Player first reads the whole file once to find where its audio is. On a long film that
+takes a while: about 10 seconds for a 65-minute Dolby TrueHD track, longer when it streams from Artist
+Connection.
+
+- **The first open now shows a progress bar**: *Reading "name.mkv" for the first time*, with a percentage.
+  The Player has not stopped responding.
+- **What it finds is saved**, so every later open of that file is fast, even after you quit and relaunch
+  (about 10 seconds down to a fraction of a second on that film). It is kept in the Player's own cache folder,
+  never beside your file, and read again only if the file changes.
+- An MKV streamed from Artist Connection is read once, not again for each use.
+
+---
+
+### A launch that stopped responding
+
+If the Player stopped responding while opening your list and had to be Force Quit, the next launch now
+brings the list back **without opening any file**, and says so.
+
+- Double-click a file, or select it and press Play, to open it.
+- If one file stops the Player again, **right-click it and choose Remove from List**. That does not open it.
+
+---
+
+### Help > Log File...
+
+Shows the Player's log file in Finder, so you can send it to us when something goes wrong.
+
+---
+
+**What we would like to hear from testers**
+
+- Does an MKV open quickly the second time, including after a relaunch?
+- If the Player stops responding, please send the log (Help > Log File...).
+
+[Back to the list of versions](#versions)
 
 ---
 
