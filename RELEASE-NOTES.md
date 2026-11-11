@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.41](#v0-1-41)** — 2026-11-11
+  - Upload to Artist Connection, export from Album Info, and a new layout for the top half.
 - **[0.1.40](#v0-1-40)** — 2026-11-10
   - MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.
 - **[0.1.39](#v0-1-39)** — 2026-11-10
@@ -87,6 +89,52 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-41"></a>
+## 0.1.41 — 2026-11-11
+
+Upload to Artist Connection, export from Album Info, and a new layout for the top half.
+
+### Artist Connection tab
+
+- **Upload** chooses files or folders (folders with their subfolders) and uploads into
+  the selected library folder. A folder that already exists is added to, not duplicated.
+  Hidden files and sidecars are skipped.
+- **New Folder** creates a folder in the library.
+- Files and folders can be dragged in.
+- AC Connect plays plain web links, signed out as well.
+
+---
+
+### Album Info
+
+- **Export** (CSV or DDEX) is in the Album Info window.
+- A DDEX release that is missing details (label, UPC...) can still be written:
+  **Export Anyway** leaves those fields blank.
+- Titles and artists come from each file's own tags. No release date means today.
+- Opening it fills a blank album and artist from the selected file, and the layout and
+  genre when every file agrees.
+
+---
+
+### Layout
+
+- The top half is in four columns: Overview | Loudness | the album, with the timecode
+  under it | Desk and the Monitor meters with the fader. Play is under the album.
+- **Help > Explore the Player** opens a page that shows what each part does.
+- Save buttons turn blue when there is something to save.
+- **Cmd-,** opens Settings.
+
+---
+
+**What we would like to hear from testers**
+
+- Does Upload put everything where it should in the library?
+- Does the new top half fit your screen?
+
+[Back to the list of versions](#versions)
 
 ---
 
