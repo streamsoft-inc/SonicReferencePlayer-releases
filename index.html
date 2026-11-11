@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-41"><span class="v">0.1.41</span><span class="d">2026-11-11</span></a></li>
 <li><a href="#v0-1-40"><span class="v">0.1.40</span><span class="d">2026-11-10</span></a></li>
 <li><a href="#v0-1-39"><span class="v">0.1.39</span><span class="d">2026-11-10</span></a></li>
 <li><a href="#v0-1-38"><span class="v">0.1.38</span><span class="d">2026-11-08</span></a></li>
@@ -98,6 +99,17 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-41"><h2>0.1.41 <span class="date">2026-11-11</span></h2><ul class="headlines"><li>Upload to Artist Connection, export from Album Info, and a new layout for the top half.</li></ul><details><summary>Full notes</summary><p>Upload to Artist Connection, export from Album Info, and a new layout for the top half.</p><h3>Artist Connection tab</h3>
+<ul><li><strong>Upload</strong> chooses files or folders (folders with their subfolders) and uploads into the selected library folder. A folder that already exists is added to, not duplicated. Hidden files and sidecars are skipped.</li><li><strong>New Folder</strong> creates a folder in the library.</li><li>Files and folders can be dragged in.</li><li><p>AC Connect plays plain web links, signed out as well.</p></li></ul>
+<hr>
+<h3>Album Info</h3>
+<ul><li><strong>Export</strong> (CSV or DDEX) is in the Album Info window.</li><li>A DDEX release that is missing details (label, UPC...) can still be written: <strong>Export Anyway</strong> leaves those fields blank.</li><li>Titles and artists come from each file's own tags. No release date means today.</li><li><p>Opening it fills a blank album and artist from the selected file, and the layout and genre when every file agrees.</p></li></ul>
+<hr>
+<h3>Layout</h3>
+<ul><li>The top half is in four columns: Overview | Loudness | the album, with the timecode under it | Desk and the Monitor meters with the fader. Play is under the album.</li><li><strong>Help &gt; Explore the Player</strong> opens a page that shows what each part does.</li><li>Save buttons turn blue when there is something to save.</li><li><p><strong>Cmd-,</strong> opens Settings.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Does Upload put everything where it should in the library?</li><li>Does the new top half fit your screen?</li></ul></details></section>
 <section id="v0-1-40"><h2>0.1.40 <span class="date">2026-11-10</span></h2><ul class="headlines"><li>MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.</li></ul><details><summary>Full notes</summary><p>MKV files open quickly after the first time, the first open shows its progress, and a launch that got stuck no longer gets stuck again.</p><h3>MKV: fast after the first open</h3>
 <p>To play an MKV, the Player first reads the whole file once to find where its audio is. On a long film that takes a while: about 10 seconds for a 65-minute Dolby TrueHD track, longer when it streams from Artist Connection.</p>
 <ul><li><strong>The first open now shows a progress bar</strong>: <em>Reading "name.mkv" for the first time</em>, with a percentage. The Player has not stopped responding.</li><li><strong>What it finds is saved</strong>, so every later open of that file is fast, even after you quit and relaunch (about 10 seconds down to a fraction of a second on that film). It is kept in the Player's own cache folder, never beside your file, and read again only if the file changes.</li><li><p>An MKV streamed from Artist Connection is read once, not again for each use.</p></li></ul>
