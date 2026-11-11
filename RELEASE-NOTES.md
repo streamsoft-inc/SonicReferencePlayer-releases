@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.42](#v0-1-42)** — 2026-11-11
+  - New Loop modes, selecting part of a file, object sizes in the room, and the Mac release is now Sonic Reference Player Pro.
 - **[0.1.41](#v0-1-41)** — 2026-11-11
   - Upload to Artist Connection, export from Album Info, and a new layout for the top half.
 - **[0.1.40](#v0-1-40)** — 2026-11-10
@@ -89,6 +91,65 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-42"></a>
+## 0.1.42 — 2026-11-11
+
+New Loop modes, selecting part of a file, object sizes in the room, and the Mac release is now **Sonic Reference Player Pro**.
+
+### Sonic Reference Player Pro
+
+- The Mac download is **Sonic Reference Player Pro** — the full feature set, for
+  testers. It has its own name and settings; the first launch copies your existing
+  settings across.
+- The App Store and iPad edition is **Sonic Reference Player**.
+
+---
+
+### Loop
+
+- **Loop** is a square button that moves on with each click:
+  - **Off** (white arrows) — the list plays through and stops after the last file.
+  - **Loop 1** (blue arrows with a 1) — this file, again and again, **from its start**.
+  - **Loop All** (blue arrows) — the list, back to the first file after the last.
+  - **Loop Selection** (blue arrows with a yellow bar) — the selection, again and
+    again; offered when there is one.
+
+---
+
+### Selecting part of a file
+
+- **Drag across the Layout's Overview column** to select part of the file, as in a
+  soundBlade EDL (a yellow band with red edges). It is for playing only.
+- When stopped, Play starts at the selection. A click clears it.
+
+---
+
+### ADM masters
+
+- **An ADM with objects has a 7.1.4 Source** — its bed (7.1.2 at most in Dolby
+  Atmos) and objects mixed together. The Overview still shows the bed as **Bed
+  configuration**; the Monitor is yours to set.
+- Objects in the room **scale with the view**, and an object with a size has a
+  **faint ring** as wide as the area it spreads over.
+
+---
+
+### Also
+
+- **Help ▸ Show Tour** is gone; the tour still shows on first launch.
+
+---
+
+**What we would like to hear from testers**
+
+- Do the four Loop modes do what you expect?
+- Does selecting in the Overview column feel like soundBlade's?
+- Does Pro pick up your settings on first launch?
+
+[Back to the list of versions](#versions)
 
 ---
 
