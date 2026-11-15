@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.43](#v0-1-43)** — 2026-11-15
+  - A maintenance release of Sonic Reference Player Pro, built from the same playback engine as soundBlade 1.1.140.
 - **[0.1.42](#v0-1-42)** — 2026-11-11
   - New Loop modes, selecting part of a file, object sizes in the room, and the Mac release is now Sonic Reference Player Pro.
 - **[0.1.41](#v0-1-41)** — 2026-11-11
@@ -91,6 +93,29 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-43"></a>
+## 0.1.43 — 2026-11-15
+
+A maintenance release of **Sonic Reference Player Pro**, built from the same playback engine as soundBlade 1.1.140.
+
+### What changed
+
+- **The playback engine is the one in soundBlade 1.1.140.** That release changed
+  where playback starts a plug-in, so that playback and an export match. The Player
+  hosts no plug-ins on a timeline, so there is nothing new to see or hear here — the
+  two applications are simply kept on one engine.
+- Nothing else has changed since 0.1.42.
+
+---
+
+**What we would like to hear from testers**
+
+- Anything that plays differently from 0.1.42. Nothing should.
+
+[Back to the list of versions](#versions)
 
 ---
 
