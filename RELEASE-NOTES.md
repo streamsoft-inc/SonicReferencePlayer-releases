@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.44](#v0-1-44)** — 2026-11-17
+  - Sonic Reference Player Pro. This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.
 - **[0.1.43](#v0-1-43)** — 2026-11-15
   - A maintenance release of Sonic Reference Player Pro, built from the same playback engine as soundBlade 1.1.140.
 - **[0.1.42](#v0-1-42)** — 2026-11-11
@@ -93,6 +95,46 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-44"></a>
+## 0.1.44 — 2026-11-17
+
+**Sonic Reference Player Pro.** This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.
+
+### AC Connect (playing from the Pure Audio Streaming app)
+
+- **Fixed "Could not stream ... Item not found or not accessible" on the phone.**
+  The Player replaced the link the phone sent with a reference to this computer's own
+  Artist Connection studio. When the track was not in that studio, it could not play.
+  Every track now plays the link the phone sent.
+- **An old error is no longer sent to the phone.** A file list restored at launch could
+  report its own failed reads against the phone's new playlist.
+- **Stop and disconnect keep the playlist.** The phone goes on to send Play and seek for
+  the same tracks, and they now work.
+- **An expired Artist Connection sign-in says so**, and signs out, instead of failing
+  on every request. Log in again in Settings > Accounts.
+- Every AC Connect command is written to the log with its answer.
+
+---
+
+### iLok protection
+
+- **The Player now uses PACE Fusion 6.** Your existing licence should carry over. With
+  no licence, the activation window appears at launch.
+- **If the licence is removed while the Player is open**, playback pauses and a message
+  stays up until the licence is found again.
+
+---
+
+**What we would like to hear from testers**
+
+- Does the Pure Audio Streaming app play to the Player through AC Connect? If not,
+  please send the log (Help > Log File...).
+- Does your iLok licence open this build without asking again?
+
+[Back to the list of versions](#versions)
 
 ---
 
