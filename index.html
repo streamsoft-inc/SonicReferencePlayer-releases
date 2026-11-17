@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-44"><span class="v">0.1.44</span><span class="d">2026-11-17</span></a></li>
 <li><a href="#v0-1-43"><span class="v">0.1.43</span><span class="d">2026-11-15</span></a></li>
 <li><a href="#v0-1-42"><span class="v">0.1.42</span><span class="d">2026-11-11</span></a></li>
 <li><a href="#v0-1-41"><span class="v">0.1.41</span><span class="d">2026-11-11</span></a></li>
@@ -101,6 +102,14 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-44"><h2>0.1.44 <span class="date">2026-11-17</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.</p><h3>AC Connect (playing from the Pure Audio Streaming app)</h3>
+<ul><li><strong>Fixed "Could not stream ... Item not found or not accessible" on the phone.</strong> The Player replaced the link the phone sent with a reference to this computer's own Artist Connection studio. When the track was not in that studio, it could not play. Every track now plays the link the phone sent.</li><li><strong>An old error is no longer sent to the phone.</strong> A file list restored at launch could report its own failed reads against the phone's new playlist.</li><li><strong>Stop and disconnect keep the playlist.</strong> The phone goes on to send Play and seek for the same tracks, and they now work.</li><li><strong>An expired Artist Connection sign-in says so</strong>, and signs out, instead of failing on every request. Log in again in Settings &gt; Accounts.</li><li><p>Every AC Connect command is written to the log with its answer.</p></li></ul>
+<hr>
+<h3>iLok protection</h3>
+<ul><li><strong>The Player now uses PACE Fusion 6.</strong> Your existing licence should carry over. With no licence, the activation window appears at launch.</li><li><p><strong>If the licence is removed while the Player is open</strong>, playback pauses and a message stays up until the licence is found again.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Does the Pure Audio Streaming app play to the Player through AC Connect? If not, please send the log (Help &gt; Log File...).</li><li>Does your iLok licence open this build without asking again?</li></ul></details></section>
 <section id="v0-1-43"><h2>0.1.43 <span class="date">2026-11-15</span></h2><ul class="headlines"><li>A maintenance release of Sonic Reference Player Pro, built from the same playback engine as soundBlade 1.1.140.</li></ul><details><summary>Full notes</summary><p>A maintenance release of <strong>Sonic Reference Player Pro</strong>, built from the same playback engine as soundBlade 1.1.140.</p><h3>What changed</h3>
 <ul><li><strong>The playback engine is the one in soundBlade 1.1.140.</strong> That release changed where playback starts a plug-in, so that playback and an export match. The Player hosts no plug-ins on a timeline, so there is nothing new to see or hear here — the two applications are simply kept on one engine.</li><li><p>Nothing else has changed since 0.1.42.</p></li></ul>
 <hr>
