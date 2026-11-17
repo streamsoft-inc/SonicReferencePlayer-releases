@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.45](#v0-1-45)** — 2026-11-17
+  - Sonic Reference Player Pro. A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine's plug-in and latency handling was rewritten.
 - **[0.1.44](#v0-1-44)** — 2026-11-17
   - Sonic Reference Player Pro. This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.
 - **[0.1.43](#v0-1-43)** — 2026-11-15
@@ -95,6 +97,29 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-45"></a>
+## 0.1.45 — 2026-11-17
+
+**Sonic Reference Player Pro.** A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine's plug-in and latency handling was rewritten.
+
+### Changes
+
+- No new features and no visible changes.
+- The playback engine is the same code as soundBlade 1.1.143. The rewritten parts handle plug-ins
+  and latency on the soundBlade Desk, which the Player does not use, but they are in the
+  same playback path.
+
+---
+
+**What we would like to hear from testers**
+
+- Does everything play as it did in 0.1.44? Any difference in playback, meters or
+  gapless play-through, please send the log (Help > Log File...).
+
+[Back to the list of versions](#versions)
 
 ---
 
