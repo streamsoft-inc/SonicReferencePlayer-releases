@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-45"><span class="v">0.1.45</span><span class="d">2026-11-17</span></a></li>
 <li><a href="#v0-1-44"><span class="v">0.1.44</span><span class="d">2026-11-17</span></a></li>
 <li><a href="#v0-1-43"><span class="v">0.1.43</span><span class="d">2026-11-15</span></a></li>
 <li><a href="#v0-1-42"><span class="v">0.1.42</span><span class="d">2026-11-11</span></a></li>
@@ -102,6 +103,11 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-45"><h2>0.1.45 <span class="date">2026-11-17</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine&#x27;s plug-in and latency handling was rewritten.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine's plug-in and latency handling was rewritten.</p><h3>Changes</h3>
+<ul><li>No new features and no visible changes.</li><li><p>The playback engine is the same code as soundBlade 1.1.143. The rewritten parts handle plug-ins and latency on the soundBlade Desk, which the Player does not use, but they are in the same playback path.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Does everything play as it did in 0.1.44? Any difference in playback, meters or gapless play-through, please send the log (Help &gt; Log File...).</li></ul></details></section>
 <section id="v0-1-44"><h2>0.1.44 <span class="date">2026-11-17</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> This build carries the AC Connect fixes that were missing from 0.1.43, and a newer version of the iLok protection.</p><h3>AC Connect (playing from the Pure Audio Streaming app)</h3>
 <ul><li><strong>Fixed "Could not stream ... Item not found or not accessible" on the phone.</strong> The Player replaced the link the phone sent with a reference to this computer's own Artist Connection studio. When the track was not in that studio, it could not play. Every track now plays the link the phone sent.</li><li><strong>An old error is no longer sent to the phone.</strong> A file list restored at launch could report its own failed reads against the phone's new playlist.</li><li><strong>Stop and disconnect keep the playlist.</strong> The phone goes on to send Play and seek for the same tracks, and they now work.</li><li><strong>An expired Artist Connection sign-in says so</strong>, and signs out, instead of failing on every request. Log in again in Settings &gt; Accounts.</li><li><p>Every AC Connect command is written to the log with its answer.</p></li></ul>
 <hr>
