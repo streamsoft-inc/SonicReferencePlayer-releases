@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-46"><span class="v">0.1.46</span><span class="d">2026-11-19</span></a></li>
 <li><a href="#v0-1-45"><span class="v">0.1.45</span><span class="d">2026-11-17</span></a></li>
 <li><a href="#v0-1-44"><span class="v">0.1.44</span><span class="d">2026-11-17</span></a></li>
 <li><a href="#v0-1-43"><span class="v">0.1.43</span><span class="d">2026-11-15</span></a></li>
@@ -103,6 +104,20 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-46"><h2>0.1.46 <span class="date">2026-11-19</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. This build adds choosing an MKV&#x27;s audio stream and its picture, decodes Auro albums played from Artist Connection, and makes Play wait for the audio device after a sample rate change.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> This build adds choosing an MKV's audio stream and its picture, decodes Auro albums played from Artist Connection, and makes Play wait for the audio device after a sample rate change.</p><h3>MKV files</h3>
+<ul><li><strong>An MKV with several audio streams lists one row per stream</strong> under the file, above its chapters. Click a row to play that stream. A stream that cannot play is greyed, with the reason. The choice is kept with the list and the next session, and Measure and Render use it too.</li><li><strong>Details names the stream playing</strong>: its title, else its format.</li><li><strong>The picture opens in the video window.</strong> The MKV's video is copied, not re-encoded, into a cached file the first time (H.264 and HEVC only), then opens in step with the sound.</li><li><strong>Cover art and liner notes</strong>: a cover attached to the MKV shows as the file's artwork; a PDF attached to it opens from the row's right-click menu, "Liner Notes...".</li><li><strong>An Auro-3D stream inside an MKV is now checked again when you choose it.</strong> Before, a file first opened on another stream (a TrueHD stream, say) stayed "not Auro" whichever stream you then chose, and an Auro stream played its eight channels undecoded.</li><li><p>Dolby TrueHD plays its 7.1 bed. The Atmos objects are not decoded.</p></li></ul>
+<hr>
+<h3>Artist Connection and AC Connect</h3>
+<ul><li><p><strong>Auro-3D albums streamed from Artist Connection or played from the phone (AC Connect) are decoded</strong>, as files on disk are: the Auro badge, all their channels, and binaural through Auro's renderer. They played as their undecoded channels (e.g. 5.1) before.</p></li></ul>
+<hr>
+<h3>Playback</h3>
+<ul><li><strong>After the device's sample rate changes, Play waits for the device to start</strong> (up to 6 seconds) before playing. If it never starts, Play does not start either, the window says so, and an AC Connect phone is told.</li><li><p>Every line of the log now carries the time of day.</p></li></ul>
+<hr>
+<h3>Album Info</h3>
+<ul><li><p>Removing every file from the list no longer asks whether to delete Album Info you never set or changed: it is simply cleared. Album Info you entered or imported is still asked about.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Open an MKV with several audio streams (an Auro DTS-HD MA and a TrueHD, for example) and click each stream's row. Does an Auro stream show the Auro badge and all its channels? (FFmpeg must be installed for DTS and TrueHD; see the guide.)</li><li>Play an Auro album from Artist Connection or from the phone. Auro badge, all channels, sound?</li><li>If Play ever does not start after a sample rate change, please send the log (Help &gt; Log File...).</li></ul></details></section>
 <section id="v0-1-45"><h2>0.1.45 <span class="date">2026-11-17</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine&#x27;s plug-in and latency handling was rewritten.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine's plug-in and latency handling was rewritten.</p><h3>Changes</h3>
 <ul><li>No new features and no visible changes.</li><li><p>The playback engine is the same code as soundBlade 1.1.143. The rewritten parts handle plug-ins and latency on the soundBlade Desk, which the Player does not use, but they are in the same playback path.</p></li></ul>
 <hr>
