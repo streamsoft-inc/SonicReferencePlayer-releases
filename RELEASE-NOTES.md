@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.46](#v0-1-46)** — 2026-11-19
+  - Sonic Reference Player Pro. This build adds choosing an MKV's audio stream and its picture, decodes Auro albums played from Artist Connection, and makes Play wait for the audio device after a sample rate change.
 - **[0.1.45](#v0-1-45)** — 2026-11-17
   - Sonic Reference Player Pro. A maintenance build. It brings the Player up to date with the playback engine shipped in soundBlade 1.1.143, where part of the engine's plug-in and latency handling was rewritten.
 - **[0.1.44](#v0-1-44)** — 2026-11-17
@@ -97,6 +99,63 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-46"></a>
+## 0.1.46 — 2026-11-19
+
+**Sonic Reference Player Pro.** This build adds choosing an MKV's audio stream and its picture, decodes Auro albums played from Artist Connection, and makes Play wait for the audio device after a sample rate change.
+
+### MKV files
+
+- **An MKV with several audio streams lists one row per stream** under the file, above its chapters. Click a
+  row to play that stream. A stream that cannot play is greyed, with the reason. The choice is kept with the
+  list and the next session, and Measure and Render use it too.
+- **Details names the stream playing**: its title, else its format.
+- **The picture opens in the video window.** The MKV's video is copied, not re-encoded, into a cached file
+  the first time (H.264 and HEVC only), then opens in step with the sound.
+- **Cover art and liner notes**: a cover attached to the MKV shows as the file's artwork; a PDF attached to it
+  opens from the row's right-click menu, "Liner Notes...".
+- **An Auro-3D stream inside an MKV is now checked again when you choose it.** Before, a file first opened on
+  another stream (a TrueHD stream, say) stayed "not Auro" whichever stream you then chose, and an Auro
+  stream played its eight channels undecoded.
+- Dolby TrueHD plays its 7.1 bed. The Atmos objects are not decoded.
+
+---
+
+### Artist Connection and AC Connect
+
+- **Auro-3D albums streamed from Artist Connection or played from the phone (AC Connect) are decoded**, as
+  files on disk are: the Auro badge, all their channels, and binaural through Auro's renderer. They played
+  as their undecoded channels (e.g. 5.1) before.
+
+---
+
+### Playback
+
+- **After the device's sample rate changes, Play waits for the device to start** (up to 6 seconds) before
+  playing. If it never starts, Play does not start either, the window says so, and an AC Connect phone is told.
+- Every line of the log now carries the time of day.
+
+---
+
+### Album Info
+
+- Removing every file from the list no longer asks whether to delete Album Info you never set or changed:
+  it is simply cleared. Album Info you entered or imported is still asked about.
+
+---
+
+**What we would like to hear from testers**
+
+- Open an MKV with several audio streams (an Auro DTS-HD MA and a TrueHD, for example) and click each stream's
+  row. Does an Auro stream show the Auro badge and all its channels? (FFmpeg must be installed for DTS and
+  TrueHD; see the guide.)
+- Play an Auro album from Artist Connection or from the phone. Auro badge, all channels, sound?
+- If Play ever does not start after a sample rate change, please send the log (Help > Log File...).
+
+[Back to the list of versions](#versions)
 
 ---
 
