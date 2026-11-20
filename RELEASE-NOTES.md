@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.47](#v0-1-47)** — 2026-11-20
+  - Sonic Reference Player Pro. This build fixes a crash on quit, refuses MKV files sent from the phone (AC Connect), and adds Clear List to the file list's menus.
 - **[0.1.46](#v0-1-46)** — 2026-11-19
   - Sonic Reference Player Pro. This build adds choosing an MKV's audio stream and its picture, decodes Auro albums played from Artist Connection, and makes Play wait for the audio device after a sample rate change.
 - **[0.1.45](#v0-1-45)** — 2026-11-17
@@ -99,6 +101,43 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-47"></a>
+## 0.1.47 — 2026-11-20
+
+**Sonic Reference Player Pro.** This build fixes a crash on quit, refuses MKV files sent from the phone (AC Connect), and adds Clear List to the file list's menus.
+
+### Fixes
+
+- **Quitting no longer crashes** when audio from Artist Connection or AC Connect was still loading, or an
+  upload was in progress. Streaming and uploads are now stopped before the app closes.
+- **An MP4 with a sound track is no longer taken for a picture** to pair with another file. Only an MP4 with
+  no audio is offered as a picture.
+- An MP4 whose first check found no picture is checked once more.
+
+---
+
+### AC Connect
+
+- **A playlist from the phone that holds an MKV file is refused**, and the phone shows "MKV files are not
+  supported." Whatever was playing carries on, and the list does not change.
+
+---
+
+### File list
+
+- **Clear List** is on the file list's right-click menus.
+
+---
+
+**What we would like to hear from testers**
+
+- Play an album from Artist Connection or the phone, then quit while it plays. Does the app close cleanly?
+- If anything crashes on quit, please send the crash report and the log (Help > Log File...).
+
+[Back to the list of versions](#versions)
 
 ---
 
