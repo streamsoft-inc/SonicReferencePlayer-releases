@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.48](#v0-1-48)** — 2026-11-20
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.
 - **[0.1.47](#v0-1-47)** — 2026-11-20
   - Sonic Reference Player Pro. This build fixes a crash on quit, refuses MKV files sent from the phone (AC Connect), and adds Clear List to the file list's menus.
 - **[0.1.46](#v0-1-46)** — 2026-11-19
@@ -101,6 +103,40 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-48"></a>
+## 0.1.48 — 2026-11-20
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.
+
+### AC Connect (playing from the Pure Audio Streaming app)
+
+- **An album no longer skips its first tracks.** The phone asks for play before the Player has finished
+  reading the track. The Player started anyway, stopped when the track was ready, and then moved to the
+  next one. It now waits for the track, and the phone shows it buffering until the sound starts.
+- **A seek sent by the phone before the track is ready is kept**, and applied when it starts.
+- The log now records each time the Player itself moves to the next track.
+
+---
+
+### Fixes
+
+- **Quitting while a stream is playing no longer hangs.** In 0.1.47, quitting while a FLAC file was
+  streaming from Artist Connection or the phone could leave the Player spinning, and the phone waiting.
+- **A stream that stops answering no longer ties up the Player.** The same fault could occur without
+  quitting, if the network dropped while a FLAC file was streaming.
+
+---
+
+**What we would like to hear from testers**
+
+- From the phone, play an album you have not played since opening the Player. Does it start on track 1?
+- Quit while a stream is playing. Does the Player close?
+- If not, please send the log (Help > Log File...).
+
+[Back to the list of versions](#versions)
 
 ---
 
