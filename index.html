@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-48"><span class="v">0.1.48</span><span class="d">2026-11-20</span></a></li>
 <li><a href="#v0-1-47"><span class="v">0.1.47</span><span class="d">2026-11-20</span></a></li>
 <li><a href="#v0-1-46"><span class="v">0.1.46</span><span class="d">2026-11-19</span></a></li>
 <li><a href="#v0-1-45"><span class="v">0.1.45</span><span class="d">2026-11-17</span></a></li>
@@ -105,6 +106,14 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-48"><h2>0.1.48 <span class="date">2026-11-20</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.</p><h3>AC Connect (playing from the Pure Audio Streaming app)</h3>
+<ul><li><strong>An album no longer skips its first tracks.</strong> The phone asks for play before the Player has finished reading the track. The Player started anyway, stopped when the track was ready, and then moved to the next one. It now waits for the track, and the phone shows it buffering until the sound starts.</li><li><strong>A seek sent by the phone before the track is ready is kept</strong>, and applied when it starts.</li><li><p>The log now records each time the Player itself moves to the next track.</p></li></ul>
+<hr>
+<h3>Fixes</h3>
+<ul><li><strong>Quitting while a stream is playing no longer hangs.</strong> In 0.1.47, quitting while a FLAC file was streaming from Artist Connection or the phone could leave the Player spinning, and the phone waiting.</li><li><p><strong>A stream that stops answering no longer ties up the Player.</strong> The same fault could occur without quitting, if the network dropped while a FLAC file was streaming.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>From the phone, play an album you have not played since opening the Player. Does it start on track 1?</li><li>Quit while a stream is playing. Does the Player close?</li><li>If not, please send the log (Help &gt; Log File...).</li></ul></details></section>
 <section id="v0-1-47"><h2>0.1.47 <span class="date">2026-11-20</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. This build fixes a crash on quit, refuses MKV files sent from the phone (AC Connect), and adds Clear List to the file list&#x27;s menus.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> This build fixes a crash on quit, refuses MKV files sent from the phone (AC Connect), and adds Clear List to the file list's menus.</p><h3>Fixes</h3>
 <ul><li><strong>Quitting no longer crashes</strong> when audio from Artist Connection or AC Connect was still loading, or an upload was in progress. Streaming and uploads are now stopped before the app closes.</li><li><strong>An MP4 with a sound track is no longer taken for a picture</strong> to pair with another file. Only an MP4 with no audio is offered as a picture.</li><li><p>An MP4 whose first check found no picture is checked once more.</p></li></ul>
 <hr>
