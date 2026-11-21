@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.52](#v0-1-52)** — 2026-11-21
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build has no changes you will notice. It is built from the same shared code as soundBlade 1.1.150, whose Edit Fade Mode was rebuilt; the Player has no Edit Fade Mode.
 - **[0.1.51](#v0-1-51)** — 2026-11-21
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build adds pass-through to the User Guide. The program itself is unchanged from 0.1.50.
 - **[0.1.50](#v0-1-50)** — 2026-11-21
@@ -109,6 +111,20 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-52"></a>
+## 0.1.52 — 2026-11-21
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build has no changes you will notice. It is built from the same shared code as soundBlade 1.1.150, whose Edit Fade Mode was rebuilt; the Player has no Edit Fade Mode.
+
+**What we would like to hear from testers**
+
+- Pass-through (new in 0.1.49): which Mac, which receiver, which format, and what the receiver's
+  display showed.
+
+[Back to the list of versions](#versions)
 
 ---
 
