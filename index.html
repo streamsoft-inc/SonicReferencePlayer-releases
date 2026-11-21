@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-49"><span class="v">0.1.49</span><span class="d">2026-11-21</span></a></li>
 <li><a href="#v0-1-48"><span class="v">0.1.48</span><span class="d">2026-11-20</span></a></li>
 <li><a href="#v0-1-47"><span class="v">0.1.47</span><span class="d">2026-11-20</span></a></li>
 <li><a href="#v0-1-46"><span class="v">0.1.46</span><span class="d">2026-11-19</span></a></li>
@@ -106,6 +107,28 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-49"><h2>0.1.49 <span class="date">2026-11-21</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build adds pass-through of Dolby streams to a receiver over HDMI, and answers a tester&#x27;s report on ADM, MKV and AC Connect.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build adds pass-through of Dolby streams to a receiver over HDMI, and answers a tester's report on ADM, MKV and AC Connect.</p><h3>Pass-through to a receiver (new, for testing)</h3>
+<p>A Dolby Digital, Dolby Digital Plus or Dolby TrueHD stream can be sent to a receiver over HDMI <strong>undecoded</strong>, so the receiver decodes it, Atmos included.</p>
+<ul><li><strong>The PASS button</strong> appears above DIM when all of these hold: the selected file (or the MKV stream you chose) is one of those Dolby formats, the output device is an HDMI receiver that accepts it, and FFmpeg is installed as for DTS and TrueHD playback (see the User Guide).</li><li><strong>Turn PASS on and press Play.</strong> The receiver's display should show the format.</li><li><strong>While it plays, nothing of the Player's is in the path:</strong> no meters, no Desk, no volume, no Solo or Mute, no Binaural. Set the level on the receiver.</li><li><strong>Seeking</strong> starts the stream again from the new place; the receiver may take a moment to lock.</li><li><strong>Files on disk only</strong>, not files streamed from Artist Connection or the phone.</li><li>Moving from one file to the next is not gapless.</li><li><p>Turn PASS off to play the file through the Player as before.</p></li></ul>
+<p><strong>Tested so far</strong> on one receiver with one Dolby TrueHD with Atmos stream. Dolby Digital and Digital Plus have not been tried on a receiver yet. It relies on formats macOS offers on HDMI but does not document, so it may behave differently on other Macs and receivers.</p>
+<hr>
+<h3>ADM</h3>
+<ul><li><p><strong>A 9.1.4 or 9.1.6 mix delivered as a bed plus fixed objects now plays as 9.1.4 or 9.1.6.</strong> When every object is fixed in place and a pair sits at the wide positions, Source: Auto chooses 9.1.4, or 9.1.6 with a top-middle pair as well. The wide objects play from the wide speakers alone. Choosing the layout by hand (Ctrl-click Source) still works.</p></li></ul>
+<hr>
+<h3>MKV</h3>
+<ul><li><p><strong>Auro-3D inside DTS-HD MA decodes with the surrounds and rears the right way round.</strong></p></li></ul>
+<hr>
+<h3>AC Connect</h3>
+<ul><li><p><strong>The phone is told when the Player quits</strong>, so it stops trying.</p></li></ul>
+<hr>
+<h3>Window</h3>
+<ul><li><p><strong>The white bar beside the meters can be dragged further left</strong>, giving the meters more room. It stops 40 px from the album cover. Double-click it to reset.</p></li></ul>
+<hr>
+<h3>Known issue</h3>
+<ul><li><p>A click between two ADM files that should join seamlessly (reported with 2L-179 tracks 1 and 2). The files themselves join cleanly, so the fault is ours; it is being investigated.</p></li></ul>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Pass-through: which Mac, which receiver, which format, and what the receiver's display showed. If PASS does not appear, or there is no sound, please send the log (Help &gt; Log File...).</li><li>Does your 9.1.4 or 9.1.6 ADM now open with the wides on their own speakers?</li></ul></details></section>
 <section id="v0-1-48"><h2>0.1.48 <span class="date">2026-11-20</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.</p><h3>AC Connect (playing from the Pure Audio Streaming app)</h3>
 <ul><li><strong>An album no longer skips its first tracks.</strong> The phone asks for play before the Player has finished reading the track. The Player started anyway, stopped when the track was ready, and then moved to the next one. It now waits for the track, and the phone shows it buffering until the sound starts.</li><li><strong>A seek sent by the phone before the track is ready is kept</strong>, and applied when it starts.</li><li><p>The log now records each time the Player itself moves to the next track.</p></li></ul>
 <hr>
