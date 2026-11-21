@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.50](#v0-1-50)** — 2026-11-21
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes the click that could follow a seamless join between two files.
 - **[0.1.49](#v0-1-49)** — 2026-11-21
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build adds pass-through of Dolby streams to a receiver over HDMI, and answers a tester's report on ADM, MKV and AC Connect.
 - **[0.1.48](#v0-1-48)** — 2026-11-20
@@ -105,6 +107,35 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-50"></a>
+## 0.1.50 — 2026-11-21
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes the click that could follow a seamless join between two files.
+
+### Playback
+
+- **No more click after a seamless join.** When one file in the list ran into the next with no
+  gap, a short burst of the wrong audio could be heard about 30 to 50 ms into the new file. It
+  came and went from one pass to the next, and only happened when the new file was longer than
+  the one before it. Reported with two ADM files (2L-179 tracks 1 and 2). The join itself was
+  always exact. Measured on a recording of the output: the join and the 13 seconds after it now
+  match the files sample for sample.
+- **The log says how each join was made** (lines starting "Join:"), which helps if anything
+  like this is heard again.
+
+---
+
+**What we would like to hear from testers**
+
+- If you still hear a click where two files join, please send the two files' names, where in
+  the first file you pressed Play, and the log (Help > Log File...).
+- Pass-through (new in 0.1.49): which Mac, which receiver, which format, and what the
+  receiver's display showed.
+
+[Back to the list of versions](#versions)
 
 ---
 
