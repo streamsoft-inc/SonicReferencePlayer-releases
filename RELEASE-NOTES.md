@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.49](#v0-1-49)** — 2026-11-21
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build adds pass-through of Dolby streams to a receiver over HDMI, and answers a tester's report on ADM, MKV and AC Connect.
 - **[0.1.48](#v0-1-48)** — 2026-11-20
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build fixes two faults when playing from the phone (AC Connect): an album that skipped its first tracks, and the Player not closing when quit while a stream was playing.
 - **[0.1.47](#v0-1-47)** — 2026-11-20
@@ -103,6 +105,78 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-49"></a>
+## 0.1.49 — 2026-11-21
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. This build adds pass-through of Dolby streams to a receiver over HDMI, and answers a tester's report on ADM, MKV and AC Connect.
+
+### Pass-through to a receiver (new, for testing)
+
+A Dolby Digital, Dolby Digital Plus or Dolby TrueHD stream can be sent to a receiver over HDMI
+**undecoded**, so the receiver decodes it, Atmos included.
+
+- **The PASS button** appears above DIM when all of these hold: the selected file (or the MKV
+  stream you chose) is one of those Dolby formats, the output device is an HDMI receiver that
+  accepts it, and FFmpeg is installed as for DTS and TrueHD playback (see the User Guide).
+- **Turn PASS on and press Play.** The receiver's display should show the format.
+- **While it plays, nothing of the Player's is in the path:** no meters, no Desk, no volume, no
+  Solo or Mute, no Binaural. Set the level on the receiver.
+- **Seeking** starts the stream again from the new place; the receiver may take a moment to lock.
+- **Files on disk only**, not files streamed from Artist Connection or the phone.
+- Moving from one file to the next is not gapless.
+- Turn PASS off to play the file through the Player as before.
+
+**Tested so far** on one receiver with one Dolby TrueHD with Atmos stream. Dolby Digital and
+Digital Plus have not been tried on a receiver yet. It relies on formats macOS offers on HDMI
+but does not document, so it may behave differently on other Macs and receivers.
+
+---
+
+### ADM
+
+- **A 9.1.4 or 9.1.6 mix delivered as a bed plus fixed objects now plays as 9.1.4 or 9.1.6.**
+  When every object is fixed in place and a pair sits at the wide positions, Source: Auto
+  chooses 9.1.4, or 9.1.6 with a top-middle pair as well. The wide objects play from the wide
+  speakers alone. Choosing the layout by hand (Ctrl-click Source) still works.
+
+---
+
+### MKV
+
+- **Auro-3D inside DTS-HD MA decodes with the surrounds and rears the right way round.**
+
+---
+
+### AC Connect
+
+- **The phone is told when the Player quits**, so it stops trying.
+
+---
+
+### Window
+
+- **The white bar beside the meters can be dragged further left**, giving the meters more room.
+  It stops 40 px from the album cover. Double-click it to reset.
+
+---
+
+### Known issue
+
+- A click between two ADM files that should join seamlessly (reported with 2L-179 tracks 1 and
+  2). The files themselves join cleanly, so the fault is ours; it is being investigated.
+
+---
+
+**What we would like to hear from testers**
+
+- Pass-through: which Mac, which receiver, which format, and what the receiver's display showed.
+  If PASS does not appear, or there is no sound, please send the log (Help > Log File...).
+- Does your 9.1.4 or 9.1.6 ADM now open with the wides on their own speakers?
+
+[Back to the list of versions](#versions)
 
 ---
 
