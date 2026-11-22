@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.56](#v0-1-56)** — 2026-11-22
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### Fixed - Metadata sheets: Album Artist. A sheet's plain "Main Artists" column is now always each track's artist. It no longer becomes the album artist when the sheet states none. The album artist comes only from a column that says so ("ALBUM | Main Artists", "Album Artist", "Artist Name on Cover Art").
 - **[0.1.55](#v0-1-55)** — 2026-11-22
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### New - Dolby Atmos Renderer preset in Speaker Wiring. Audio I/O Settings > Speaker Wiring... > Presets now includes the Dolby Atmos Renderer's own routing: L R C LFE Lw Rw Lss Rss Lrs Rrs Ltf Rtf Ltm Rtm Ltr Rtr. - The user guide describes Speaker Wiring, pass-through (Dolby and DTS), Send Auro-3D Undecoded and AC Connect artwork. ### Fixed - An Auro-3D file played as 8 undecoded channels. Some Auro-3D carriers state their layout a moment after the Auro signal starts; the Player stopped looking too early and played them undecoded. They now decode to all their channels (an Auro 11.1 file to 12). - The Monitor layout after pass-through. Stopping pass-through now puts the Monitor back on the layout you chose; it could stay on the receiver's 7.1.
 - **[0.1.54](#v0-1-54)** — 2026-11-22
@@ -117,6 +119,23 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-56"></a>
+## 0.1.56 — 2026-11-22
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### Fixed - **Metadata sheets: Album Artist.** A sheet's plain "Main Artists" column is now always each track's artist. It no longer becomes the album artist when the sheet states none. The album artist comes only from a column that says so ("ALBUM | Main Artists", "Album Artist", "Artist Name on Cover Art").
+
+**What we would like to hear from testers**
+
+- A metadata sheet that imports with the wrong album fields: the sheet itself.
+- Speaker Wiring: your device, the preset or order you set, and any layout that plays to the
+  wrong speaker with Monitor on Follow File.
+- The click between two Auro-3D files: the log (Help > Log File...) from a session where you
+  heard it, and the two file names.
+
+[Back to the list of versions](#versions)
 
 ---
 
