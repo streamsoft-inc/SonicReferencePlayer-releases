@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.54](#v0-1-54)** — 2026-11-22
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### New - Speaker Wiring, per output device. Audio I/O Settings > Speaker Wiring... shows a plan of the room. Click a speaker and choose the output it is wired to, once for each device. Presets set the Player's order, the P&E Wing order or the Film order in one click. With Monitor on Follow File, every layout then plays to the right speakers. Example: a 5.1 file's surrounds go to your side pair, and a 9.1.6 file finds the wides wherever they are wired. A layout that needs a speaker you have not wired is not offered in the Monitor menu. A Monitor layout you saved by name still uses its own map. This changes playback only, never a Render. - DTS pass-through. The PASS button now appears for DTS streams too, sending them undecoded to an HDMI receiver. A DTS-HD MA stream is sent as its DTS core for now. - Send Auro-3D Undecoded (Monitor menu). An Auro-3D file is sent to the outputs exactly as it is, without decoding, for a receiver or processor that decodes Auro-3D itself. The badge reads "Auro-3D sent undecoded" while it is on. Set the volume to 0 dB and leave the file's channels unchanged, or the receiver cannot find the Auro-3D signal. ### Changed - AC Connect: artwork. When the Pure Audio Streaming app sends a track's artwork, the Player shows it as that track's cover. ### Known - The Dolby speaker order is not yet a preset. It will be added from Dolby's own documentation. - A click at the join between two decoded Auro-3D files is still being looked into. If you hear it, please send the log (Help > Log File...) and the two files' names.
 - **[0.1.53](#v0-1-53)** — 2026-11-22
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### Fixed - The Monitor layout after changing the output device. Changing the device in Audio I/O Settings now applies your Monitor layout again. Going from an HDMI receiver (eight outputs, Monitor shown as 7.1) back to a wider interface restores the full immersive layout; it no longer has to be chosen again by hand. ### Changed - ADM files mixed as 7.1.6. With Source on Auto, an ADM whose heights are fixed (non-moving) objects at the four top corners and the two top-middle positions now plays as 7.1.6, as does a 7.1.2 bed with fixed objects at the four top corners. These played as 7.1.4 before. With fixed wide objects as well, the file plays as 9.1.6, as before. An ADM with moving objects still plays as 7.1.4. ### Coming - Speaker wiring per output device. In Audio I/O Settings you will set, once for each device, which output carries each speaker, on a plan of the room, with presets for the Player's order and the P&E Wing order. Every layout will then play to the right speakers with Monitor on Follow File. Not in this build: until then, keep using your own saved Monitor layouts.
 - **[0.1.52](#v0-1-52)** — 2026-11-21
@@ -113,6 +115,22 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-54"></a>
+## 0.1.54 — 2026-11-22
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### New - **Speaker Wiring, per output device.** Audio I/O Settings > Speaker Wiring... shows a plan of the room. Click a speaker and choose the output it is wired to, once for each device. Presets set the Player's order, the P&E Wing order or the Film order in one click. With Monitor on Follow File, every layout then plays to the right speakers. Example: a 5.1 file's surrounds go to your side pair, and a 9.1.6 file finds the wides wherever they are wired. A layout that needs a speaker you have not wired is not offered in the Monitor menu. A Monitor layout you saved by name still uses its own map. This changes playback only, never a Render. - **DTS pass-through.** The PASS button now appears for DTS streams too, sending them undecoded to an HDMI receiver. A DTS-HD MA stream is sent as its DTS core for now. - **Send Auro-3D Undecoded** (Monitor menu). An Auro-3D file is sent to the outputs exactly as it is, without decoding, for a receiver or processor that decodes Auro-3D itself. The badge reads "Auro-3D sent undecoded" while it is on. Set the volume to 0 dB and leave the file's channels unchanged, or the receiver cannot find the Auro-3D signal. ### Changed - **AC Connect: artwork.** When the Pure Audio Streaming app sends a track's artwork, the Player shows it as that track's cover. ### Known - The Dolby speaker order is not yet a preset. It will be added from Dolby's own documentation. - A click at the join between two decoded Auro-3D files is still being looked into. If you hear it, please send the log (Help > Log File...) and the two files' names.
+
+**What we would like to hear from testers**
+
+- Speaker Wiring: your device, the order your outputs are wired in, and any layout that plays
+  to the wrong speaker with Monitor on Follow File.
+- DTS and Auro-3D to a receiver: which receiver, which file, and what its display showed.
+- An Auro 11.1 file that shows six heights: a screenshot of the Preview with the file selected.
+
+[Back to the list of versions](#versions)
 
 ---
 
