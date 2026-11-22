@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.55](#v0-1-55)** — 2026-11-22
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### New - Dolby Atmos Renderer preset in Speaker Wiring. Audio I/O Settings > Speaker Wiring... > Presets now includes the Dolby Atmos Renderer's own routing: L R C LFE Lw Rw Lss Rss Lrs Rrs Ltf Rtf Ltm Rtm Ltr Rtr. - The user guide describes Speaker Wiring, pass-through (Dolby and DTS), Send Auro-3D Undecoded and AC Connect artwork. ### Fixed - An Auro-3D file played as 8 undecoded channels. Some Auro-3D carriers state their layout a moment after the Auro signal starts; the Player stopped looking too early and played them undecoded. They now decode to all their channels (an Auro 11.1 file to 12). - The Monitor layout after pass-through. Stopping pass-through now puts the Monitor back on the layout you chose; it could stay on the receiver's 7.1.
 - **[0.1.54](#v0-1-54)** — 2026-11-22
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### New - Speaker Wiring, per output device. Audio I/O Settings > Speaker Wiring... shows a plan of the room. Click a speaker and choose the output it is wired to, once for each device. Presets set the Player's order, the P&E Wing order or the Film order in one click. With Monitor on Follow File, every layout then plays to the right speakers. Example: a 5.1 file's surrounds go to your side pair, and a 9.1.6 file finds the wides wherever they are wired. A layout that needs a speaker you have not wired is not offered in the Monitor menu. A Monitor layout you saved by name still uses its own map. This changes playback only, never a Render. - DTS pass-through. The PASS button now appears for DTS streams too, sending them undecoded to an HDMI receiver. A DTS-HD MA stream is sent as its DTS core for now. - Send Auro-3D Undecoded (Monitor menu). An Auro-3D file is sent to the outputs exactly as it is, without decoding, for a receiver or processor that decodes Auro-3D itself. The badge reads "Auro-3D sent undecoded" while it is on. Set the volume to 0 dB and leave the file's channels unchanged, or the receiver cannot find the Auro-3D signal. ### Changed - AC Connect: artwork. When the Pure Audio Streaming app sends a track's artwork, the Player shows it as that track's cover. ### Known - The Dolby speaker order is not yet a preset. It will be added from Dolby's own documentation. - A click at the join between two decoded Auro-3D files is still being looked into. If you hear it, please send the log (Help > Log File...) and the two files' names.
 - **[0.1.53](#v0-1-53)** — 2026-11-22
@@ -115,6 +117,25 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-55"></a>
+## 0.1.55 — 2026-11-22
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### New - **Dolby Atmos Renderer preset in Speaker Wiring.** Audio I/O Settings > Speaker Wiring... > Presets now includes the Dolby Atmos Renderer's own routing: L R C LFE Lw Rw Lss Rss Lrs Rrs Ltf Rtf Ltm Rtm Ltr Rtr. - **The user guide** describes Speaker Wiring, pass-through (Dolby and DTS), Send Auro-3D Undecoded and AC Connect artwork. ### Fixed - **An Auro-3D file played as 8 undecoded channels.** Some Auro-3D carriers state their layout a moment after the Auro signal starts; the Player stopped looking too early and played them undecoded. They now decode to all their channels (an Auro 11.1 file to 12). - **The Monitor layout after pass-through.** Stopping pass-through now puts the Monitor back on the layout you chose; it could stay on the receiver's 7.1.
+
+**What we would like to hear from testers**
+
+- Speaker Wiring: your device, the preset or order you set, and any layout that plays to the
+  wrong speaker with Monitor on Follow File.
+- The click between two Auro-3D files: the log (Help > Log File...) from a session where you
+  heard it, the two file names, and whether Send Auro-3D Undecoded was on.
+- An Auro 11.1 file that shows six heights: a screenshot with the file selected, and the file's
+  name.
+- DTS and Auro-3D to a receiver: which receiver, which file, and what its display showed.
+
+[Back to the list of versions](#versions)
 
 ---
 
