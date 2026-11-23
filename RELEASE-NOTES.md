@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.58](#v0-1-58)** — 2026-11-23
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.57](#v0-1-57)** — 2026-11-23
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.56](#v0-1-56)** — 2026-11-22
@@ -121,6 +123,47 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-58"></a>
+## 0.1.58 — 2026-11-23
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### New
+
+- **Send DTS-HD MA Whole (Pass-through Test)**, in the Help menu, off until ticked and remembered.
+  Pass-through normally sends a DTS-HD Master Audio stream as its 48 kHz 5.1 core, so an Auro-3D
+  master inside DTS-HD MA reached the receiver as plain DTS 5.1. Ticked, the whole stream is sent
+  (7.1, up to 192 kHz, Auro-3D inside). This has not yet been seen working on a receiver: please
+  try it. A stream already passing through restarts in the new form from where it was.
+- **Skip goes to the next or previous track** of a file that has tracks (an MTFF, a DDP, an MKV
+  with chapters). Back within a second of a track's start goes to the one before. Any other file
+  keeps the 5-second step.
+
+### Changed
+
+- **Switching between Binaural and speakers keeps playing.** Only the monitoring changes. An Auro-3D
+  file is read again for its new decode and carries on from where it was, after a short gap.
+- **Ctrl-click Peak Hold clears the held numbers and they stay clear while stopped.** The meters'
+  fall after Stop was being held as a new peak (-66 and the like).
+
+### Fixed
+
+- **After pass-through the audio device could stay closed** ("the HDMI interface is no longer
+  active" in Audio I/O), most likely when the format or rate changed between files. The Player now
+  tries again for up to five seconds, and says so if the device still will not open.
+
+---
+
+**What we would like to hear from testers**
+
+- Send DTS-HD MA Whole: your receiver, what its display shows (format, channels, rate, Auro), and
+  whether it plays at all. If it does not, the log (Help > Log File...) has the "Pass-through:" lines.
+- After pass-through: whether Audio I/O Settings shows the HDMI device again.
+
+[Back to the list of versions](#versions)
 
 ---
 
