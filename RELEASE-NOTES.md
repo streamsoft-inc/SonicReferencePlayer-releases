@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.60](#v0-1-60)** — 2026-11-23
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.59](#v0-1-59)** — 2026-11-23
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.58](#v0-1-58)** — 2026-11-23
@@ -125,6 +127,39 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-60"></a>
+## 0.1.60 — 2026-11-23
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### Fixed
+
+- **Auro-3D albums: a click between tracks played gaplessly.** The Auro decoder now carries on
+  into the next track instead of into silence, so the end of one track and the start of the next
+  decode as one stream. Recorded at the output across a join, the Player now matches one continuous
+  decode of the two files exactly.
+- **The end of an Auro track decodes the same way on every play.** It used to depend on where
+  playback had been started, so a click at a join could come and go from one play to the next.
+- **An Auro file restored at launch now decodes at full width.** With the Monitor pinned to a wide
+  layout, the first file showed and played as 5.1 after a relaunch.
+
+A small click can remain where an album's tracks were not cut on whole Auro blocks (a track length
+that is not a multiple of 1024 samples) and the music runs straight across the join. That is in the
+files themselves, and any Auro decoder playing them gaplessly does the same.
+
+Everything in 0.1.59 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- Auro albums played straight through: any join that still clicks, with the album and track
+  numbers, so we can check the track lengths.
+
+[Back to the list of versions](#versions)
 
 ---
 
