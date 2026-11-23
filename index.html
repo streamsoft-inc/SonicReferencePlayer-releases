@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-60"><span class="v">0.1.60</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-59"><span class="v">0.1.59</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-58"><span class="v">0.1.58</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-57"><span class="v">0.1.57</span><span class="d">2026-11-23</span></a></li>
@@ -117,6 +118,13 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-60"><h2>0.1.60 <span class="date">2026-11-23</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Fixed</h3>
+<ul><li><strong>Auro-3D albums: a click between tracks played gaplessly.</strong> The Auro decoder now carries on into the next track instead of into silence, so the end of one track and the start of the next decode as one stream. Recorded at the output across a join, the Player now matches one continuous decode of the two files exactly.</li><li><strong>The end of an Auro track decodes the same way on every play.</strong> It used to depend on where playback had been started, so a click at a join could come and go from one play to the next.</li><li><p><strong>An Auro file restored at launch now decodes at full width.</strong> With the Monitor pinned to a wide layout, the first file showed and played as 5.1 after a relaunch.</p></li></ul>
+<p>A small click can remain where an album's tracks were not cut on whole Auro blocks (a track length that is not a multiple of 1024 samples) and the music runs straight across the join. That is in the files themselves, and any Auro decoder playing them gaplessly does the same.</p>
+<p>Everything in 0.1.59 is included.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Auro albums played straight through: any join that still clicks, with the album and track numbers, so we can check the track lengths.</li></ul></details></section>
 <section id="v0-1-59"><h2>0.1.59 <span class="date">2026-11-23</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Fixed</h3>
 <ul><li><p><strong>Ctrl-click Peak Hold now clears the Main fader's meter too</strong>, with the Desk and Monitor meters, and it stays clear while stopped. So does Ctrl-click on any meter.</p></li></ul>
 <p>Everything in 0.1.58 is included: Help &gt; Send DTS-HD MA Whole (Pass-through Test), Skip by track, Binaural and speakers switching while playing, Peak Hold staying clear, and the audio device reopening after pass-through.</p>
