@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.59](#v0-1-59)** — 2026-11-23
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.58](#v0-1-58)** — 2026-11-23
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.57](#v0-1-57)** — 2026-11-23
@@ -123,6 +125,32 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-59"></a>
+## 0.1.59 — 2026-11-23
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### Fixed
+
+- **Ctrl-click Peak Hold now clears the Main fader's meter too**, with the Desk and Monitor meters,
+  and it stays clear while stopped. So does Ctrl-click on any meter.
+
+Everything in 0.1.58 is included: Help > Send DTS-HD MA Whole (Pass-through Test), Skip by track,
+Binaural and speakers switching while playing, Peak Hold staying clear, and the audio device
+reopening after pass-through.
+
+---
+
+**What we would like to hear from testers**
+
+- Send DTS-HD MA Whole: your receiver, what its display shows (format, channels, rate, Auro), and
+  whether it plays at all. If it does not, the log (Help > Log File...) has the "Pass-through:" lines.
+- After pass-through: whether Audio I/O Settings shows the HDMI device again.
+
+[Back to the list of versions](#versions)
 
 ---
 
