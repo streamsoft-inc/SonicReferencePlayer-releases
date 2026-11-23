@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.57](#v0-1-57)** — 2026-11-23
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.56](#v0-1-56)** — 2026-11-22
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon. ### Fixed - Metadata sheets: Album Artist. A sheet's plain "Main Artists" column is now always each track's artist. It no longer becomes the album artist when the sheet states none. The album artist comes only from a column that says so ("ALBUM | Main Artists", "Album Artist", "Artist Name on Cover Art").
 - **[0.1.55](#v0-1-55)** — 2026-11-22
@@ -119,6 +121,72 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-57"></a>
+## 0.1.57 — 2026-11-23
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### New
+
+- **Energy and Phase in the object view.** Two new tick boxes along the bottom of the room, both
+  off until ticked. **Energy** shows where the finished mix's sound is: a patch at each speaker for
+  the level it carries, one patch between two speakers for sound they share, coloured by band
+  (orange-red low, amber mid, pale blue high), a white ring where a transient lands, and a cross at
+  the centre of the energy. **Phase** joins speakers that carry the same signal: a pale line in
+  phase, a red line out of phase in the low, mid or high band, and the worst pair named at the top
+  left. A red line means those two speakers cancel in that band when folded down. Both measure the
+  mix as delivered, before Solo and Mute. A menu beside them shows all bands or the low, mid or
+  high band alone; the boxes and the band are remembered. Phase compares speakers at the same
+  instant, so a spaced-microphone recording reads as unrelated.
+- **Object size and divergence are heard.** An ADM object with a width, depth or height is spread
+  over the speakers around it by ITU-R BS.2127's rule, and divergence splits it into a centre and
+  two flanking positions. An object with no size plays exactly as before. It follows the published
+  rule, not Dolby's renderer.
+- **The picture shows in the album column**, where the cover is. The arrow under it moves the
+  picture to the video window; closing that window brings it back. The Video button turns the
+  picture off for the file showing; the next file with a picture shows it again.
+- **Assign Speakers is a 3-D room.** Seen from behind the listener, with the preset in use named
+  above it (Current Setup for the layout as it stands), unassigned speakers hollow, and a Plan
+  button for the view from above. Drag a speaker onto another to swap their outputs.
+
+### Changed
+
+- **Dragging the bottom edge of the window changes its height only.** A side or a corner still
+  scales the window.
+- **The Monitor meters sit 40 px to the right of the Source meters.**
+- **Faster drawing on macOS 26.** The app now draws through JUCE's own image; macOS no longer scans
+  each repaint.
+
+### Fixed
+
+- **Removing an MKV with DTS or TrueHD audio could hang the Player.** Two ffmpeg helpers started at the
+  same moment each kept the other's pipe open, so closing the pipe never reached the helper and the
+  app waited for it for ever. The pipes are now closed on exec and a helper's writer can no longer
+  block past a stop. Reproduced in a test and fixed there; not yet checked in the app.
+- **A hang when the Source layout changed with Energy or Phase showing** (Ctrl-click Source). The
+  room drew a reading taken for the old layout against the new one.
+
+---
+
+### Known issues
+
+- **The video in an MKV does not always show.** Still being investigated. If you see it, please
+  send the file's name and the log (Help > Log File...), which now has "Video window:" lines.
+
+---
+
+**What we would like to hear from testers**
+
+- Energy and Phase: whether the picture matches what you hear; a red line on material you know to
+  be in phase (name the pair and the band shown); whether playback of a wide file breaks up with a
+  layer ticked.
+- Assign Speakers: your device, the order you set, and any layout that plays to the wrong speaker
+  with Monitor on Follow File.
+
+[Back to the list of versions](#versions)
 
 ---
 
