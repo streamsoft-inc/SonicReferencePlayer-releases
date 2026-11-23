@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-59"><span class="v">0.1.59</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-58"><span class="v">0.1.58</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-57"><span class="v">0.1.57</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-56"><span class="v">0.1.56</span><span class="d">2026-11-22</span></a></li>
@@ -116,6 +117,12 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-59"><h2>0.1.59 <span class="date">2026-11-23</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Fixed</h3>
+<ul><li><p><strong>Ctrl-click Peak Hold now clears the Main fader's meter too</strong>, with the Desk and Monitor meters, and it stays clear while stopped. So does Ctrl-click on any meter.</p></li></ul>
+<p>Everything in 0.1.58 is included: Help &gt; Send DTS-HD MA Whole (Pass-through Test), Skip by track, Binaural and speakers switching while playing, Peak Hold staying clear, and the audio device reopening after pass-through.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Send DTS-HD MA Whole: your receiver, what its display shows (format, channels, rate, Auro), and whether it plays at all. If it does not, the log (Help &gt; Log File...) has the "Pass-through:" lines.</li><li>After pass-through: whether Audio I/O Settings shows the HDMI device again.</li></ul></details></section>
 <section id="v0-1-58"><h2>0.1.58 <span class="date">2026-11-23</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>New</h3>
 <ul><li><strong>Send DTS-HD MA Whole (Pass-through Test)</strong>, in the Help menu, off until ticked and remembered. Pass-through normally sends a DTS-HD Master Audio stream as its 48 kHz 5.1 core, so an Auro-3D master inside DTS-HD MA reached the receiver as plain DTS 5.1. Ticked, the whole stream is sent (7.1, up to 192 kHz, Auro-3D inside). This has not yet been seen working on a receiver: please try it. A stream already passing through restarts in the new form from where it was.</li><li><p><strong>Skip goes to the next or previous track</strong> of a file that has tracks (an MTFF, a DDP, an MKV with chapters). Back within a second of a track's start goes to the one before. Any other file keeps the 5-second step.</p></li></ul>
 <h3>Changed</h3>
