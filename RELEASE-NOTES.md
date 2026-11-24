@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.62](#v0-1-62)** — 2026-11-24
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.61](#v0-1-61)** — 2026-11-24
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.60](#v0-1-60)** — 2026-11-23
@@ -129,6 +131,48 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-62"></a>
+## 0.1.62 — 2026-11-24
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### Added
+
+- **The object view in a window of its own.** The small arrow at the right of the room view's
+  buttons moves the view, with its buttons and options, into a separate window you can size and
+  place anywhere, on a second screen for example. The arrow there, the window's close button, or
+  the triangle in the Preview's folded object column bring it back. If it is out when you quit, it
+  opens out again, where you left it.
+- **Streamed files are kept on disk, encrypted.** Everything streamed from Artist Connection is
+  kept in an encrypted cache on this Mac, so a file plays again without the network fetching it
+  afresh. The cache icon on a streamed row keeps the whole file. Settings > Accounts shows how much
+  is used and sets the limit.
+- **Artist Connection albums as covers.** The Albums tab shows each album as its cover; one click
+  opens the album's page (cover, facts, Play, Add to File Pane, its tracks). Tiles / List switches
+  back to the list.
+- **The Measurement column folds away.** A triangle beside Loudness closes it, and the Overview
+  takes its width. Remembered.
+
+### Fixed
+
+- **A tick between two tracks played gaplessly with the Monitor on Binaural.** The headphone
+  renderer's delay now stays the same from one track to the next.
+- **Some stereo WAVs from Artist Connection would not play**, refused as if they were ADMs.
+
+Everything in 0.1.61 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- Any click between two tracks played gaplessly, on Binaural or speakers: the two files, the time,
+  the Monitor layout, and your log file (Help > Log File...).
+- The object view's window: anything odd when moving it out and back, or on relaunch.
+
+[Back to the list of versions](#versions)
 
 ---
 
