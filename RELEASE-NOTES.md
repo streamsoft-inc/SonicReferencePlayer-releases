@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.61](#v0-1-61)** — 2026-11-24
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.60](#v0-1-60)** — 2026-11-23
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.59](#v0-1-59)** — 2026-11-23
@@ -127,6 +129,42 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-61"></a>
+## 0.1.61 — 2026-11-24
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### Changed
+
+- **DTS-HD Master Audio goes to the receiver whole.** Pass-through now sends the full DTS-HD MA
+  stream (7.1, high sample rates, Auro-3D inside), so the receiver can show and play the full Auro-3D
+  mix. A receiver that cannot take the full stream gets the 48 kHz core instead, as before. The
+  Help menu's "Send DTS-HD MA Whole (Pass-through Test)" is gone: it is always on now.
+- **Follow File follows the Source.** With the Monitor on Follow File, an ADM whose objects play in
+  7.1.4 is now monitored on 7.1.4 (or the widest layout your output can carry), not on its 7.1 bed.
+  The objects in the ceiling are no longer folded down to ear level unless you pick a narrower
+  Monitor yourself.
+
+### Added
+
+- **A check at every gapless join, written to the log.** Between two tracks the Player briefly runs
+  a second engine and then hands back to its own. The log (Help > Log File...) now says whether the
+  two were exactly in step at that moment, and by how many samples if not.
+
+Everything in 0.1.60 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- Any click between two tracks played gaplessly: the two files, the time, which Monitor layout you
+  were on, and your log file (Help > Log File...). The lines starting "Join:" are the ones we need.
+- DTS-HD MA files passed through to your receiver: what the receiver shows.
+
+[Back to the list of versions](#versions)
 
 ---
 
