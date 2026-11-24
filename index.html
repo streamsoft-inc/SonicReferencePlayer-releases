@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-62"><span class="v">0.1.62</span><span class="d">2026-11-24</span></a></li>
 <li><a href="#v0-1-61"><span class="v">0.1.61</span><span class="d">2026-11-24</span></a></li>
 <li><a href="#v0-1-60"><span class="v">0.1.60</span><span class="d">2026-11-23</span></a></li>
 <li><a href="#v0-1-59"><span class="v">0.1.59</span><span class="d">2026-11-23</span></a></li>
@@ -119,6 +120,14 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-62"><h2>0.1.62 <span class="date">2026-11-24</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Added</h3>
+<ul><li><strong>The object view in a window of its own.</strong> The small arrow at the right of the room view's buttons moves the view, with its buttons and options, into a separate window you can size and place anywhere, on a second screen for example. The arrow there, the window's close button, or the triangle in the Preview's folded object column bring it back. If it is out when you quit, it opens out again, where you left it.</li><li><strong>Streamed files are kept on disk, encrypted.</strong> Everything streamed from Artist Connection is kept in an encrypted cache on this Mac, so a file plays again without the network fetching it afresh. The cache icon on a streamed row keeps the whole file. Settings &gt; Accounts shows how much is used and sets the limit.</li><li><strong>Artist Connection albums as covers.</strong> The Albums tab shows each album as its cover; one click opens the album's page (cover, facts, Play, Add to File Pane, its tracks). Tiles / List switches back to the list.</li><li><p><strong>The Measurement column folds away.</strong> A triangle beside Loudness closes it, and the Overview takes its width. Remembered.</p></li></ul>
+<h3>Fixed</h3>
+<ul><li><strong>A tick between two tracks played gaplessly with the Monitor on Binaural.</strong> The headphone renderer's delay now stays the same from one track to the next.</li><li><p><strong>Some stereo WAVs from Artist Connection would not play</strong>, refused as if they were ADMs.</p></li></ul>
+<p>Everything in 0.1.61 is included.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Any click between two tracks played gaplessly, on Binaural or speakers: the two files, the time, the Monitor layout, and your log file (Help &gt; Log File...).</li><li>The object view's window: anything odd when moving it out and back, or on relaunch.</li></ul></details></section>
 <section id="v0-1-61"><h2>0.1.61 <span class="date">2026-11-24</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Changed</h3>
 <ul><li><strong>DTS-HD Master Audio goes to the receiver whole.</strong> Pass-through now sends the full DTS-HD MA stream (7.1, high sample rates, Auro-3D inside), so the receiver can show and play the full Auro-3D mix. A receiver that cannot take the full stream gets the 48 kHz core instead, as before. The Help menu's "Send DTS-HD MA Whole (Pass-through Test)" is gone: it is always on now.</li><li><p><strong>Follow File follows the Source.</strong> With the Monitor on Follow File, an ADM whose objects play in 7.1.4 is now monitored on 7.1.4 (or the widest layout your output can carry), not on its 7.1 bed. The objects in the ceiling are no longer folded down to ear level unless you pick a narrower Monitor yourself.</p></li></ul>
 <h3>Added</h3>
