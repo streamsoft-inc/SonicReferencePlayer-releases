@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-63"><span class="v">0.1.63</span><span class="d">2026-11-25</span></a></li>
 <li><a href="#v0-1-62"><span class="v">0.1.62</span><span class="d">2026-11-24</span></a></li>
 <li><a href="#v0-1-61"><span class="v">0.1.61</span><span class="d">2026-11-24</span></a></li>
 <li><a href="#v0-1-60"><span class="v">0.1.60</span><span class="d">2026-11-23</span></a></li>
@@ -120,6 +121,14 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-63"><h2>0.1.63 <span class="date">2026-11-25</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Added</h3>
+<ul><li><strong>The Player checks the iLok licence itself.</strong> It used to learn the licence had gone only from PACE's own check, 25 minutes after launch and then hourly. It now checks every 30 seconds in the background. When the licence goes, playback stops and the "iLok can not be found" message appears within 30 seconds; when it comes back, the message closes and you carry on, with no restart. Once the iLok is plugged in again the message also offers <strong>Restart</strong>.</li><li><strong>Source Channels.</strong> Ctrl-click Source, or right-click a file &gt; Source Channels..., to say what a file's channels are: Use Speaker Layout, Channel Based, Binaural, or Source Channels..., where each speaker of any layout picks the file's channel, in SMPTE, Film or a custom order. An undeclared file whose channel count matches the pinned Monitor layout now takes that layout's speaker names in the Monitor's order.</li><li><p><strong>Every Speaker Layout dialog lists its speakers in the chosen order</strong> (Film reads L C R ...).</p></li></ul>
+<h3>Fixed</h3>
+<ul><li><p><strong>The licence message came back over Quit's own questions</strong> and could loop.</p></li></ul>
+<p>Everything in 0.1.62 is included.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Pulling the iLok while playing: how long before the message, and whether putting it back lets you carry on.</li><li>A file set with Source Channels: anything that plays from the wrong speaker.</li></ul></details></section>
 <section id="v0-1-62"><h2>0.1.62 <span class="date">2026-11-24</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Added</h3>
 <ul><li><strong>The object view in a window of its own.</strong> The small arrow at the right of the room view's buttons moves the view, with its buttons and options, into a separate window you can size and place anywhere, on a second screen for example. The arrow there, the window's close button, or the triangle in the Preview's folded object column bring it back. If it is out when you quit, it opens out again, where you left it.</li><li><strong>Streamed files are kept on disk, encrypted.</strong> Everything streamed from Artist Connection is kept in an encrypted cache on this Mac, so a file plays again without the network fetching it afresh. The cache icon on a streamed row keeps the whole file. Settings &gt; Accounts shows how much is used and sets the limit.</li><li><strong>Artist Connection albums as covers.</strong> The Albums tab shows each album as its cover; one click opens the album's page (cover, facts, Play, Add to File Pane, its tracks). Tiles / List switches back to the list.</li><li><p><strong>The Measurement column folds away.</strong> A triangle beside Loudness closes it, and the Overview takes its width. Remembered.</p></li></ul>
 <h3>Fixed</h3>
