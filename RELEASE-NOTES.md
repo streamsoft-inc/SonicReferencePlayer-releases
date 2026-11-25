@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.63](#v0-1-63)** — 2026-11-25
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.62](#v0-1-62)** — 2026-11-24
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.61](#v0-1-61)** — 2026-11-24
@@ -131,6 +133,43 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-63"></a>
+## 0.1.63 — 2026-11-25
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### Added
+
+- **The Player checks the iLok licence itself.** It used to learn the licence had gone only from
+  PACE's own check, 25 minutes after launch and then hourly. It now checks every 30 seconds in the
+  background. When the licence goes, playback stops and the "iLok can not be found" message
+  appears within 30 seconds; when it comes back, the message closes and you carry on, with no
+  restart. Once the iLok is plugged in again the message also offers **Restart**.
+- **Source Channels.** Ctrl-click Source, or right-click a file > Source Channels..., to say what a
+  file's channels are: Use Speaker Layout, Channel Based, Binaural, or Source Channels..., where
+  each speaker of any layout picks the file's channel, in SMPTE, Film or a custom order. An
+  undeclared file whose channel count matches the pinned Monitor layout now takes that layout's
+  speaker names in the Monitor's order.
+- **Every Speaker Layout dialog lists its speakers in the chosen order** (Film reads L C R ...).
+
+### Fixed
+
+- **The licence message came back over Quit's own questions** and could loop.
+
+Everything in 0.1.62 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- Pulling the iLok while playing: how long before the message, and whether putting it back lets
+  you carry on.
+- A file set with Source Channels: anything that plays from the wrong speaker.
+
+[Back to the list of versions](#versions)
 
 ---
 
