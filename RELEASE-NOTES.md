@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.65](#v0-1-65)** — 2026-11-26
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.64](#v0-1-64)** — 2026-11-25
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.63](#v0-1-63)** — 2026-11-25
@@ -135,6 +137,41 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-65"></a>
+## 0.1.65 — 2026-11-26
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### New
+
+- **Delivery Check.** Right-click a file in the list > **Delivery Check…** checks a master against
+  Apple Music Immersive, UMG, FUGA or Dolby Atmos Music, rule by rule: **OK**, **Check**, **Fail** or
+  **Not checked** (always with the reason). Every finding names where its rule comes from: a published
+  specification, a distributor's asset specification, or a House rule, which only ever says Check.
+  - Reads the file; never changes it. Several files selected together are checked as an album.
+  - **Scan the audio** (on by default) reads every channel once: clipping, dropouts, DC offset, a cut-off
+    ending, empty objects and beds, mono as stereo, the real word width, and the LFE.
+  - **Stereo master…** compares each file with its stereo master (start, end and, for an album, each
+    track's boundary). Files and masters are paired by ISRC, name or track number; an unclear pairing is
+    not guessed, and the rule says so.
+  - **Copy** and **PDF** write the report.
+  - Dolby Media Encoder measurements are not in yet.
+- **A sample-rate conversion that cannot hang.** Converting between sample rates that need no conversion
+  (48 kHz to 48 kHz, for example) no longer stops an export; an impossible rate is refused.
+
+Everything in 0.1.64 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- Delivery Check on real masters, with their stereo masters: a result you disagree with, a master that is
+  not paired with its stereo master, a rule you expected and did not find.
+
+[Back to the list of versions](#versions)
 
 ---
 
