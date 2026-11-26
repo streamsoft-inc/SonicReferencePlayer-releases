@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.66](#v0-1-66)** — 2026-11-26
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.65](#v0-1-65)** — 2026-11-26
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.64](#v0-1-64)** — 2026-11-25
@@ -137,6 +139,34 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-66"></a>
+## 0.1.66 — 2026-11-26
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### New
+
+- **Delivery Check: an Auro-3D profile.** For people who encode with the Auro-3D Encoder. The **Auro-3D**
+  entry in the Delivery Check's Profile menu appears **only while the Auro-3D Encoder Service is installed and
+  running** on this Mac; otherwise it is not there.
+  - It checks an **ADM that is going into the encoder**: an ADM BWF, 24-bit, the chna table, the channel and
+    object counts, empty objects, the LFE and an ISRC.
+  - Above the files it shows whether the encoder is ready: running, its Auro codec licence, and its support tools.
+  - It reads the encoder's status and never starts or controls it.
+- The Delivery Check section of the User Guide describes the Auro-3D profile.
+
+Everything in 0.1.65 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- The Auro-3D profile with the encoder running: what an ADM you encode should be checked for that it is not.
+
+[Back to the list of versions](#versions)
 
 ---
 
