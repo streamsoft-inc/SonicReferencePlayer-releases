@@ -54,6 +54,7 @@
 <header><h1>Sonic Reference Player — Release Notes</h1></header>
 <div class="wrap">
 <nav><input id="filter" type="search" placeholder="Search the notes" aria-label="Search the release notes"><ul id="versions">
+<li><a href="#v0-1-65"><span class="v">0.1.65</span><span class="d">2026-11-26</span></a></li>
 <li><a href="#v0-1-64"><span class="v">0.1.64</span><span class="d">2026-11-25</span></a></li>
 <li><a href="#v0-1-63"><span class="v">0.1.63</span><span class="d">2026-11-25</span></a></li>
 <li><a href="#v0-1-62"><span class="v">0.1.62</span><span class="d">2026-11-24</span></a></li>
@@ -122,6 +123,12 @@
 </ul></nav>
 <main>
 <div id="results" aria-live="polite"><h2 id="results-count"></h2><ol id="results-list"></ol></div>
+<section id="v0-1-65"><h2>0.1.65 <span class="date">2026-11-26</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>New</h3>
+<ul><li><strong>Delivery Check.</strong> Right-click a file in the list &gt; <strong>Delivery Check…</strong> checks a master against Apple Music Immersive, UMG, FUGA or Dolby Atmos Music, rule by rule: <strong>OK</strong>, <strong>Check</strong>, <strong>Fail</strong> or <strong>Not checked</strong> (always with the reason). Every finding names where its rule comes from: a published specification, a distributor's asset specification, or a House rule, which only ever says Check. - Reads the file; never changes it. Several files selected together are checked as an album. - <strong>Scan the audio</strong> (on by default) reads every channel once: clipping, dropouts, DC offset, a cut-off ending, empty objects and beds, mono as stereo, the real word width, and the LFE. - <strong>Stereo master…</strong> compares each file with its stereo master (start, end and, for an album, each track's boundary). Files and masters are paired by ISRC, name or track number; an unclear pairing is not guessed, and the rule says so. - <strong>Copy</strong> and <strong>PDF</strong> write the report. - Dolby Media Encoder measurements are not in yet.</li><li><p><strong>A sample-rate conversion that cannot hang.</strong> Converting between sample rates that need no conversion (48 kHz to 48 kHz, for example) no longer stops an export; an impossible rate is refused.</p></li></ul>
+<p>Everything in 0.1.64 is included.</p>
+<hr>
+<p><strong>What we would like to hear from testers</strong></p>
+<ul><li>Delivery Check on real masters, with their stereo masters: a result you disagree with, a master that is not paired with its stereo master, a rule you expected and did not find.</li></ul></details></section>
 <section id="v0-1-64"><h2>0.1.64 <span class="date">2026-11-25</span></h2><ul class="headlines"><li>Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</li></ul><details><summary>Full notes</summary><p><strong>Sonic Reference Player Pro.</strong> Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.</p><h3>Fixed</h3>
 <ul><li><p><strong>A file's Name column now matches its Out column.</strong> With a file set to Film order in Source Channels, the Name column showed the speaker names in SMPTE order (L R C LFE ...) while Out, which says where each channel actually plays, read L C R ... Only the names were wrong: every channel played from the right speaker. Rows named by the file or by Source Channels now keep their names.</p></li></ul>
 <p>Everything in 0.1.63 is included.</p>
