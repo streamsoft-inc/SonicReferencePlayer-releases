@@ -5,6 +5,8 @@ Every release, newest first. Each links to its full notes below.
 <a name="versions"></a>
 ## Versions
 
+- **[0.1.67](#v0-1-67)** — 2026-11-26
+  - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.66](#v0-1-66)** — 2026-11-26
   - Sonic Reference Player Pro. Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
 - **[0.1.65](#v0-1-65)** — 2026-11-26
@@ -139,6 +141,34 @@ Every release, newest first. Each links to its full notes below.
   - Video files, an About window, and updates where you would look for them.
 - **[0.1.0](#v0-1-0)** — 2026-09-20
   - The first build. Sonic Reference Player opens masters, tells you what they are, and plays them correctly on whatever rig you are sitting in front of. It is soundBlade's Preview window as an application of its own: the same engine, the same decoders, the same metering — with no EDLs, no editing and nothing to accidentally change about the file you were sent.
+
+---
+
+<a name="v0-1-67"></a>
+## 0.1.67 — 2026-11-26
+
+**Sonic Reference Player Pro.** Requires macOS 11 (Big Sur) or later, on Intel or Apple silicon.
+
+### New
+
+- **Delivery Check: channels that cancel or duplicate each other.** With "Scan the audio" ticked, the Delivery Check
+  now compares every pair of channels, over the whole file and over short stretches of it.
+  - It reports channels that are in reversed polarity, which can cancel in a downmix or on the speakers, and
+    channels carrying the same content in two different places, which can read as a phantom source.
+  - It uses where the two channels sit, taken from the ADM, so an intended phantom centre between a left and right
+    pair is not reported.
+  - It is in the Apple, Dolby, UMG and Auro-3D profiles and says Check, never Fail.
+- The Delivery Check section of the User Guide describes it.
+
+Everything in 0.1.66 is included.
+
+---
+
+**What we would like to hear from testers**
+
+- Whether the pair findings match what you hear on your own masters.
+
+[Back to the list of versions](#versions)
 
 ---
 
